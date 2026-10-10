@@ -1,0 +1,33 @@
+name: Actualizar lista y publicar en Firebase
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: publicar
+  cancel-in-progress: true
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    env:
+      TIENE_FIREBASE: ${{ secrets.FIREBASE_SERVICE_ACCOUNT != '' }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generar materiales.json y version.json
+        run: python3 tools/generar_lista.py
+      - name: Guardar cambios en el repositorio
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add materiales.json version.json
+          git diff --cached --quiet || (git commit -m "Actualizar lista de materiales" && git push)
+      - name: Publicar en Firebase Hosting
+        if: env.TIENE_FIREBASE == 'true'
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          projectId: mathjconjean
+          channelId: live

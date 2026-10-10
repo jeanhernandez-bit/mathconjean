@@ -1,0 +1,41 @@
+MATH CON JEAN - Publicacion en Firebase Hosting con cache versionado
+
+ARCHIVOS (copialos dentro de la carpeta del repositorio "mathconjean",
+reemplazando los que ya existan; incluye los ocultos .firebaserc y .github):
+
+  index.html                    la pagina
+  firebase.json                 configuracion de Hosting y reglas de cache
+  .firebaserc                   indica el proyecto "mathconjean"
+  tools/generar_lista.py        arma materiales.json y version.json
+  .github/workflows/lista.yml   en cada Push: actualiza la lista y publica en Firebase
+
+COMO FUNCIONA EL CACHE
+  - index.html se reutiliza 5 minutos. Recargar la pagina en ese rato no la
+    vuelve a bajar. Los logos (logo.png, marca.png) se guardan una semana.
+  - version.json guarda una huella de materiales.json y de videos.txt.
+    La pagina lo consulta como mucho una vez por minuto. Si un archivo no tiene
+    huella, no se pide.
+  - Si la huella no cambio, materiales.json y videos.txt salen de la copia
+    local. Si cambio, se bajan una vez (archivo?v=huella) y quedan un ano.
+  - Cada PDF lleva su huella en el enlace (archivo.pdf?v=abc123). El navegador
+    lo guarda un ano. La vista previa pide solo las paginas visibles, no el PDF entero.
+  - Un cambio de la pagina se ve en la siguiente visita, pasados esos 5 minutos.
+
+CONFIGURACION (una sola vez)
+  1. Consola de Firebase > proyecto mathconjean > Hosting > Comenzar
+     (avanza con "Siguiente" hasta terminar; no hace falta instalar nada).
+  2. Engranaje > Configuracion del proyecto > Cuentas de servicio >
+     Generar nueva clave privada. Se descarga un archivo .json.
+  3. console.cloud.google.com > IAM y administracion > IAM (proyecto mathconjean).
+     En la cuenta firebase-adminsdk-...: Editar > Agregar rol >
+     "Administrador de Firebase Hosting" > Guardar.
+  4. GitHub > repositorio mathconjean > Settings > Secrets and variables >
+     Actions > New repository secret
+       Name:   FIREBASE_SERVICE_ACCOUNT
+       Secret: pega TODO el contenido del archivo .json
+  5. GitHub Desktop: Commit y Push.
+  6. GitHub > pestana Actions: cuando quede en verde, el sitio esta en
+       https://mathconjean.web.app
+
+IMPORTANTE: el archivo .json de la clave es secreto. No lo pongas dentro
+de la carpeta del repositorio y borralo de Descargas despues del paso 4.
