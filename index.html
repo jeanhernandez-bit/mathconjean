@@ -387,6 +387,29 @@ nav a:hover,nav a.on{color:#fff}
 body.pvo{overflow:hidden}
 @media(max-width:560px){.pv{padding:0}.pvp{height:100%;border-radius:0;border:0}.pvb{padding:8px}}
 @media(prefers-reduced-motion:reduce){.pv,.pvp{transition:none}}
+
+/* v25 videos */
+.vg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:0 0 16px}
+.vg.one{grid-template-columns:1fr}
+.vc{position:relative;display:block;width:100%;text-align:left;padding:0;font:inherit;color:inherit;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:linear-gradient(160deg,#171717,#0b0b0b);cursor:pointer;transition:transform .3s cubic-bezier(.2,.8,.2,1),border-color .25s,box-shadow .3s;animation:v21in .5s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i,0)*70ms)}
+.vc:not(.vph):hover,.vc:not(.vph):focus-visible{transform:translateY(-5px);border-color:#cfcfcf;box-shadow:0 18px 40px rgba(0,0,0,.6)}
+.vc .tw{position:relative;overflow:hidden;aspect-ratio:16/9;background:#121212}
+.vc .th{position:absolute;inset:0;background:#161616 center/cover no-repeat;transition:transform .6s cubic-bezier(.2,.8,.2,1),filter .3s}
+.vc:not(.vph):hover .th{transform:scale(1.07);filter:brightness(.75)}
+.vc .pl{position:absolute;left:50%;top:50%;width:58px;height:58px;margin:-29px 0 0 -29px;display:grid;place-items:center;border-radius:50%;background:#fff;color:#000;box-shadow:0 8px 26px rgba(0,0,0,.55);transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+.vc .pl svg{width:26px;height:26px;fill:currentColor;margin-left:3px}
+.vg.one .vc .pl{width:92px;height:92px;margin:-46px 0 0 -46px}.vg.one .vc .pl svg{width:42px;height:42px}
+.vc:not(.vph):hover .pl{transform:scale(1.14)}
+.vc.vph .pl{background:#2a2a2a;color:#777}
+.vc .vt{display:flex;flex-direction:column;gap:3px;padding:13px 16px}
+.vc .vt b{font:700 1.02rem/1.25 "Bricolage Grotesque",sans-serif;color:var(--ink)}
+.vg.one .vc .vt b{font-size:1.25rem}
+.vc .vt small{font:500 .78rem "IBM Plex Mono",monospace,sans-serif;color:var(--muted)}
+.ytc{display:inline-block;color:var(--ink);font-weight:600;font-size:.9rem;text-decoration:underline;margin-bottom:8px}
+.pvp.vid{height:auto;max-height:96vh}.pvp.vid .pvb{padding:0;background:#000;display:block}
+.pvp.vid .vf{display:block;width:100%;aspect-ratio:16/9;border:0;background:#000}
+@media(max-width:620px){.vg{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.vc,.vc *{transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
@@ -618,7 +641,12 @@ return '<svg viewBox="0 0 230 150" class="dd" role="img" aria-label="Representac
 function vt(s){return (s||"").replace(/«([^»]*)»/g,function(_,c){var r=c.split("|");if(r.length>1)return '<span class="mx" style="--c:'+r[0].split(",").length+'">'+r.map(function(w){return w.split(",").map(function(e){return '<i>'+e+'</i>'}).join("")}).join("")+'</span>';return '<span class="cv">'+c.split(";").map(function(e){return '<i>'+e+'</i>'}).join("")+'</span>'})}
 function ruta(s,k){var u=s.parciales[k];return '<p class="pt">Parcial '+(k+1)+' · '+u.t+'</p>'+u.temas.map(function(x,i){return '<details><summary><b>'+(i+1)+'</b>'+x.n+'</summary>'+(x.g?'<div class="tg"><div class="tgf">'+fig(x.g)+'</div><div class="tgi"><p class="fm">'+vt(x.f).replace(/\s+·\s+/g,"<br>")+'</p><ol class="ps">'+x.p.map(function(y){return '<li>'+vt(y)+'</li>'}).join("")+'</ol><p class="ex"><b>Ejemplo</b>'+vt(x.e).replace(/\s+·\s+/g,"<br>")+'</p></div></div>':'<p class="pend">[Idea, fórmula y ejemplo por completar]</p>')+'</details>'}).join("")}
 function parc(s,k){var all=gm(s.slug,k,"parciales"),a=["Parcial "+(k+1)+" · Examen 1","Parcial "+(k+1)+" · Examen 2"];return '<p class="pt">Parcial '+(k+1)+' · exámenes de semestres anteriores</p>'+blkf("Parciales",all,a,FDOC,"parcial")}
-function grab(s,k){return '<p class="pt">Parcial '+(k+1)+' · clases grabadas</p>'+blk("Grabaciones",["Clase 1","Clase 2","Clase 3"],'<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10 9.5v5l4.5-2.5z"/></svg>')}
+var VID=null,YTC="https://www.youtube.com/@matematicasconjean3481";
+function ytid(u){var m=String(u).trim().match(/(?:youtu\.be\/|[?&]v=|\/embed\/|\/shorts\/|\/live\/)([\w-]{11})/);return m?m[1]:null}
+function parseVid(t){var o={};String(t).split(/\r?\n/).forEach(function(l){l=l.trim();if(!l||l[0]==="#")return;var p=l.split("|").map(function(x){return x.trim()});if(p.length<4)return;var id=ytid(p[3]),n=String(parseInt(p[1],10));if(!id||!(n>0))return;o[p[0]]=o[p[0]]||{};o[p[0]][n]=(o[p[0]][n]||[]).concat([{t:p[2]||"Clase",id:id}])});return o}
+function grab(s,k){var a=VID&&VID[s.slug]&&VID[s.slug][String(k+1)]||[],h='<p class="pt">Parcial '+(k+1)+' · clases grabadas</p>';
+if(!a.length)return h+'<div class="vg one"><div class="vc vph"><div class="tw"><div class="th"></div><span class="pl">'+'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>'+'</span></div><div class="vt"><b>Próximamente</b><small>Las grabaciones de este parcial se publicarán aquí</small></div></div></div>';
+return h+'<div class="vg'+(a.length===1?' one':'')+'">'+a.map(function(v,i){return '<button type="button" class="vc" style="--i:'+i+'" data-id="'+v.id+'" data-t="'+esc(v.t)+'"><div class="tw"><div class="th" style="background-image:url(https://i.ytimg.com/vi/'+v.id+'/hqdefault.jpg)"></div><span class="pl">'+'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>'+'</span></div><div class="vt"><b>'+esc(v.t)+'</b><small>Parcial '+(k+1)+' · clase grabada</small></div></button>'}).join("")+'</div><a class="ytc" href="'+YTC+'" target="_blank" rel="noopener">Ver todo el canal en YouTube ↗</a>'}
 function view(sl){var m=sl.split("/");sl=m[0];var n=S.findIndex(function(x){return x.slug===sl});if(n<0)return null;
 var s=S[n],f=s.info||S[0].info,r=s.rec,p=S[n-1],q=S[n+1],k=m[1]?Math.min(Math.max(+m[1].slice(1)-1||0,0),s.parciales.length-1):s.cur,h;
 h='<div class="wrap sv" data-s="'+sl+'"><a class="back" href="#inicio">Volver al inicio</a>';
@@ -635,6 +663,7 @@ h+='</div></div></div>';
 return {h:h,t:s.name}}
 function paint(r,s,k){var q=r.querySelector("#p2");if(q)q.innerHTML=mat(s,k);q=r.querySelector("#p3");if(q)q.innerHTML=grab(s,k);q=r.querySelector("#p4");if(q)q.innerHTML=parc(s,k)}
 try{fetch("materiales.json",{cache:"no-cache"}).then(function(x){return x.ok?x.json():null}).then(function(j){if(!j||typeof j!=="object")return;MAT=j;var r=document.querySelector(".sv");if(!r)return;var s=S.find(function(x){return x.slug===r.dataset.s}),b=r.querySelector(".pjb[aria-pressed=true]");if(s&&b)paint(r,s,+b.dataset.k)}).catch(function(){})}catch(e){}
+try{fetch("videos.txt",{cache:"no-cache"}).then(function(x){return x.ok?x.text():null}).then(function(t){if(t==null)return;VID=parseVid(t);var r=document.querySelector(".sv");if(!r)return;var s=S.find(function(x){return x.slug===r.dataset.s}),b=r.querySelector(".pjb[aria-pressed=true]");if(s&&b)paint(r,s,+b.dataset.k)}).catch(function(){})}catch(e){}
 function wireDemo(r){var sl=r.querySelector(".sv").dataset.s,s=S.find(function(x){return x.slug===sl}),tb=r.querySelectorAll('[role=tab]');
 tb.forEach(function(t){t.addEventListener("click",function(){tb.forEach(function(x){x.setAttribute("aria-selected",x===t)});r.querySelectorAll('[role=tabpanel]').forEach(function(p){p.hidden=p.id!==t.getAttribute("aria-controls")})})});
 r.querySelectorAll("button.wkd").forEach(function(b){b.addEventListener("click",function(){r.querySelectorAll("button.wkd.sel").forEach(function(x){x.classList.remove("sel")});b.classList.add("sel");r.querySelector("#cdet").textContent=b.dataset.d})});
@@ -697,6 +726,16 @@ load().then(function(p){return p.getDocument({url:u}).promise}).then(function(do
 document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a.view");if(!a||e.metaKey||e.ctrlKey||e.shiftKey||e.button)return;e.preventDefault();last=a;open(a.getAttribute("href"),a.dataset.t)});
 document.getElementById("pvx").addEventListener("click",close);ov.addEventListener("click",function(e){if(e.target===ov)close()});addEventListener("keydown",function(e){if(e.key==="Escape"&&ov.classList.contains("on"))close()});
 addEventListener("hashchange",function(){if(ov.classList.contains("on"))close()});
+})();
+</script>
+<script>
+(function(){var ov=document.createElement("div");ov.className="pv";ov.setAttribute("role","dialog");ov.setAttribute("aria-modal","true");ov.setAttribute("aria-label","Reproductor de video");ov.setAttribute("data-uncommentable","");
+ov.innerHTML='<div class="pvp vid"><div class="pvh"><b id="vvt"></b><a id="vvy" href="#" target="_blank" rel="noopener">▶ Ver en YouTube</a><button id="vvx" type="button" aria-label="Cerrar">✕ Cerrar</button></div><div class="pvb" id="vvb"></div></div>';document.body.appendChild(ov);
+var bd=document.getElementById("vvb"),last=null;
+function close(){ov.classList.remove("on");document.body.classList.remove("pvo");bd.innerHTML="";if(last&&last.focus)try{last.focus()}catch(e){}}
+document.addEventListener("click",function(e){var c=e.target.closest&&e.target.closest("button.vc");if(!c)return;last=c;var id=c.dataset.id;document.getElementById("vvt").textContent=c.dataset.t||"Clase";document.getElementById("vvy").href="https://www.youtube.com/watch?v="+id;
+bd.innerHTML='<iframe class="vf" src="https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1" title="'+(c.dataset.t||"Video")+'" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';ov.classList.add("on");document.body.classList.add("pvo")});
+document.getElementById("vvx").addEventListener("click",close);ov.addEventListener("click",function(e){if(e.target===ov)close()});addEventListener("keydown",function(e){if(e.key==="Escape"&&ov.classList.contains("on"))close()});addEventListener("hashchange",function(){if(ov.classList.contains("on"))close()});
 })();
 </script>
 </body>

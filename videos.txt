@@ -1,0 +1,13 @@
+# VIDEOS DE MATH CON JEAN
+# Una línea por video, con este formato (separado por el símbolo | ):
+#   curso | parcial | título del video | enlace de YouTube
+#
+# Cursos: geometria-vectorial, calculo-diferencial, calculo-integral,
+#         calculo-varias-variables, algebra-lineal, ecuaciones-diferenciales,
+#         estadistica-1, quimica-general, fisica-mecanica
+# Parcial: 1, 2 o 3
+# Las líneas que empiezan con # se ignoran.
+#
+# Ejemplos (bórralos y pon los tuyos):
+geometria-vectorial | 2 | Vectores en el plano | https://www.youtube.com/watch?v=PC0GvyEIXfk&list=RDPC0GvyEIXfk&start_radio=1
+geometria-vectorial | 2 | Producto punto | https://www.youtube.com/watch?v=0NAKpzOfVoY&list=RD0NAKpzOfVoY&start_radio=1
