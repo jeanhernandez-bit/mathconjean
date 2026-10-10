@@ -654,6 +654,19 @@ section[data-off]{display:none!important}
 #faq details[open]{border-color:#555}
 #faq details[open] p{animation:rise .4s ease both}
 @media(prefers-reduced-motion:reduce){#cursos .pbar,#cursos .ltile,#cursos .feat,#contacto .cc,#contacto .cform,#faq details,#contacto .fqh{animation:none!important}.cc::before{animation:none}}
+
+nav.open{border:1px solid var(--line)!important;border-top:0!important;border-radius:0 0 20px 20px!important;margin:0!important;padding:8px 20px 14px!important;gap:0!important;background:#0a0a0a!important;box-shadow:0 24px 40px rgba(0,0,0,.6);font-size:1.05rem!important}
+nav.open a{width:100%;padding:14px 4px;border-bottom:1px solid #1c1c1c}
+nav.open a:last-of-type{border-bottom:0}
+nav.open a.on{padding-left:14px;border-left:2px solid #fff}
+nav.open{animation:navd .28s cubic-bezier(.2,.8,.2,1)}
+@keyframes navd{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+.hero2{padding-top:12px!important}
+.hero2 .stage{margin-top:2px!important}
+.tp .pt{animation:rise .45s cubic-bezier(.2,.8,.2,1) both}
+.tp details{animation:rise .55s cubic-bezier(.2,.8,.2,1) both}
+.tp details:nth-of-type(1){animation-delay:0.045s}.tp details:nth-of-type(2){animation-delay:0.090s}.tp details:nth-of-type(3){animation-delay:0.135s}.tp details:nth-of-type(4){animation-delay:0.180s}.tp details:nth-of-type(5){animation-delay:0.225s}.tp details:nth-of-type(6){animation-delay:0.270s}.tp details:nth-of-type(7){animation-delay:0.315s}.tp details:nth-of-type(8){animation-delay:0.360s}.tp details:nth-of-type(9){animation-delay:0.405s}.tp details:nth-of-type(10){animation-delay:0.450s}.tp details:nth-of-type(11){animation-delay:0.495s}.tp details:nth-of-type(12){animation-delay:0.540s}
+@media(prefers-reduced-motion:reduce){.tp details,.tp .pt,nav.open{animation:none}}
 </style>
 </head>
 <body>
@@ -709,7 +722,7 @@ html.pl{overflow:hidden}
 <line class="ax" x1="24" y1="136" x2="24" y2="10"/><polygon class="ar" points="24,4 20,12 28,12"/>
 <line id="pvl" class="vl" x1="24" y1="128" x2="24" y2="128"/><circle id="pdt" class="dt" r="4.5" cx="24" cy="128"/>
 <text x="113" y="144">1</text><text x="205" y="144">2</text><text x="10" y="144">0</text><text x="252" y="144">x</text><text x="30" y="12">y</text>
-<text class="fx" x="179.6" y="18">y = eˣ</text><text class="fx" x="38" y="40" id="pint">∫₀ˣ eᵗ dt</text>
+
 </svg><div class="pn"><span id="ppc">0</span><small>%</small></div></div>
 </div>
 <div class="pf"><span>MCJ.OS // 2026-2</span><span>Potenciando mentes</span></div>
