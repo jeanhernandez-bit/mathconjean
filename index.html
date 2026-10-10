@@ -574,6 +574,15 @@ footer .flname b{font-weight:500;color:var(--ink)}
 .hero2>.wrap{flex:1;justify-content:center;padding-bottom:36px}
 .hmq{width:100%}
 .hmq .mqb{background:#f4f4f4;padding:18px 0}
+
+main>section[hidden]{display:none!important}
+footer[hidden]{display:none!important}
+.pgin{animation:pgin .5s cubic-bezier(.2,.8,.2,1)}
+@keyframes pgin{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.pgin{animation:none}}
+
+#faq{scroll-margin-top:calc(var(--hh,73px) + 16px)}
+main>section:not(.hero2){min-height:calc(100svh - var(--hh,73px) - 40px)}
 </style>
 </head>
 <body>
@@ -1091,9 +1100,18 @@ tb.forEach(function(t){t.addEventListener("click",function(){tb.forEach(function
 r.querySelectorAll("button.wkd").forEach(function(b){b.addEventListener("click",function(){r.querySelectorAll("button.wkd.sel").forEach(function(x){x.classList.remove("sel")});b.classList.add("sel");r.querySelector("#cdet").textContent=b.dataset.d})});
 var pb=r.querySelectorAll(".pjb");pb.forEach(function(b){b.addEventListener("click",function(){var k=+b.dataset.k;pb.forEach(function(x){x.setAttribute("aria-pressed",x===b)});r.querySelector("#p1").innerHTML=ruta(s,k);paint(r,s,k);var ct=r.querySelector(".cort");if(ct)ct.textContent=ct.textContent.replace(/Corte \d/,"Corte "+(k+1));r.querySelector("#t1").click();try{history.replaceState(null,"","#materia/"+sl+"/p"+(k+1))}catch(e){}})})}
 var home=document.getElementById("inicio"),sv=document.getElementById("subject"),T0=document.title;
+var PG=["inicio","jean","cursos","combos","contacto"],TT={jean:"Sobre Jean",cursos:"Nuestros cursos",combos:"Combos",contacto:"Contacto"},ft=document.querySelector("footer"),secs=[].slice.call(home.querySelectorAll(":scope > section"));
+function pkey(x){return x.id||"inicio"}
 function route(){var hs=location.hash,v=hs.indexOf("#materia/")===0?view(hs.slice(9)):null;
-if(v){sv.innerHTML=v.h;setWA(sv);wireDemo(sv);home.hidden=true;sv.hidden=false;document.title=v.t+" | Math con Jean";scrollTo(0,0)}
-else{sv.hidden=true;home.hidden=false;document.title=T0;var el=hs.length>1&&document.getElementById(hs.slice(1));if(el)el.scrollIntoView()}}
+if(v){sv.innerHTML=v.h;setWA(sv);wireDemo(sv);home.hidden=true;sv.hidden=false;if(ft)ft.hidden=false;document.body.dataset.pg="materia";document.title=v.t+" | Math con Jean";scrollTo(0,0);return}
+var id=hs.slice(1)||"inicio",pg="inicio",tg=null;
+if(PG.indexOf(id)>-1)pg=id;else{var el=document.getElementById(id);if(el&&home.contains(el)){var sc=el.closest("main > section");pg=sc?pkey(sc):"inicio";tg=el}}
+sv.hidden=true;home.hidden=false;var prev=document.body.dataset.pg;
+secs.forEach(function(x){var on=pkey(x)===pg;x.hidden=!on;if(on&&prev!==pg){x.classList.remove("pgin");void x.offsetWidth;x.classList.add("pgin")}});
+if(ft)ft.hidden=pg==="inicio";document.body.dataset.pg=pg;document.title=TT[pg]?TT[pg]+" | Math con Jean":T0;
+if(tg&&tg.tagName!=="SECTION")setTimeout(function(){tg.scrollIntoView({block:"start"})},30);else scrollTo(0,0);
+dispatchEvent(new Event("resize"))}
+document.addEventListener("click",function(e){var a=e.target.closest('a[href^="#"]');if(a&&a.getAttribute("href")===location.hash)scrollTo({top:0,behavior:"smooth"})});
 addEventListener("hashchange",route);route();
 (function(){var p=document.getElementById("cmp"),a=document.getElementById("wsend");if(!p)return;
 p.innerHTML=S.map(function(x){return '<label class="ck"><input type="checkbox" value="'+x.name+'"><span>'+x.name+'</span></label>'}).join("");
@@ -1120,7 +1138,7 @@ document.addEventListener("click",function(e){if(!on||!cm)return;var t=e.target;
 var ids=["inicio","jean","cursos","combos","contacto"],map={},cur="",sv=document.getElementById("subject");
 function set(h){var a=null;links.forEach(function(l){var on=l.getAttribute("href")===h;l.classList.toggle("on",on);if(on){a=l;l.setAttribute("aria-current","page")}else l.removeAttribute("aria-current")});
 if(a){bar.style.width=a.offsetWidth+"px";bar.style.transform="translateX("+a.offsetLeft+"px)";bar.style.opacity=1}else bar.style.opacity=0;cur=h}
-function pick(){var h="#inicio";if(sv&&!sv.hidden)h="#cursos";else{var y=innerHeight*.4;ids.forEach(function(i){var e=document.getElementById(i);if(e&&e.getBoundingClientRect().top<=y)h=map[i]||"#"+i});if(innerHeight+scrollY>=document.documentElement.scrollHeight-4)h="#contacto"}
+function pick(){var h="#"+(document.body.dataset.pg||"inicio");if(sv&&!sv.hidden)h="#cursos";
 if(h!==cur)set(h)}
 var t=0;function q(){if(t)return;t=requestAnimationFrame(function(){t=0;pick()})}
 addEventListener("scroll",q,{passive:true});addEventListener("hashchange",function(){setTimeout(function(){cur="";pick()},60)});addEventListener("resize",function(){var c=cur;cur="";set(c||"#inicio")});
@@ -1213,7 +1231,7 @@ addEventListener("resize",size);addEventListener("scroll",function(){if(!run)dra
 <script>
 (function(){var t=document.getElementById("hmq");if(t&&typeof S!=="undefined"){var q=S.map(function(x){return '<a href="#materia/'+x.slug+'">'+x.name+'</a><i aria-hidden="true">•</i>'}).join("");t.innerHTML=q+q}
 var hd=document.querySelector("header"),hw=document.querySelector(".hero2>.wrap"),hm=document.querySelector(".hmq");
-function hh(){var zb=parseFloat(getComputedStyle(document.body).zoom)||1,H=hd?hd.getBoundingClientRect().height:73,sec=hw&&hw.parentNode;if(!hw)return;var vh=(innerHeight-H)/zb;sec.style.minHeight=vh.toFixed(1)+"px";hw.style.transform="";hw.style.marginBottom="";hw.style.flex="none";var pt=parseFloat(getComputedStyle(sec).paddingTop)||0,av=vh-pt-(hm?hm.offsetHeight:0),nd=hw.offsetHeight,mn=innerWidth<700?.74:.62;hw.style.flex="";if(nd>av+2){var z=Math.max(mn,av/nd);hw.style.transformOrigin="50% 0";hw.style.transform="scale("+z.toFixed(3)+")";hw.style.marginBottom=(-nd*(1-z)).toFixed(1)+"px";hw.style.flex="none"}}
+function hh(){var zb=parseFloat(getComputedStyle(document.body).zoom)||1,H=hd?hd.getBoundingClientRect().height:73,sec=hw&&hw.parentNode;if(!hw)return;var vh=Math.floor((innerHeight-H)/zb)-1;sec.style.minHeight=vh.toFixed(1)+"px";hw.style.transform="";hw.style.marginBottom="";hw.style.flex="none";var pt=parseFloat(getComputedStyle(sec).paddingTop)||0,av=vh-pt-(hm?hm.offsetHeight:0),nd=hw.offsetHeight,mn=innerWidth<700?.74:.62;hw.style.flex="";if(nd>av+2){var z=Math.max(mn,av/nd);hw.style.transformOrigin="50% 0";hw.style.transform="scale("+z.toFixed(3)+")";hw.style.marginBottom=(-nd*(1-z)).toFixed(1)+"px";hw.style.flex="none"}}
 hh();addEventListener("resize",hh);addEventListener("load",hh)})();
 </script>
 </body>
