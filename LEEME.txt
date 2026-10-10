@@ -1,0 +1,11 @@
+SITIO MATH CON JEAN - archivos para el repositorio
+
+Copia TODO lo de esta carpeta dentro de la carpeta de tu repositorio "mathconjean"
+(junto a la carpeta pdf), conservando la carpeta .github y la carpeta tools:
+
+  index.html                      -> la pagina
+  tools/generar_lista.py          -> lee tus PDFs y arma la lista
+  .github/workflows/lista.yml     -> hace que la lista se actualice sola cada vez que subes PDFs
+
+Luego en GitHub Desktop: Commit y Push origin.
+En unos minutos aparece materiales.json en el repositorio (lo crea GitHub solo).
