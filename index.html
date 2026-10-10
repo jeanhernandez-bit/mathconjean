@@ -667,6 +667,46 @@ nav.open{animation:navd .28s cubic-bezier(.2,.8,.2,1)}
 .tp details{animation:rise .55s cubic-bezier(.2,.8,.2,1) both}
 .tp details:nth-of-type(1){animation-delay:0.045s}.tp details:nth-of-type(2){animation-delay:0.090s}.tp details:nth-of-type(3){animation-delay:0.135s}.tp details:nth-of-type(4){animation-delay:0.180s}.tp details:nth-of-type(5){animation-delay:0.225s}.tp details:nth-of-type(6){animation-delay:0.270s}.tp details:nth-of-type(7){animation-delay:0.315s}.tp details:nth-of-type(8){animation-delay:0.360s}.tp details:nth-of-type(9){animation-delay:0.405s}.tp details:nth-of-type(10){animation-delay:0.450s}.tp details:nth-of-type(11){animation-delay:0.495s}.tp details:nth-of-type(12){animation-delay:0.540s}
 @media(prefers-reduced-motion:reduce){.tp details,.tp .pt,nav.open{animation:none}}
+
+@media(max-width:600px){
+#cursos .pbar span{padding:8px 10px}#cursos .pbar b{font-size:1.05rem}#cursos .pbar .go2{padding:10px}
+#cursos .ltile{padding:12px 14px!important}#cursos .ltile b{font-size:1.4rem!important}
+#cursos .lcards{gap:10px}
+#cursos .course{min-height:0;padding:16px 16px 14px;gap:4px;border-radius:14px}
+#cursos .course h4{font-size:1.1rem;margin-top:8px}
+#cursos .course .desc{min-height:0;margin-top:4px}
+#cursos .course .desc p{font-size:.88rem}
+#cursos .course .gfx{display:none}
+#cursos .course .foot{padding-top:10px;font-size:.84rem}
+#cursos .course .sym{font-size:1.1rem;top:12px;right:14px}
+#cursos .feats{margin-top:36px;padding-top:28px;gap:22px}
+#cursos .feat .fic{width:68px;height:68px;margin-bottom:10px}#cursos .feat .fic svg{width:38px;height:38px}
+#cursos .feat h3{font-size:1rem}#cursos .feat p{font-size:.85rem}
+#combos .cgo{padding:10px 14px;border-radius:14px}#combos .cgo b{font-size:1rem}#combos .cgo i{width:32px;height:32px;font-size:1.1rem}
+#combos .tiers{gap:10px}
+#combos .tier{padding:14px 16px;border-radius:16px}
+#combos .tier .tpz{font-size:1.75rem}#combos .tier .tn{font-size:.9rem}#combos .tier small{font-size:.8rem}
+#combos .specs{gap:10px}
+#combos .spec{padding:12px 14px;border-radius:16px;column-gap:12px}
+#combos .spec .ssym{width:48px;height:48px;border-radius:12px}
+#combos .spec .sn{font-size:.95rem}#combos .spec .tpz{font-size:1.6rem}#combos .spec small{font-size:.78rem}#combos .spec .sgo{font-size:.78rem}
+#combos .calc{gap:10px;margin-top:18px}
+#combos .cpick,#combos .csum{padding:16px;border-radius:16px}
+#combos .calc h3{font-size:1.1rem}
+#combos .kc{padding:7px 11px;font-size:.84rem}
+#combos .ktot b{font-size:1.9rem}
+#combos .incl{padding:16px;border-radius:16px}#combos .incl li{font-size:.88rem}
+#contacto .clist{gap:10px}
+#contacto .cc{padding:12px 14px;gap:12px;border-radius:14px}
+#contacto .cc .ic{width:46px;height:46px;border-radius:12px}#contacto .i3{width:24px;height:24px}
+#contacto .cc h3{font-size:1rem;margin-bottom:2px}#contacto .cc p,#contacto .cc a,#contacto .cc small{font-size:.86rem}
+#contacto .cform{padding:16px;border-radius:16px}
+#contacto .cform h3{font-size:1.15rem}
+#contacto .cform input,#contacto .cform textarea,#contacto .cform .ph,#contacto .ms summary{font-size:.9rem}
+#contacto #faq details{padding:10px 14px;border-radius:10px}#contacto #faq summary{font-size:.92rem}#contacto #faq details p{font-size:.86rem}
+#contacto .fqh{font-size:1.25rem}
+#contacto .cform input,#contacto .ms summary{padding-top:11px!important;padding-bottom:11px!important;min-height:0!important}#contacto .cform textarea{min-height:90px!important;height:90px}#contacto .cform label,#contacto .cform .fl{margin-bottom:6px}
+}
 </style>
 </head>
 <body>
@@ -761,7 +801,7 @@ requestAnimationFrame(f);setTimeout(fin,7500)})();
 </div><div class="hmq" aria-label="Nuestros cursos"><div class="mqb"><div class="mqt" id="hmq"></div></div></div></section>
 <section id="cursos"><div class="wrap">
 <h2>Cursos disponibles</h2>
-<p>Vamos con toda: a cinquear y a aprender los trucos para romper en el parcial. Son nueve cursos del núcleo de ingeniería, ordenados por nivel: empieza por el 1 y sube.</p>
+<p>Vamos con toda: a cinquear y a aprender los trucos para romper en el parcial.</p>
 <a class="pbar" href="#combos"><span><small>1 curso</small><b>$34.000</b></span><span><small>2 cursos</small><b>$65.000</b></span><span><small>3 cursos</small><b>$96.000</b></span><span class="go2">Ver combos y descuentos →</span></a>
 <div class="ruta">
 <div class="lv l1"><div class="ltile"><div><b>Nivel 1</b><span>Fundamentos</span></div><div class="lcar" aria-hidden="true"><div class="lslide on"><svg viewBox="0 0 160 110" aria-hidden="true"><polygon points="40,88 112,82 134,52 62,58" fill="var(--k1)" fill-opacity=".22" stroke="var(--k1)" stroke-opacity=".5" stroke-dasharray="4 4"/><line x1="40" y1="88" x2="112.0" y2="82.0" stroke="var(--k1)" stroke-width="3" stroke-linecap="round"/><polygon points="112.0,82.0 105.1,86.1 104.5,79.1" fill="var(--k1)"/><line x1="40" y1="88" x2="62.0" y2="58.0" stroke="var(--k2)" stroke-width="3" stroke-linecap="round"/><polygon points="62.0,58.0 60.5,65.9 54.9,61.8" fill="var(--k2)"/><line x1="40" y1="88" x2="40.0" y2="18.0" stroke="var(--k3)" stroke-width="3.5" stroke-linecap="round"/><polygon points="40.0,18.0 43.5,25.2 36.5,25.2" fill="var(--k3)"/><text x="46" y="24" fill="var(--k3)" font-size="11" font-weight="700" font-family="IBM Plex Sans,sans-serif">a × b</text><text x="100" y="100" fill="var(--k1)" font-size="11" font-weight="700" font-family="IBM Plex Sans,sans-serif">a</text><text x="56" y="52" fill="var(--k2)" font-size="11" font-weight="700" font-family="IBM Plex Sans,sans-serif">b</text><circle cx="40" cy="88" r="4" fill="var(--kl)"/></svg><span class="lcap">Geometría vectorial</span></div><div class="lslide"><svg viewBox="0 0 160 110" aria-hidden="true"><line x1="6" y1="96" x2="154" y2="96" stroke="var(--kl)" stroke-opacity=".35"/><path d="M8.0,61.0 L10.4,57.4 L12.8,53.9 L15.2,50.4 L17.6,47.0 L20.0,43.8 L22.4,40.8 L24.8,38.0 L27.2,35.5 L29.6,33.3 L32.0,31.5 L34.4,30.0 L36.8,28.9 L39.2,28.3 L41.6,28.0 L44.0,28.2 L46.4,28.8 L48.8,29.8 L51.2,31.2 L53.6,32.9 L56.0,35.1 L58.4,37.5 L60.8,40.2 L63.2,43.2 L65.6,46.4 L68.0,49.8 L70.4,53.2 L72.8,56.8 L75.2,60.3 L77.6,63.8 L80.0,67.3 L82.4,70.6 L84.8,73.7 L87.2,76.6 L89.6,79.3 L92.0,81.6 L94.4,83.6 L96.8,85.3 L99.2,86.6 L101.6,87.5 L104.0,87.9 L106.4,88.0 L108.8,87.6 L111.2,86.8 L113.6,85.6 L116.0,84.0 L118.4,82.1 L120.8,79.8 L123.2,77.2 L125.6,74.3 L128.0,71.3 L130.4,68.0 L132.8,64.6 L135.2,61.1 L137.6,57.5 L140.0,54.0 L142.4,50.5 L144.8,47.1 L147.2,43.9 L149.6,40.8 L152.0,38.1" fill="none" stroke="var(--k1)" stroke-width="3.5" stroke-linecap="round"/><line x1="16" y1="28.0" x2="68" y2="28.0" stroke="var(--k2)" stroke-width="2.5" stroke-dasharray="5 4"/><line x1="80" y1="88.0" x2="132" y2="88.0" stroke="var(--k4)" stroke-width="2.5" stroke-dasharray="5 4"/><circle cx="41.8" cy="28.0" r="5" fill="var(--k2)"/><circle cx="105.5" cy="88.0" r="5" fill="var(--k4)"/><text x="29.800000000000004" y="18.000012085229066" fill="var(--k2)" font-size="11" font-weight="700" font-family="IBM Plex Sans,sans-serif">máx</text><text x="95.5" y="107.99992446734495" fill="var(--k4)" font-size="11" font-weight="700" font-family="IBM Plex Sans,sans-serif">mín</text><text x="112" y="18" fill="var(--k5)" font-size="11" font-weight="700" font-family="IBM Plex Sans,sans-serif">f′ = 0</text></svg><span class="lcap">Cálculo diferencial</span></div><div class="lslide"><svg viewBox="0 0 160 110" aria-hidden="true"><path d="M68 12 H92 M71 12 V42 L44 92 Q42 98 50 98 H110 Q118 98 116 92 L89 42 V12" fill="none" stroke="var(--kl)" stroke-width="3" stroke-linejoin="round"/><path d="M58 70 H102 L114 93 Q115 96 110 96 H50 Q45 96 46 93 Z" fill="var(--k4)" fill-opacity=".55"/><circle class="bub" cx="66" cy="88" r="3.5" fill="var(--k1)" style="animation-delay:0s"/><circle class="bub" cx="80" cy="88" r="4.5" fill="var(--k2)" style="animation-delay:0.7s"/><circle class="bub" cx="94" cy="88" r="3" fill="var(--k3)" style="animation-delay:1.3s"/><circle class="bub" cx="74" cy="88" r="2.5" fill="var(--k5)" style="animation-delay:1.9s"/><text x="122" y="40" fill="var(--k1)" font-size="12" font-weight="700" font-family="IBM Plex Sans,sans-serif">H₂O</text><text x="8" y="40" fill="var(--k3)" font-size="12" font-weight="700" font-family="IBM Plex Sans,sans-serif">NaCl</text></svg><span class="lcap">Química general</span></div><div class="ldots"><i class="on"></i><i></i><i></i></div></div><div><p>El punto de partida: bases claras para todo lo que viene.</p></div></div><div class="lcards">
