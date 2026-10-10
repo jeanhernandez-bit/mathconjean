@@ -1,0 +1,34 @@
+{
+ "geometria-vectorial": {
+  "2": {
+   "material-gratis": [
+    {
+     "t": "Entrega 2 Grupo 2 Seminario III",
+     "f": "geometria-vectorial/parcial-2/material-gratis/Entrega%202_Grupo%202_Seminario%20III.pdf"
+    },
+    {
+     "t": "Fase 1 (Trabajo de Gerencia)",
+     "f": "geometria-vectorial/parcial-2/material-gratis/Fase%201%20%28Trabajo%20de%20Gerencia%29.pdf"
+    },
+    {
+     "t": "Ruta Critica",
+     "f": "geometria-vectorial/parcial-2/material-gratis/Ruta%20Critica.pdf"
+    }
+   ],
+   "quiz": [
+    {
+     "t": "Ejercicios Operativos Capitulo 8 (segunda mitad)",
+     "f": "geometria-vectorial/parcial-2/quiz/Ejercicios_Operativos_Capitulo_8%20%28segunda%20mitad%29.pdf"
+    },
+    {
+     "t": "Ejercicios Operativos Capitulo 10",
+     "f": "geometria-vectorial/parcial-2/quiz/Ejercicios_Operativos_Capitulo_10.pdf"
+    },
+    {
+     "t": "Ejercicios Operativos Capitulo Capitulo 8 segunda parte (versión 2)",
+     "f": "geometria-vectorial/parcial-2/quiz/Ejercicios_Operativos_Capitulo_Capitulo%208%20segunda%20parte%20%28versi%C3%B3n%202%29.pdf"
+    }
+   ]
+  }
+ }
+}
