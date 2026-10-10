@@ -129,9 +129,6 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 .course:hover{background:linear-gradient(160deg,#262626,#101010)}
 .steps li:nth-child(2){background:var(--ink);color:#000}.steps li:nth-child(2)::before{background:#000;color:var(--ink)}
 .steps li{border-radius:18px}
-#recursos .grid{grid-template-columns:2fr 1fr 1fr}
-@media(max-width:820px){#recursos .grid{grid-template-columns:1fr}}
-#recursos .card:first-child{background:linear-gradient(160deg,var(--s3),var(--s1));min-height:170px}
 @media(min-width:821px){#testimonios .card:nth-child(2){transform:translateY(16px)}}
 .igrid>div:last-child{background:var(--ink);color:#000}.igrid>div:last-child h3{color:#444}
 .card,.igrid>div{border-radius:16px}
@@ -429,12 +426,90 @@ body.pvo{overflow:hidden}
 @keyframes nmp{0%{box-shadow:0 0 0 0 rgba(255,200,87,.55)}70%{box-shadow:0 0 0 8px rgba(255,200,87,0)}100%{box-shadow:0 0 0 0 rgba(255,200,87,0)}}
 @media(max-width:560px){.nm{padding:30px 16px 24px}.nm .ns li{margin:0 10px}.nm .ns li+li::before{left:-11px;width:12px}}
 @media(prefers-reduced-motion:reduce){.nm,.nm .ni,.nm .nb i{animation:none}}
-@media(max-width:900px){.sgrid{grid-template-columns:minmax(0,1fr)}.saside,.saside>*,.smain,.smain>*{min-width:0}.smain{grid-template-columns:minmax(0,1fr)}}.pjn{flex-wrap:wrap}.wk2.tbd .wkd{border-style:dashed;opacity:.55}@media(max-width:520px){.pjn.n5 .pjb{width:48px;height:48px;font-size:1.25rem;border-radius:13px}}</style>
+@media(max-width:900px){.sgrid{grid-template-columns:minmax(0,1fr)}.saside,.saside>*,.smain,.smain>*{min-width:0}.smain{grid-template-columns:minmax(0,1fr)}}.pjn{flex-wrap:wrap}.wk2.tbd .wkd{border-style:dashed;opacity:.55}@media(max-width:520px){.pjn.n5 .pjb{width:48px;height:48px;font-size:1.25rem;border-radius:13px}}
+.kick{display:inline-block;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:6px 14px;margin:0 0 14px}
+.lead2{color:var(--muted);max-width:620px}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+.tier{position:relative;border:1px solid var(--line);border-radius:22px;padding:26px 24px;background:linear-gradient(160deg,var(--s3),var(--s1));display:flex;flex-direction:column;gap:4px;transition:transform .25s}
+.tier:hover{transform:translateY(-4px)}
+.tier .tn{font-weight:600;color:var(--muted);margin-top:14px}
+.tier .tpz{font:800 clamp(2.2rem,4.5vw,3rem)/1 "Bricolage Grotesque",sans-serif;letter-spacing:-.02em}
+.tier small{color:var(--muted);font-size:.9rem}
+.tier .sv{font-style:normal;font-weight:700;font-size:.85rem;margin-top:14px;align-self:flex-start;border:1px solid var(--line);border-radius:999px;padding:5px 12px}
+.tier.best{background:#f4f4f4;color:#000;border-color:#f4f4f4}
+.tier.best .tn,.tier.best small{color:#444}
+.tier.best .sv{background:#000;color:#fff;border-color:#000}
+.flag{position:absolute;top:18px;right:18px;font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;background:#000;color:#fff;border-radius:999px;padding:5px 10px}
+.stk{display:flex;gap:6px;height:30px;align-items:flex-end}
+.stk i{width:22px;border-radius:6px;background:currentColor;opacity:.9}
+.stk i:nth-child(1){height:30px}.stk i:nth-child(2){height:24px;opacity:.6}.stk i:nth-child(3){height:18px;opacity:.35}
+.perks{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px}
+.perk{display:flex;gap:14px;align-items:flex-start;border:1px dashed #3a3a3a;border-radius:18px;padding:18px}
+.perk .pk{flex:none;width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:var(--s3);font:800 1rem "Bricolage Grotesque",sans-serif}
+.perk b{display:block;margin-bottom:2px}
+.perk p{margin:0;color:var(--muted);font-size:.92rem}
+.perk p strong{color:var(--ink)}
+.perk.gift{border-style:solid;border-color:#f4f4f4}
+.perk.gift .pk{background:#f4f4f4;color:#000}
+.calc{display:grid;grid-template-columns:1.25fr 1fr;gap:16px;margin-top:28px}
+.cpick,.csum{border:1px solid var(--line);border-radius:22px;padding:24px;background:var(--surface)}
+.calc h3{margin:0 0 4px;font:700 1.3rem "Bricolage Grotesque",sans-serif}
+.hint2{margin:0 0 14px;color:var(--muted);font-size:.9rem}
+.chipset{display:flex;flex-wrap:wrap;gap:8px}
+.kc{border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:9px 14px;font:500 .92rem "IBM Plex Sans",sans-serif;cursor:pointer;display:inline-flex;gap:8px;align-items:center;transition:background .15s,color .15s,border-color .15s}
+.kc small{color:var(--muted);font-size:.8rem}
+.kc[aria-pressed="true"]{background:#f4f4f4;color:#000;border-color:#f4f4f4}
+.kc[aria-pressed="true"] small{color:#444}
+.kc:hover{border-color:var(--muted)}
+.prev{display:flex;gap:10px;align-items:center;margin-top:18px;color:var(--muted);font-size:.92rem;cursor:pointer}
+.prev input{width:18px;height:18px;accent-color:#f4f4f4}
+.csum{display:flex;flex-direction:column;gap:10px;background:linear-gradient(160deg,var(--s3),var(--s1))}
+.csum ul{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:.92rem}
+.csum li{display:flex;justify-content:space-between;gap:10px;border-bottom:1px dashed var(--line);padding-bottom:6px}
+.csum li.empty{color:var(--muted);border:0;justify-content:flex-start}
+.csum li.dsc{color:#9be59b}
+.ktot{display:flex;justify-content:space-between;align-items:baseline;margin-top:6px}
+.ktot span{color:var(--muted)}
+.ktot b{font:800 2.4rem/1 "Bricolage Grotesque",sans-serif}
+.ksave{margin:0;font-weight:700;color:#9be59b;min-height:1.2em}
+.knote{margin:0;color:var(--muted);font-size:.85rem}
+.csum .btn{margin-top:auto}
+.csum .btn.off{opacity:.45;pointer-events:none}
+.incl{margin-top:16px;border:1px solid var(--line);border-radius:22px;padding:22px 24px}
+.incl h3{margin:0 0 12px;font:700 1.1rem "Bricolage Grotesque",sans-serif}
+.incl ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px 22px}
+.incl li{display:flex;gap:8px;align-items:center;font-size:.95rem}
+.incl svg{width:22px;height:22px;flex:none;border-radius:50%;background:#f4f4f4;padding:4px;fill:none;stroke:#000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.pbar{display:flex;flex-wrap:wrap;align-items:stretch;margin-top:18px;border:1px solid var(--line);border-radius:18px;overflow:hidden;text-decoration:none;color:var(--ink);background:var(--surface);max-width:760px}
+.pbar span{padding:12px 18px;border-right:1px solid var(--line);display:flex;flex-direction:column;justify-content:center}
+.pbar small{color:var(--muted);font-size:.78rem}
+.pbar b{font:800 1.25rem "Bricolage Grotesque",sans-serif}
+.pbar .go2{flex:1;border:0;background:#f4f4f4;color:#000;font-weight:700;align-items:center;flex-direction:row;justify-content:center;min-width:200px}
+.pbar:hover .go2{background:#fff}
+.course .when{display:flex;gap:8px;align-items:flex-start;font-size:.85rem;color:var(--ink);opacity:.9;margin:0}
+.course .when svg{width:16px;height:16px;flex:none;margin-top:2px;fill:none;stroke:currentColor;stroke-width:2}
+.course .foot span,.course .foot a{white-space:nowrap}
+.course .spc{font-size:.72rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--ink);color:var(--ink);border-radius:999px;padding:3px 8px;margin-left:8px}
+@media(max-width:900px){
+.tiers,.perks,.calc{grid-template-columns:1fr}
+.tier{flex-direction:row;flex-wrap:wrap;align-items:baseline;column-gap:12px;padding:20px}
+.tier .stk{display:none}
+.tier .tn{margin-top:0;width:100%}
+.tier .sv{margin-top:6px}
+.flag{top:16px;right:16px}
+.ltile{flex-direction:row!important;align-items:center;justify-content:flex-start!important;gap:14px!important;padding:16px 18px!important}
+.ltile>div:first-child{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.ltile b{font-size:1.7rem!important}
+.ltile p{display:none}
+.pbar span{flex:1 1 30%;padding:10px 12px}
+.pbar .go2{flex-basis:100%;padding:12px}
+}
+</style>
 </head>
 <body>
 <header><div class="wrap">
 <a class="logo" href="#inicio"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGsAAABgCAYAAAAaeIzPAAAedElEQVR42t1deZxdVZH+zu3OTkhCyL5vhCQkgARwYUBm0BEUVDAwgMgIjiIQWYICYjaCERRGGCUqoCKKioKOIoiAICogDJpAQhayp7OQfSF78m7NH13V/XV1ve7XWwzc369/t7vfvfedc+p8tXxV59yERhwiklJKQn+XpZQKIjIVwLkA9gJIAFoBeBXABQCE73knHNTvswF8FcB+ABldkuj3AoByAONTSk/bvQekkSIyRUQOFZEkImX6//dJfHzU7nuHCSsTkdYiMltKP6YckLEQkaTntiKyRUSuIOFl+vsPtFF7RWSfiOQiMks7ldkz3gGCKtfzf2l/ra8F95Prz149/+RACcsEMkBE9ovIYhHpYOjS8xEisoMauV87c/E7BV3az0z7voSEJPo7H/a3jcMzPPFbVP3p+RRqzDWELvv8W9RAm10LRaT9OwFdhKprCFWRoPgwYa4Qkc4tLjASxqepAStFpItDV38R2RSg68q3O7pssonIYSKyhlBlffyFiBwtImNF5EQRecMha6eIDGJN1dIz6lb94t16nhSg65YAXRUi0vntjC4ag6mBrdphgqDrH3bXiYic2phJ21DJmus9lO4XAONFpDeAnOD9PwDe1GuSftYXwJUppbwR331QoApAQUR6ARivfS/TvmUA7kkpLVVnqo1ev4Yekev5yMC1bz5haWxlccEAPVtDDwdwrcZRAiBLKa0D8E0SVKbnq0SkJ4C8RdVAyxwWX34RQBca/ARgI4BbdaLuB1DQSbkymOx9DpTb3kVE1pNBtZ9tIjLY2a5DRWRpoNdvf7vZLrJVA0Vke2CPb3B23c5nkX23a3/dog4Gue1HBd6PNeKewHZdRo01ob0lIoPMBX67sBV6vqeILe7ItpjGa3Qg2JkeBC1lWM90rqiQEHaJyEhCVyYi7UTk9QBd975d0EWaYpQ6VQU3+J/jMXLC6iYia92kXiUihx0IYV3tYgtxDfkpqQ2bjRcG6NpDgs3eJqh6iPpufZlTjJ3RviUR+Ycbo4KIHNdi7nuRgFcCdO0TkeOZhhKRchH5P7qvKiY52NFF/T6eVB/3/1w3mVkV2r3/64QsInJ6i/WdYP20a2wedODRAF0fCdCVi8gJB7PAqP2PO1slIrLAXPRIndG900lYNkbXtki/aaa0FpF5gc1iZ8OEcKpDVyYizwXoeqLFo/nmo9f8pLyAbZr+PlxDE4hIKz1fQsIy8/G9lhKWoaqviGx1DX9DRP4cuKfPkZCs06c6NtquPe1gRBf1+9lgkr1M/Ut07V+oP62p3+L6/GiLTFIa7BOCL31cmfZdTsWJiHzE9Dl15ndBx1/gjh9kqDrdTU47/3sQpti1ZzhkDdDxYVS+ISLtm90jpMacTw02ON+nn32/yOwrc+g6QT/3scc53v09CILgcu2D1xrPuECZnahcRCY4p6OtiCx3wtqsFF3zoou+dEqge6/TBg9TFemF8B/BDPxpYKznHCwJSmrneQGqchF5L/XJxuaTZL/vJ41ituyPgft+YrOrf2r8A4ELei5d940gup9DHpMFlyM0uCyWoCz/JwrKYqM22nYfzD/sAmW7diE5WU8yOp3mYY/wopZ03593s2OviBxFnewlIhsDIXw2QNc9rvG5iCxSxuOfhi5q36X1BfIkiPE0HmIZdGe3bqSx2+f4xPJmm2l6bi8iq52wNohID9eoyQG6lnFxjZ4HKfnrPcOr/1meoUvXLwpQ9T0nUHOantFrTQi7yB7ZuHwssH0PNqvNogYNCzyamdQYM7ZdlfvyHf1igK5Iba7RLOwBRxe1azy1i8nnfs5NLw9oKFOF73HCOibQOH9t7nyWDdhAAG0phwMAC1NK+7QGLtc81kYAt+t9QucJItLVJShvB7CB2pED6AngmgOdoNT25CLSCcCXqO3WjrtTShXax9zdvjBIMI5w16zWvvIE7Ckih5TqvjdUWHDCWu2uzfVL7wWwyAmhB4AvUKFnllJaC+BOEqglKK/UbGx+ANGVaduuRGVGO6cxWg/gDkVUHiQTX6Gxsv/1dddsALDWfWdfAP3dODdJWPZlRwafzaoh1crOZiml7QC+Rg2wTkTp/7tRmU21EoEcQGcAN+jzyg4AqjKdGD0AXOU0QgJwe0ppPaozxf7YSP20Po+ufnyV5lnixrUNgG7NKSw7hgf3VQTXGRp+AuA1akSOylT4lxy6tgC4jQanTM+fEZHBqKx5aGl1aEK4SgePUbUcwAwSaCK023WLAWymCQcAg+kau34BCSoPxrXZkm8znXOxQ0SGOyfEpwbGBe7vdhEZ6hKU7SlOYXbk/pb2DMkx6q9Vxt4J+EzkXge5q4Uuz7dSRA51TsbnAlLhjmbpIw1+D42fWFiLRKStbzintTWCfzFwWX8UeIYXBx7YXvWiUksJjL7/rsAzfY1ZFf1prwnY5Pr7jBuf/SIyxgnrX4lbNWH9vFncd1dH4DPCL7j4pMxSA3UQoSyEMS6F0kpr4j2/+NuWSqGQEIYq4j0RfXYwqS4RkUXUb3Pfb6fAuOCyCSasIRpY8zi+Sp+n5ph1Hw8I3HvdNa1E5GeaRkkuffBUIISHg4E4K0CXiMhJLaEOg8UU3L7nfQpEUbZQOdCuLg1yXUAnXePisQ4BoftmqfUY9c3W5DxBdluXumeUAzgDwOfVWCfyEKeQoTX39+Mi8m6rRdSBexTAX1Bdj2jGeprzTJtF/aWUchE5Grp+DNUFqQAwST24RLHVJagscO0IoLd75Dw9l1E7h7H2SSntoHGzowu5+c2CrO8GBO4FDuKj9P8bRaQno0s//1Uwe/9A6si+6/1FSgXOaE50Ubt+EbTrcWpXRjWQFdSuD7r+Dyb2wrTP7wJC98fBWJ5TSt/qQ5Z3Lw0ZBQCvBwEeABwGYAKhKxE69jp0fVBEPmiMgIhkKaU/Afg9fY8dN2uHpamBMqHq3QA+TiyFVdNO5LhJ+zJe+7hPPzvePXYrgE0OIUeISFtCKADMDWLY3k1CFnk55YGe3SIifd3MYj5tK1XnMroeCGbx34IE5Vjnldm15zcHuqg9jwXtedA5PklEeitpXSBmfQbZavMUn3fI2ioi3d04jQu+s2n1GCSsAUpieg+mtTOeM9zKknsDVTJc4zMvhE8EzsbPghq9eU1Nobh6kNx5gDu1jcm15a7AeXgi8AgfcYRuHhC6Y4NY7skmeYPOhvi6i9+yIPT337rB3aWl1smhJlpoN5vimTISbEnVr41w14tVWs0IUDXMTTCzSxXBhJ1eR4KxFcWsG9zknyMibeoTWFaCJ2grHth+VBBdlGtwPJyemStDP5Fsl9mabwDY4kjeowBc6LyvBQB+SM8zOupGEemoNFRqjK0C8FEAJzsPdSuA2/SZQrZqIoD2xBPacahymDxWswJ71C8gdNe7pg0oxW5lJRC4I+sgcO3BXZVVt/+V60CcIyInqntuQlgBYEaQQvmKVvswyTsdwFuoucZrAIArjDRuoFoXncGTXD8TgO+llJbbM3XLhOMAnE8OCJPSHQGMcuOwLhjXMUToZjoWb7gxPgSVy6YaLSwEeRm7fpV7cH9tPM8+I2Un0d+Grju1Y4yuwQA+S7miTPNHd7u8kgC4VkS6oWFrvCxWuhDAMUEK5JuEKjum6sTzqLLJ59dZLQawzY1rf+pjRtfBaawjmsK6G3vex9H/uwEsczNjGKkrUHCYAzhdRE5zKm49qhfaMbpuEJEuQYJynWPvu7nwoNTEYkcAN1G77f47U0pVqzRVtZ8G4MP6fcW8tEEuxFkZuO99RaSTa+uSQIMd0Shk0Q4yh1GD7FivaQMEs0cCVZoATFYEMLq+A2BFkKC82qVQLPOcOXR9XkT6lYguSyxepghmVK0E8B1Clejzprg+Cf2eXKwlNGZ+bHoFbMd8mtAokqwsGVlsi7q5z9YC2OVm1OhgVpgaLAA4CcDHHLq2UoKSs8RfEJE+hK4MwHdJsJYLOhTA9fWhi1DVA8CEIonFzYwqDZTfp20vCxKLdhzu+grN4bFwy7VUgY+VGnzzM0faUuBijlN9whpKQjGJv65qgvceilLT/gsnq6srhIYfKqfms8ScoEwppbcA3OIEKwAuFZER9aDLUHW1IpdRtQjAfQ5VbQlVPCH/Surf+jZIRLq6epFVwb1jXJtWBSURPdXrRGORNSIgcCv4Xt2Ao5+7f49SS0K00RgA51PHUkppDwmB7dylIjLEoetHStWwYNsC+EqxDbwouzsIwBVOjSYAX1NylVF1sYYSjKr9Wpsxy6GmJ4DuTn3No/ERcs05Lf2Wagq+r1t97nt9ur5fcO0bASfYywn1cUrV54F7zuj6JYCZpAZzAB2U9WZ07dUZ79XmOBEZa2gvkq6/kbxVu3c2gAcJVblmdm8kYRb02odTSq9SrQXbr17uO98IxnaIeX7UxgpnMjpQKUCDhJW7GCvRtXPdtX3cLDIDeitql5kNBfAZh659Tu0Yui7Qal9G1yMAXnIplFaBM2CkcEFERgP4VBArfVWRnZFQL1cUcLC8C8BUFeryYIw8obuxCKHbyhG6rwfPajiydJamwBPcETRkZMBwbEwp7UTNMjM7f0ndc/a8fhfkscoBTKO9NUxNTXITKAdwhoic4tBl7bsJlVVEOQnsJQCPkIeaa5b7Wqe6E4B7U0rztR1/D1RcT+fMbFRbyJOnO4BOrl1LXZANVb9FPcKsGIGrjejqPl5OhjF3EGdXdHYd7nkfVNYP5pSCMCGIE8JHReR9LoXyJIA/0jV2z5QiHV0QeHPTUkr7XQrkOtSubNqM6o1IzIvzmmY42TWjs94MEoxD3f+WOLRz3FZakpUI1/cGBO6TAYH7e5cW2GNVT/r5FS5Vn9eRoIwW2j0TJCjf41ZQWhLvTCJiU7BximhhS+ayAUO17t6z4RMDEnadI2GXEZFr59sCQnece1Yv3YyMx+5l6mNqiLA+EQzcd12j2lAJ1n7aoq0TDXAHEZkf1L7fEaRFjnNsfK2V7XTtI0H7XtH8kq9F5xUhpwTP+kGQCVghIp1oQlnKaKYb4E1Uj2GCuCgQ1vWuTa11Ablf6NGzIcKyh00Oatwud0UifXQFHzf+T0Ge56KgEGY77zIT7DWxn66vsYJS7xmtKPaCvdChywpdlojIswFKj6WKJEbVZW7y2gR4PNAUJ7tx+begwOinnH7R3x91Y7ePllBlDXHdIwJ3jbtmoAaxrGNXk163atqfA/iHcyA6UIzEKZSpGqcluv54AGc7BmQ2gAdd+l8A3CQi7bhN6vZfrp8lZ9Qnq0cpZEMWALjf1bbbTJ9J32VOSA9naxYB2O7Gt3dA6C5zHmE52bZUirAKQfyQaZDrqf2oRPg1xxyYez7NPS8HcJGIjCImJEspzQXwgPPIBMAUTW8wyXuLeqicQhkB4GIVrNVapJTSEymlFyx20/+/H8CZgVs/JaW0GzVr270Xx8cwNy6r1Tnh+wYGhO5CuiZ3z6pbWEZGqs3xN21Gze3YmI4S5+Xw/3IqM/srlWr5GInR9VWamdaRkQA+5dC1BMB9QYLyeg1wc+oTlwKIqrepjhEpA/A3AL+sY8XIioCEHetCn30ONTb5uxUhdLMiRESdyLLOdCZog1TgjiJBM6NlOXeO0FUAcDN12q4/m+oHk6JhOSUoGV03aZqD0XWbTiROoQwEcBlzdimlXIVm7vWZmi02Wsnun0htQbAIYa6miVJA6OZUbjDXsR2tA/Z9NfXPnjcqiFvrFNZQmnE2uHNTSvt1RuaO1rd7NwbIqkJXSukpAE+6GClTIYIC1ATgDg3AfZb4MpegXKPBd+aC72u0sih3CydEHYFJTvVnAH6vG+RnKaVCSil6ccAmLQHg8RosIp0dQ1FRAqFbQTa+qixNRFrrxEqlCCtiJVaxLVIWYqC7bz11xOfGEmVfmc4pAPgA1Q8autYBuCtQcddpuTHTUN/STvsVlFe777Zs8ScBHIua9YIFVsnqSXawUjIS9i4ia9l58ATC3IDt6OvU5dbAaevhSiTq9QZ7BwKcG1zjGef5KaW9OjNZDVpNQ1lK6UXl+LxNmOboH9tnd40TQncAVzmSd7MW4nhq63IR6a/PK9PzIQC+zDZVn//LlNLLhkJ9/qeUhbexKtP/L3MqLnlBkPPAJdnDAkJ3mbOLXYilr1NYUTIxC2gbc9v9gC9x6ZM2WueXnFCnobKyldF1QuCeb9GiGc+02wpKIXTdq9/Pgu1EuTEb6M8rRZaTrWCy1pKVrZRXHBEM3IrAez7OjeUG8ghB6jI5dTkncGL61OtgkC0Y4pC1S7+cjyMDt32x69hwAP9t+peSlhwj5dTQKVYiTSTvPTpR2GvrolninNC1Q71In6D8tIgcCWC/qjTOFhuqvp9Smk/OiKBysUIf/S6fFonWEPdy6nJ9UKtyuGa4EeQH2X0fVUpRCXRrBM9/zaciRGMlvh1sJ3Cyo12s+vTdHL274knPx11C19p3XRAwIDuCFZStdQGcp7Z+rM+5NXjOJi2P5ud0UCood+uneKPIugpf7brHHEOxV0Te5cboRGJP7LrwfSVZ8PsQnQHsBa1NKe1xsceRDn17UHs1+mArmLE5QVswLNQYyScoJ6pd8QnKWY4BaQ/gpjoSlGzcz9Hlpp926jQD8O2U0mp28VG5tOcIYsI7BWn5TU41jqD7k8samwZqFSQrK1BZvpaCWCverYBmw4eDbWvuc6hqG6yh5S3Z7LqbacXk6QG6eisD73m56wKyNVpot4dKtPm5zxfZGlbcKsxVqkl455vOWhrN26CPIdSYpzjb9X+9esiMmktLWGDXRjd89hsed/aEbvRirjFBnDTHXd+dPMGq2ZZS2ukKJfs4b6+ckFGmM/pbbqbnzj2XOhbatab0P5c8TylSbeXrBW/TUje2VZejeh8M73BxVnmts1tdUftNCBWB+34MsSiZZqt9srIzhQKpLtd9ZAkE7gA1lOFKSHXTM/Kk9qm3dB6VPds1/BoMofrBCXQt1537LLGVaHOC8ikATzuSNzmnYgGA7xO7nasDcpVzUBKAdsGkfiUgdHu6QV+sbEfmaCeeMFE9RvuoHiML3PbuTlj7HXUCCoYZfa+5Z7Z3NQWW0m8NICcaahNqbh9k3OGV6p4XaBY+B+CxgAGZEgzAZGcLffA/TT1IXk57lfY/p7asUK6QqS8/wHDEtjjbVoMdEpGOrnxtXimEbkYsgwWMPq7YFtS4jaBGRfVyVhZwuJvV5epkCBVfJnXPl9FsLihybwhWUE6kQTOhfYhKtA1dLwD4tQsPbIBeAfCQQ1VfjcE8qqYr01BG6pY1CXtsYxxzsxs1S6WNofBsx6IgFOhTHzd4aEDgrlSBMfqGBumT+QEj38HZiiW6MVdGvFumdXTTHbpyVO4yM4xtV0ppJoCHgoB8Mi/XoeB7T4CuqVSDAarB6OIQOx/Aj/R797sxmI3qZbdRzqrMMRk2Du0CZn21PovlMdx9X9WH7La3cgPMO59Zae9A92VbAvT5WkIOmjNP8qJ2Ead1bArze/r9NxPzberpJABnEbrKtNbPgu99en4awGMOVUPUXReX17rF8lqBytsS5KyGiEgH57778rWE2suolkd+AWm8BNcwcy5SMQKXKnUGuftWEYEblVUll7/hLK5QjDQ5oJbOE5F3uTVeCwD8wCUoAWCSus1Cgp2uuTGru58cbP1wAyqLQLlcbaapSn5FLanw7WRreOGcV3HzAhXX2933FmovsOuJ6sV6oRrsGXg9r7q/e9NDqkqGg/TJkKAEbGmROkXzDH+F2kWcliQkcyAJlUWk2ygXVQDwLvU4OYWyWG1imZK1LzhUHaUsfO5I1xqq0h1mv/y7scrhSqWLELpHudSRBGPTC24NQeZU1THBAC8OPJ5yxPsOJiq07O0mxa4iuS7wvahdnVsA8GEROdmhq4ISlFGJNico71RV83Uiaw1VX0ZlzTzXYLwA4FGPquBYEhC6owN7tMkhaxCxHZ4oB03SPpGwJCBwM7ULa4vUG0R1F/Z3N3Jj7dhIelmKoSul9ASAZ0hQVa62S8tbgnKdS1AOB/CfnKJRwX4IwKvm0en3jQXwiQBVU5zdqUX46PnvJXhxGwJ7frixHfUkK2sQuhnVKHQO9O1qgmfkCZYVUW+He30LoCKltN2/6r1I8tNX5xY0Bf8Rh64NKrAU1GB0Au0PqCXQfrvUrwSVTU+mlJ4qAVWgTASnko7knJU+Y3lgbgYEts1UaQSeGrNpsD6EB3Kd0iEsLL/36/bAkxmK2vsvLagn4ckJyucB/CZwz6eSA2HomqGDwSq9P6r3kLLMdkZeYi4i/+Iqm2pli+tKUpAXtxnBihGHzPnu3lZB8cwq1WSeKaoaexbWYY4ZqPJkRKSctlDwMF+B2muNhgfqblkJg8DHJFSvDjR0HQvgXJeg3O5iNDtfq6sdzYjnjrec5CiuDMBvUkov1ocqKm9bRWZCSMV1dH1dEqg4P0YbUL3an1eftDMPNAsIXD78WqMeQYXOWo3DWAh9A4ZjXikSInT5BCWnUNq4BOUDOnsZXd0AXBfVYIjIhwCc5lC1F9W1jaVMKLtmrfu7h/OEeaIyoTvSsR3byJmza7oyocvwHRUMsOe/+qN6Aw/PyLNDMCrQ5UuDILmOXKgkHbxdjoQdDuBStwplt17LeawcwOdEZCjVYJhwJ7qZngF4KKU0yy2/reuwfr3sCN3yoDZlMQXlEWkQEeaijNIAFlYxAleUUvG2qBgrYY5KVB+3lWISKQFduYuRPLpusCJOEsAv1DtjBqQjgC+T7coBfAzAe10Nxm4A04N9MEo5VgcpmFGurysp6K1aAiwi7Yu47+wwVaHU1EI71F5xv510qK+7YPQtc9d0D/jF5UGEXiq6bkV1Ead1oh+A8UzyagA72U24HMCFInKsemdttQjGo+p+q8EIPMb6nIzFAaE72k0+3hSSaza6FDE7PGn6eyh3KDLAm1zAN9gNxp7AFg1GsFhBGY663PZi6HoTNesHDTlVRZxE8j4G4FnnKLXWdEgOYJyyHAXqw1ZUL5hrCKqECN0CiixCoArdpe7eQ1B7ZemawGZW7Q+f0QC3dlBepjWArMP96r3NqF4UHSXX/Ar2hu6nlwcJSkNEV1S/Ip4ZlymoWUQqqFzGei7iDfbvtj2bGoAqFtY21K7QHUoqzi9CYEQPCxiRzVE9RkqpkJGO9THNCpfz6hJQ+4sBbHaz8qiA4ViIRhxkazajevV/gYRwuYgMdOj6MyrXKGfOLv1cs9XshKwDcFcjbZVRWVsC7dJdkVOfiuvjBL8+MBd9LBTIiHHwxn+Wmy39tAEF+llGBjKKun2c0ZgNiQuUoFxCmeRcHYgaCUpKoRTcwPh6DNuzaV0jUAUqHM0D5+mQII20PCAijiYNYvuC+E3M+phQTVjHBa72CnfTKFSuei+jMy+ItqCzr3vW7qYIi9C1k9xzTqFcLCIjSSuklNLf1Tv0RaSsglag5p5NTTkWOkI3ofa7W1ahSMmZ8wjnOzNSZqYlYxbYOQ4WY1mG9CUA5ynxOQ7AuUr1ANU1FZ0Du7YpiPIbKjBLofxEDTq757wJJeexLEbLUHtrvQTgLi3PLmsoqgK7NbOOnJUdb6J6FT+vGOninL1VRdkOEekYLOJeRXvRltW16xhf416IZvV0f6EBbPRB9YNnB29g8K+It2tnBC/FzPU1fx3dS2Ca0qaTgld4PETjw2+w47HZLyJH6zX2XsxxwXrkb5g0hwQM8MqU0i5dgFaoa+a5a/qh9gvRltZH4DbQM/w1gBede15OMRaTvLepp8ZITAC+rnUfWamhRD3IWoqaW8my58yonhfkrA7TMdyjYzgnCAUGQjvZhdIEVf6+LpXJSqSHylRdnhSouyUNJHCL2i4iZCcBeMoFymeIyKkppWdVqFlKabluB3G9cn+tUFnn8YBVVzWxTTmxGBtdfNlDRA5NKW3T9hQCQrcMwKkislhDp71KqO9SJ6VqqZCIlENEJrh38RpM32rgzzZXrlxwm3U095sO/hDsg/FcsCFJd11oYdd8spnbY4U8f3Yqdx+VXduWC2cFY23bTOzQ805a6JGTWeqecYRMbShXyTbkp6MLej0Z3FzvEeEEpX+/ycmornCyFMo6VG7xWqak60PB4u6mHGUua2xhRTnlrIS0TMGFOpkySO313A413+hnoVW/DLVr1uFcx4b8eF2+OciSoomqx1IoL6GywMbn4G7imnpKUK4B8E1dSZ+aaKuiyVMXoQtKp2wvYaz9Z60BDMlQvS1AtL64oT9eWKsoIpdmlJkJYTKqa8lNaGM1QVm1UEEraj+AyuwzSkyBlOz4OIaC3/LjY62dqF2yhzrGka8bkqEBL4hshJdU0VACt4Ek71yNvYyGspk5wTY4oRqM11NKu9D8R9V2tC4bUSNnRa9kmt/AyVuF0v8HsIEvWuGOY0UAAAAASUVORK5CYII=" alt=""><span>MATH <b>CON JEAN</b></span></a>
-<nav id="nav" aria-label="Principal"><a href="#inicio">Inicio</a><a href="#jean">Sobre Jean</a><a href="#cursos">Cursos</a><a href="#como">Cómo funciona</a><a href="#recursos">Recursos</a><a href="#contacto">Contacto</a></nav>
+<nav id="nav" aria-label="Principal"><a href="#inicio">Inicio</a><a href="#jean">Sobre Jean</a><a href="#cursos">Cursos</a><a href="#combos">Combos</a><a href="#contacto">Contacto</a></nav>
 <a class="btn out" data-wa="Hola Jean, quiero información sobre las clases." href="#contacto">WhatsApp</a>
 <button class="menu" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">&#9776;</button>
 </div></header>
@@ -466,6 +541,7 @@ body.pvo{overflow:hidden}
 <section id="cursos"><div class="wrap">
 <h2>Cursos disponibles</h2>
 <p>Nueve cursos del núcleo de ingeniería, en el orden en que se ven en la UNAL Medellín. Empieza por el Nivel 1 y sube: cada bloque se oscurece y exige un poco más que el anterior.</p>
+<a class="pbar" href="#combos"><span><small>1 curso</small><b>$34.000</b></span><span><small>2 cursos</small><b>$65.000</b></span><span><small>3 cursos</small><b>$96.000</b></span><span class="go2">Ver combos y descuentos →</span></a>
 <div class="ruta">
 <div class="lv l1"><div class="ltile"><div><b>Nivel 1</b><span>Fundamentos</span></div><div><p>El punto de partida: bases claras para todo lo que viene.</p></div></div><div class="lcards">
 <article class="course"><span class="sym" aria-hidden="true">a×b</span><span class="sem">S 2026-2</span><h4>Geometría vectorial</h4><div class="desc"><p>Vectores, rectas, planos, cónicas y cuádricas.</p><svg class="gfx" viewBox="0 0 160 80" aria-hidden="true"><path class="dim" d="M20.0 66.0 L150.0 66.0" stroke-width="1" /><path class="dim" d="M30.0 74.0 L30.0 8.0" stroke-width="1" /><path class="dim" d="M95 56 L122 20 L62 28" stroke-width="1.4" stroke-dasharray="3 3"/><path class="dr k" pathLength="1" d="M30.0 66.0 L95.0 56.0" stroke-width="2.4"/><path class="k" d="M89.2 60.0 L95.0 56.0 L88.3 53.9" stroke-width="2.4"/><path class="dr y" pathLength="1" d="M30.0 66.0 L62.0 28.0" stroke-width="2.4"/><path class="y" d="M60.3 34.8 L62.0 28.0 L55.6 30.9" stroke-width="2.4"/><path class="dr g" pathLength="1" d="M30.0 66.0 L122.0 20.0" stroke-width="2.8"/><path class="g" d="M117.7 25.5 L122.0 20.0 L115.0 20.1" stroke-width="2.8"/></svg></div><div class="foot"><span>$34.000 COP</span><a class="stretch" href="#materia/geometria-vectorial">Ver curso</a></div></article>
@@ -496,22 +572,45 @@ body.pvo{overflow:hidden}
 </div>
 </div></section>
 
-<section id="como"><div class="wrap">
-<h2>Cómo funciona</h2>
-<ol class="steps">
-<li><h3>Cuéntame qué necesitas</h3><p>Escríbeme por WhatsApp con tu materia, tu universidad y la fecha de tu próximo parcial.</p></li>
-<li><h3>Armamos el plan</h3><p>Definimos el formato (en vivo o grabado, por definir) y los temas que vamos a trabajar.</p></li>
-<li><h3>Practicamos y resolvemos</h3><p>Aprendes con ejercicios tipo parcial y resuelves tus dudas conmigo.</p></li>
-</ol>
-</div></section>
-
-<section id="recursos" class="band"><div class="wrap">
-<h2>Recursos gratis</h2>
-<p>Un adelanto de cómo explico. Material descargable y videos cortos. [Por completar]</p>
-<div class="grid">
-<div class="card todo"><h3>Formulario de derivadas</h3><p>[PDF por subir]</p></div>
-<div class="card todo"><h3>Ejercicios resueltos</h3><p>[PDF por subir]</p></div>
-<div class="card todo"><h3>Videos en TikTok o YouTube</h3><p>[Enlaces por añadir]</p></div>
+<section id="combos"><div class="wrap">
+<p class="kick">Cursos semestrales · 2.º corte · 2026-2</p>
+<h2>Arma tu combo</h2>
+<p class="lead2">Entre más cursos tomes, menos pagas por cada uno. Elige 1, 2 o 3 y mira cuánto ahorras.</p>
+<div class="tiers">
+<div class="tier"><div class="stk" aria-hidden="true"><i></i></div><span class="tn">1 curso</span><b class="tpz">$34.000</b><small>precio por curso</small><em class="sv">Precio base</em></div>
+<div class="tier"><div class="stk" aria-hidden="true"><i></i><i></i></div><span class="tn">2 cursos</span><b class="tpz">$65.000</b><small>$32.500 por curso</small><em class="sv">Ahorras $3.000</em></div>
+<div class="tier best"><span class="flag">Mejor precio</span><div class="stk" aria-hidden="true"><i></i><i></i><i></i></div><span class="tn">3 cursos</span><b class="tpz">$96.000</b><small>$32.000 por curso</small><em class="sv">Ahorras $6.000</em></div>
+</div>
+<div class="perks">
+<div class="perk"><span class="pk">%</span><div><b>Precios especiales</b><p>Química general <strong>$30.000</strong> · Estadística 1 <strong>$25.000</strong></p></div></div>
+<div class="perk"><span class="pk">−6</span><div><b>¿Ya estudiaste conmigo?</b><p>Descuento de <strong>$6.000</strong> si tomaste al menos un curso el semestre anterior.</p></div></div>
+<div class="perk gift"><span class="pk">★</span><div><b>Vacacional gratuito</b><p>Curso vacacional sin costo. Pregúntame los detalles por WhatsApp.</p></div></div>
+</div>
+<div class="calc" data-uncommentable>
+<div class="cpick">
+<h3>Elige tus cursos</h3>
+<p class="hint2">Toca para agregar o quitar.</p>
+<div class="chipset" id="kpick"></div>
+<label class="prev"><input type="checkbox" id="kprev"> <span>Tomé al menos un curso el semestre anterior</span></label>
+</div>
+<div class="csum" aria-live="polite">
+<h3>Tu combo</h3>
+<ul id="klist"><li class="empty">Aún no has elegido cursos.</li></ul>
+<div class="ktot"><span>Total</span><b id="ktot">$0</b></div>
+<p class="ksave" id="ksave"></p>
+<p class="knote" id="knote"></p>
+<a class="btn" id="kwa" href="#contacto">Inscribirme por WhatsApp</a>
+</div>
+</div>
+<div class="incl">
+<h3>Todos los cursos incluyen</h3>
+<ul>
+<li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg>Solución de quices, parciales y talleres</li>
+<li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg>Clases grabadas en Drive</li>
+<li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg>Material de estudio</li>
+<li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg>Comunicación 24/7</li>
+<li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg>Modalidad virtual</li>
+</ul>
 </div>
 </div></section>
 
@@ -526,9 +625,9 @@ body.pvo{overflow:hidden}
 
 <section id="faq" class="band"><div class="wrap">
 <h2>Preguntas frecuentes</h2>
-<details><summary>¿Las clases son en vivo o grabadas?</summary><p>[Por definir: en vivo, grabadas o ambas.]</p></details>
+<details><summary>¿Las clases son en vivo o grabadas?</summary><p>Son virtuales, en el horario de cada curso, y quedan grabadas en Drive para que las repases cuando quieras.</p></details>
 <details><summary>¿Cómo pago?</summary><p>[Por definir: Nequi, Daviplata o transferencia, coordinado por WhatsApp.]</p></details>
-<details><summary>¿Puedo tomar solo una clase?</summary><p>[Por definir: clases sueltas o paquetes.]</p></details>
+<details><summary>¿Puedo tomar un solo curso?</summary><p>Sí. Un curso cuesta $34.000 (Química general $30.000 y Estadística 1 $25.000). Si tomas 2 pagas $65.000 y si tomas 3, $96.000. Mira la sección <a href="#combos">Combos</a>.</p></details>
 <details><summary>¿Qué pasa si no puedo asistir a una sesión?</summary><p>[Por definir: política de reprogramación.]</p></details>
 </div></section>
 
@@ -559,8 +658,8 @@ body.pvo{overflow:hidden}
 <div class="fgrid">
 <div class="fbrand"><a class="logo flname" href="#inicio"><span>MATH <b>CON JEAN</b></span></a><p class="ftag">Potenciando Mentes</p>
 <div class="fsoc"><a href="https://www.instagram.com/math_jean1" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8"/></svg></a><a href="https://www.youtube.com/@matematicasconjean3481" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10 9.5v5l4.5-2.5z"/></svg></a><a data-wa="Hola Jean, quiero información sobre los cursos." href="#contacto" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.4-4.2A8 8 0 1 1 8.2 18.6L4 20z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-.8.8c-1-.4-1.8-1.2-2.2-2.2l.8-.8-1-2z"/></svg></a></div></div>
-<div class="fcol"><h4>Navegación</h4><a href="#inicio">Inicio</a><a href="#jean">Sobre Jean</a><a href="#cursos">Cursos</a><a href="#como">Cómo funciona</a><a href="#contacto">Contacto</a></div>
-<div class="fcol"><h4>Recursos</h4><a href="#recursos">Recursos gratis</a><a href="#testimonios">Testimonios</a><a href="#faq">Preguntas frecuentes</a><a href="https://www.youtube.com/@matematicasconjean3481" target="_blank" rel="noopener">Videos en YouTube</a></div>
+<div class="fcol"><h4>Navegación</h4><a href="#inicio">Inicio</a><a href="#jean">Sobre Jean</a><a href="#cursos">Cursos</a><a href="#combos">Combos</a><a href="#contacto">Contacto</a></div>
+<div class="fcol"><h4>Más</h4><a href="#testimonios">Testimonios</a><a href="#faq">Preguntas frecuentes</a><a href="https://www.youtube.com/@matematicasconjean3481" target="_blank" rel="noopener">Videos en YouTube</a></div>
 <div class="fcol"><h4>Legal</h4><span>Política de privacidad</span><span>Términos y condiciones</span><span>Política de cookies</span><small>Próximamente</small></div>
 </div>
 <div class="fbot"><span>© 2026 Math con Jean. Todos los derechos reservados.</span><span>Hecho con <i class="hrt">♥</i> en Colombia</span></div>
@@ -981,7 +1080,7 @@ document.addEventListener("click",function(e){if(!on||!cm)return;var t=e.target;
 </script>
 <script>
 (function(){var nav=document.getElementById("nav");if(!nav)return;var links=[].slice.call(nav.querySelectorAll("a")),bar=document.createElement("span");bar.className="nbar";nav.appendChild(bar);
-var ids=["inicio","jean","cursos","como","recursos","testimonios","faq","contacto"],map={testimonios:"#recursos",faq:"#recursos"},cur="",sv=document.getElementById("subject");
+var ids=["inicio","jean","cursos","combos","testimonios","faq","contacto"],map={testimonios:"#combos",faq:"#combos"},cur="",sv=document.getElementById("subject");
 function set(h){var a=null;links.forEach(function(l){var on=l.getAttribute("href")===h;l.classList.toggle("on",on);if(on){a=l;l.setAttribute("aria-current","page")}else l.removeAttribute("aria-current")});
 if(a){bar.style.width=a.offsetWidth+"px";bar.style.transform="translateX("+a.offsetLeft+"px)";bar.style.opacity=1}else bar.style.opacity=0;cur=h}
 function pick(){var h="#inicio";if(sv&&!sv.hidden)h="#cursos";else{var y=innerHeight*.4;ids.forEach(function(i){var e=document.getElementById(i);if(e&&e.getBoundingClientRect().top<=y)h=map[i]||"#"+i});if(innerHeight+scrollY>=document.documentElement.scrollHeight-4)h="#contacto"}
@@ -1022,6 +1121,30 @@ function close(){ov.classList.remove("on");document.body.classList.remove("pvo")
 document.addEventListener("click",function(e){var c=e.target.closest&&e.target.closest("button.vc");if(!c)return;last=c;var id=c.dataset.id;document.getElementById("vvt").textContent=c.dataset.t||"Clase";document.getElementById("vvy").href="https://www.youtube.com/watch?v="+id;
 bd.innerHTML='<iframe class="vf" src="https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1" title="'+(c.dataset.t||"Video")+'" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';ov.classList.add("on");document.body.classList.add("pvo")});
 document.getElementById("vvx").addEventListener("click",close);ov.addEventListener("click",function(e){if(e.target===ov)close()});addEventListener("keydown",function(e){if(e.key==="Escape"&&ov.classList.contains("on"))close()});addEventListener("hashchange",function(){if(ov.classList.contains("on"))close()});
+})();
+</script>
+<script>
+(function(){
+function P(t){return +(String(t).replace(/[^0-9]/g,""))||0}
+function fm(n){return "$"+n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,".")}
+var DN=["Lun","Mar","Mié","Jue","Vie","Sáb","Dom"],CLK='<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>';
+function st(f,d){var t=f.ex&&f.ex[d]?f.ex[d]:f.h1+" "+f.ap,ap=(t.match(/([AP])\. M\.$/)||[])[1]||"",a=t.split(" – ")[0];if(!/M\.$/.test(a))a+=" "+(ap?ap+". M.":"");return a.replace(/ P\. M\./," p. m.").replace(/ A\. M\./," a. m.")}
+function when(f){if(!f||!f.dias||!f.dias.length)return "Horario por definir";var g=[];f.dias.forEach(function(d){var t=st(f,d);if(g.length&&g[g.length-1].t===t)g[g.length-1].d.push(DN[d]);else g.push({t:t,d:[DN[d]]})});return g.map(function(x){return x.d.join(" · ")+" "+x.t}).join(" · ")}
+document.querySelectorAll("#cursos .course").forEach(function(c){var a=c.querySelector("a.stretch");if(!a)return;var sl=a.getAttribute("href").split("/")[1],s=S.find(function(x){return x.slug===sl});if(!s||!s.info)return;var f=s.info,m=(f.corte.match(/Corte \d/)||[""])[0],se=c.querySelector(".sem");if(se&&m)se.textContent=m+" · 2026-2";var ft=c.querySelector(".foot");if(ft){var p=document.createElement("p");p.className="when";p.innerHTML=CLK+"<span>"+when(f)+"</span>";c.insertBefore(p,ft);if(P(f.precio)!==34000){var sp=ft.querySelector("span");if(sp){sp.textContent=sp.textContent.replace(" COP","");sp.insertAdjacentHTML("beforeend",'<i class="spc">especial</i>')}}}});
+var box=document.getElementById("kpick");if(!box)return;var sel=[],prev=document.getElementById("kprev"),CO=S.filter(function(x){return x.info});
+box.innerHTML=CO.map(function(x){return '<button type="button" class="kc" aria-pressed="false" data-s="'+x.slug+'">'+x.name+' <small>'+fm(P(x.info.precio))+'</small></button>'}).join("");
+var TB={0:0,1:34000,2:65000,3:96000};
+function calc(){var L=document.getElementById("klist"),T=document.getElementById("ktot"),SV=document.getElementById("ksave"),N=document.getElementById("knote"),W=document.getElementById("kwa");var cs=sel.map(function(sl){return CO.find(function(x){return x.slug===sl})}),reg=cs.filter(function(x){return P(x.info.precio)===34000}),spe=cs.filter(function(x){return P(x.info.precio)!==34000}),full=cs.reduce(function(a,x){return a+P(x.info.precio)},0),h="",tot=null,note="";
+if(!cs.length){L.innerHTML='<li class="empty">Aún no has elegido cursos.</li>';T.textContent="$0";SV.textContent="";N.textContent="";W.classList.add("off");return}
+cs.forEach(function(x){h+='<li><span>'+x.name+'</span><span>'+fm(P(x.info.precio))+'</span></li>'});
+if(reg.length<=3){var cb=TB[reg.length];tot=cb+spe.reduce(function(a,x){return a+P(x.info.precio)},0);if(reg.length>=2)h+='<li class="dsc"><span>Combo de '+reg.length+' cursos</span><span>−'+fm(reg.length*34000-cb)+'</span></li>'}
+if(tot!==null&&prev.checked){tot-=6000;h+='<li class="dsc"><span>Descuento semestre anterior</span><span>−$6.000</span></li>'}
+L.innerHTML=h;
+if(tot===null){T.textContent="A convenir";SV.textContent="";note="Para más de 3 cursos te doy un precio especial por WhatsApp."}else{T.textContent=fm(tot);SV.textContent=full-tot>0?"Ahorras "+fm(full-tot):"";if(spe.length&&reg.length)note="El combo aplica a los cursos de $34.000; Química y Estadística van con su precio especial.";else if(reg.length===1&&!spe.length)note="Agrega otro curso y pagas $65.000 por los dos.";else if(reg.length===2&&!spe.length)note="Con un tercer curso pagas $96.000 por los tres."}
+N.textContent=note;W.classList.remove("off");
+W.href="https://wa.me/"+WA+"?text="+encodeURIComponent("Hola Jean, quiero inscribirme en: "+cs.map(function(x){return x.name}).join(", ")+"."+(prev.checked?" Tomé al menos un curso contigo el semestre anterior.":"")+(tot!==null?" Total según la página: "+fm(tot)+".":""));W.target="_blank";W.rel="noopener"}
+box.addEventListener("click",function(e){var b=e.target.closest(".kc");if(!b)return;var sl=b.dataset.s,i=sel.indexOf(sl);if(i>-1)sel.splice(i,1);else sel.push(sl);b.setAttribute("aria-pressed",i<0);calc()});
+prev.addEventListener("change",calc);calc();
 })();
 </script>
 </body>
