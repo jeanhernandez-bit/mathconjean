@@ -23,6 +23,19 @@ for base in BASES:
         cdir = os.path.join(base, curso)
         if curso.startswith(".") or not os.path.isdir(cdir):
             continue
+        # Estructura alterna: <curso>/parciales/parcial-N/archivo.pdf
+        alt = os.path.join(cdir, "parciales")
+        if os.path.isdir(alt):
+            for par in sorted(os.listdir(alt), key=natural):
+                m = re.fullmatch(r"parcial-(\d+)", par)
+                kdir = os.path.join(alt, par)
+                if not m or not os.path.isdir(kdir):
+                    continue
+                files = sorted((f for f in os.listdir(kdir) if f.lower().endswith(".pdf")), key=natural)
+                if files:
+                    partes = [] if base == "." else [base]
+                    lst = data.setdefault(curso, {}).setdefault(m.group(1), {}).setdefault("parciales", [])
+                    lst += [{"t": titulo(f), "f": "/".join(quote(x) for x in partes + [curso, "parciales", par, f])} for f in files]
         for par in sorted(os.listdir(cdir), key=natural):
             m = re.fullmatch(r"parcial-(\d+)", par)
             pdir = os.path.join(cdir, par)
@@ -35,7 +48,8 @@ for base in BASES:
                 files = sorted((f for f in os.listdir(kdir) if f.lower().endswith(".pdf")), key=natural)
                 if files:
                     partes = [] if base == "." else [base]
-                    data.setdefault(curso, {}).setdefault(m.group(1), {})[cat] = [
+                    lst = data.setdefault(curso, {}).setdefault(m.group(1), {}).setdefault(cat, [])
+                    lst += [
                         {"t": titulo(f), "f": "/".join(quote(x) for x in partes + [curso, par, cat, f])}
                         for f in files
                     ]
