@@ -569,6 +569,11 @@ footer .flname b{font-weight:500;color:var(--ink)}
 .mqb:hover .mqt{animation-play-state:paused}
 @keyframes mq{to{transform:translateX(-50%)}}
 @media(prefers-reduced-motion:reduce){.mqt{animation:none;flex-wrap:wrap;width:auto;justify-content:center;row-gap:10px}}
+
+.hero2{min-height:calc(100svh - var(--hh,73px));display:flex;flex-direction:column;padding-bottom:0!important}
+.hero2>.wrap{flex:1;justify-content:center;padding-bottom:36px}
+.hmq{width:100%}
+.hmq .mqb{background:#f4f4f4;padding:18px 0}
 </style>
 </head>
 <body>
@@ -588,7 +593,7 @@ footer .flname b{font-weight:500;color:var(--ink)}
 <p class="lead">Cursos de las materias del núcleo de ingeniería, explicados con calma y con ejercicios tipo parcial. Empezamos en la UNAL Medellín y vamos a más sedes.</p>
 <div class="stats"><div><b>3 años</b><span>de experiencia</span></div><div><b>9</b><span>materias principales</span></div><div><b>UNAL</b><span>sede Medellín</span></div><div><b class="sm">Simulacros</b><span>tipo parcial</span></div></div>
 <div class="cta"><a class="btn" href="#cursos">Nuestros cursos</a><a class="btn ghost" data-wa="Hola Jean, quiero información sobre los cursos." href="#contacto">Escribir por WhatsApp</a></div>
-</div></section>
+</div><div class="hmq" aria-label="Nuestros cursos"><div class="mqb"><div class="mqt" id="hmq"></div></div></div></section>
 <section id="cursos"><div class="wrap">
 <h2>Cursos disponibles</h2>
 <p>Nueve cursos del núcleo de ingeniería, en el orden en que se ven en la UNAL Medellín. Empieza por el Nivel 1 y sube: cada bloque se oscurece y exige un poco más que el anterior.</p>
@@ -1192,7 +1197,7 @@ for(var i=N-1;i>=0;i--){var c=sv.cloneNode(true);c.style.transform="translateZ("
 sv.remove();ic.appendChild(w)});
 /* cuadrícula de fondo que se hunde alrededor del mouse */
 var cv=document.getElementById("gfx");if(!cv)return;var x=cv.getContext("2d"),G=32,W=0,H=0,dpr=1,mx=-9999,my=-9999,tx=-9999,ty=-9999,A=0,TA=0,run=false,
-hov=matchMedia("(hover:hover) and (pointer:fine)").matches,rm=matchMedia("(prefers-reduced-motion:reduce)").matches,SIG=62;
+hov=matchMedia("(hover:hover) and (pointer:fine)").matches,rm=matchMedia("(prefers-reduced-motion:reduce)").matches,SIG=30;
 function size(){dpr=Math.min(2,devicePixelRatio||1);W=innerWidth;H=innerHeight;cv.width=W*dpr;cv.height=H*dpr;x.setTransform(dpr,0,0,dpr,0,0);draw()}
 function warp(px,py){if(A<.002)return [px,py];var dx=px-mx,dy=py-my,r2=dx*dx+dy*dy;if(r2>9*SIG*SIG)return [px,py];var f=A*.55*Math.exp(-r2/(2*SIG*SIG));return [px-dx*f,py-dy*f]}
 function draw(){x.clearRect(0,0,W,H);x.lineWidth=1;var ox=-(scrollX%G),oy=-(scrollY%G),st=8,i,j,q,P=new Path2D();
@@ -1204,6 +1209,12 @@ function tick(){mx+=(tx-mx)*.18;my+=(ty-my)*.18;A+=(TA-A)*.08;draw();if(Math.abs
 function kick(){if(!run){run=true;requestAnimationFrame(tick)}}
 if(hov&&!rm){addEventListener("pointermove",function(e){tx=e.clientX;ty=e.clientY;if(mx<-9000){mx=tx;my=ty}TA=1;kick()},{passive:true});document.addEventListener("pointerleave",function(){TA=0;kick()});addEventListener("blur",function(){TA=0;kick()})}
 addEventListener("resize",size);addEventListener("scroll",function(){if(!run)draw()},{passive:true});size()})();
+</script>
+<script>
+(function(){var t=document.getElementById("hmq");if(t&&typeof S!=="undefined"){var q=S.map(function(x){return '<a href="#materia/'+x.slug+'">'+x.name+'</a><i aria-hidden="true">•</i>'}).join("");t.innerHTML=q+q}
+var hd=document.querySelector("header"),hw=document.querySelector(".hero2>.wrap"),hm=document.querySelector(".hmq");
+function hh(){var zb=parseFloat(getComputedStyle(document.body).zoom)||1,H=hd?hd.getBoundingClientRect().height:73,sec=hw&&hw.parentNode;if(!hw)return;var vh=(innerHeight-H)/zb;sec.style.minHeight=vh.toFixed(1)+"px";hw.style.transform="";hw.style.marginBottom="";hw.style.flex="none";var pt=parseFloat(getComputedStyle(sec).paddingTop)||0,av=vh-pt-(hm?hm.offsetHeight:0),nd=hw.offsetHeight,mn=innerWidth<700?.74:.62;hw.style.flex="";if(nd>av+2){var z=Math.max(mn,av/nd);hw.style.transformOrigin="50% 0";hw.style.transform="scale("+z.toFixed(3)+")";hw.style.marginBottom=(-nd*(1-z)).toFixed(1)+"px";hw.style.flex="none"}}
+hh();addEventListener("resize",hh);addEventListener("load",hh)})();
 </script>
 </body>
 </html>
