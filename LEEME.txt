@@ -1,11 +1,37 @@
-SITIO MATH CON JEAN - archivos para el repositorio
+MATH CON JEAN - Publicacion en Firebase Hosting con cache versionado
 
-Copia TODO lo de esta carpeta dentro de la carpeta de tu repositorio "mathconjean"
-(junto a la carpeta pdf), conservando la carpeta .github y la carpeta tools:
+ARCHIVOS (copialos dentro de la carpeta del repositorio "mathconjean",
+reemplazando los que ya existan; incluye los ocultos .firebaserc y .github):
 
-  index.html                      -> la pagina
-  tools/generar_lista.py          -> lee tus PDFs y arma la lista
-  .github/workflows/lista.yml     -> hace que la lista se actualice sola cada vez que subes PDFs
+  index.html                    la pagina
+  firebase.json                 configuracion de Hosting y reglas de cache
+  .firebaserc                   indica el proyecto "mathconjean"
+  tools/generar_lista.py        arma materiales.json y version.json
+  .github/workflows/lista.yml   en cada Push: actualiza la lista y publica en Firebase
 
-Luego en GitHub Desktop: Commit y Push origin.
-En unos minutos aparece materiales.json en el repositorio (lo crea GitHub solo).
+COMO FUNCIONA EL CACHE
+  - version.json guarda una huella de materiales.json y de videos.txt.
+    La pagina descarga solo ese archivo (unos bytes). Si la huella no cambio,
+    usa la copia guardada en el navegador; si cambio, descarga la nueva.
+  - Cada PDF lleva su huella en el enlace (archivo.pdf?v=abc123). El navegador
+    lo guarda un ano; si reemplazas el PDF, cambia la huella y se descarga de nuevo.
+  - index.html se revisa en cada visita: los cambios se ven sin Ctrl+F5.
+
+CONFIGURACION (una sola vez)
+  1. Consola de Firebase > proyecto mathconjean > Hosting > Comenzar
+     (avanza con "Siguiente" hasta terminar; no hace falta instalar nada).
+  2. Engranaje > Configuracion del proyecto > Cuentas de servicio >
+     Generar nueva clave privada. Se descarga un archivo .json.
+  3. console.cloud.google.com > IAM y administracion > IAM (proyecto mathconjean).
+     En la cuenta firebase-adminsdk-...: Editar > Agregar rol >
+     "Administrador de Firebase Hosting" > Guardar.
+  4. GitHub > repositorio mathconjean > Settings > Secrets and variables >
+     Actions > New repository secret
+       Name:   FIREBASE_SERVICE_ACCOUNT
+       Secret: pega TODO el contenido del archivo .json
+  5. GitHub Desktop: Commit y Push.
+  6. GitHub > pestana Actions: cuando quede en verde, el sitio esta en
+       https://mathconjean.web.app
+
+IMPORTANTE: el archivo .json de la clave es secreto. No lo pongas dentro
+de la carpeta del repositorio y borralo de Descargas despues del paso 4.

@@ -1,12 +1,15 @@
-name: Actualizar lista de materiales
+name: Actualizar lista y publicar
 on:
   push:
-    paths: ["**/*.pdf", "tools/generar_lista.py"]
+    branches: [main]
   workflow_dispatch:
 permissions:
   contents: write
+concurrency:
+  group: publicar
+  cancel-in-progress: true
 jobs:
-  lista:
+  publicar:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -15,5 +18,12 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          git add materiales.json
+          git add materiales.json version.json
           git diff --cached --quiet || (git commit -m "Actualizar lista de materiales" && git push)
+      - name: Publicar en Firebase Hosting
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          projectId: mathconjean
+          channelId: live
