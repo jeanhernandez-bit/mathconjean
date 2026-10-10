@@ -1,5 +1,99 @@
 {
+ "algebra-lineal": {
+  "1": {
+   "parciales": [
+    {
+     "t": "Parcial 1 2024 I",
+     "f": "algebra-lineal/parcial-1/parciales/Parcial%201%202024-I.pdf"
+    },
+    {
+     "t": "Parcial 1 2024 II",
+     "f": "algebra-lineal/parcial-1/parciales/Parcial%201%202024-II.pdf"
+    },
+    {
+     "t": "Parcial 1 2025 I",
+     "f": "algebra-lineal/parcial-1/parciales/Parcial%201%202025-I.pdf"
+    },
+    {
+     "t": "Parcial 1 2025 II",
+     "f": "algebra-lineal/parcial-1/parciales/Parcial%201%202025-II.pdf"
+    },
+    {
+     "t": "parcial 1 2026 I",
+     "f": "algebra-lineal/parcial-1/parciales/parcial%201%202026-I.pdf"
+    }
+   ]
+  },
+  "2": {
+   "parciales": [
+    {
+     "t": "Parcial 2 2024 I",
+     "f": "algebra-lineal/parcial-2/parciales/Parcial%202%202024-I.pdf"
+    },
+    {
+     "t": "Parcial 2 2024 II",
+     "f": "algebra-lineal/parcial-2/parciales/Parcial%202%202024-II.pdf"
+    },
+    {
+     "t": "Parcial 2 2025 I",
+     "f": "algebra-lineal/parcial-2/parciales/Parcial%202%202025-I.pdf"
+    },
+    {
+     "t": "Parcial 2 2025 II",
+     "f": "algebra-lineal/parcial-2/parciales/Parcial%202%202025-II.pdf"
+    },
+    {
+     "t": "parcial 2 2026 I",
+     "f": "algebra-lineal/parcial-2/parciales/parcial%202%202026-I.pdf"
+    }
+   ]
+  },
+  "3": {
+   "parciales": [
+    {
+     "t": "Parcial 3 2024 I",
+     "f": "algebra-lineal/parcial-3/parciales/Parcial%203%202024-I.pdf"
+    },
+    {
+     "t": "Parcial 3 2024 II",
+     "f": "algebra-lineal/parcial-3/parciales/Parcial%203%202024-II.pdf"
+    },
+    {
+     "t": "Parcial 3 2025 I",
+     "f": "algebra-lineal/parcial-3/parciales/Parcial%203%202025-I.pdf"
+    },
+    {
+     "t": "Parcial 3 2025 II",
+     "f": "algebra-lineal/parcial-3/parciales/Parcial%203%202025-II.pdf"
+    },
+    {
+     "t": "parcial 3 2026 I",
+     "f": "algebra-lineal/parcial-3/parciales/parcial%203%202026-I.pdf"
+    }
+   ]
+  }
+ },
  "calculo-diferencial": {
+  "1": {
+   "parciales": [
+    {
+     "t": "Parcial 1 2024 02",
+     "f": "calculo-diferencial/parcial-1/parciales/Parcial_1_2024_02.pdf"
+    },
+    {
+     "t": "Solucionario P1 2025 01",
+     "f": "calculo-diferencial/parcial-1/parciales/Solucionario_P1_2025_01.pdf"
+    },
+    {
+     "t": "Solucionario P1 2026 01",
+     "f": "calculo-diferencial/parcial-1/parciales/Solucionario_P1_2026_01.pdf"
+    },
+    {
+     "t": "Solucionario P1 CD 2025 02",
+     "f": "calculo-diferencial/parcial-1/parciales/Solucionario_P1_CD_2025_02.pdf"
+    }
+   ]
+  },
   "2": {
    "material-gratis": [
     {
@@ -17,16 +111,102 @@
    ],
    "parciales": [
     {
-     "t": "Notas Clase 14. Simulacrooo",
-     "f": "calculo-diferencial/parcial-2/parciales/Notas%20Clase%2014.%20Simulacrooo.pdf"
+     "t": "Parcial 2 2024 02",
+     "f": "calculo-diferencial/parcial-2/parciales/Parcial_2_2024_02.pdf"
     },
     {
-     "t": "Notas Clase 15. Aplicacionesssss",
-     "f": "calculo-diferencial/parcial-2/parciales/Notas%20Clase%2015.%20Aplicacionesssss.pdf"
+     "t": "Solucionario CD P2 2026 01",
+     "f": "calculo-diferencial/parcial-2/parciales/Solucionario_CD_P2_2026_01.pdf"
     },
     {
-     "t": "Simulacro Parcial 1",
-     "f": "calculo-diferencial/parcial-2/parciales/Simulacro%20Parcial%201.pdf"
+     "t": "Solucionario P2 20250 01",
+     "f": "calculo-diferencial/parcial-2/parciales/Solucionario_P2_20250_01.pdf"
+    },
+    {
+     "t": "Solucionario P2 CD 2025 02",
+     "f": "calculo-diferencial/parcial-2/parciales/Solucionario_P2_CD_2025_02.pdf"
+    }
+   ]
+  },
+  "3": {
+   "parciales": [
+    {
+     "t": "Parcial 3 2024 02",
+     "f": "calculo-diferencial/parcial-3/parciales/Parcial_3_2024_02.pdf"
+    },
+    {
+     "t": "Solucionario CD P3 2026 01",
+     "f": "calculo-diferencial/parcial-3/parciales/Solucionario_CD_P3_2026_01.pdf"
+    },
+    {
+     "t": "Solucionario P3 CD 2025 01",
+     "f": "calculo-diferencial/parcial-3/parciales/Solucionario_P3_CD_2025_01.pdf"
+    },
+    {
+     "t": "Solucionario P3 CD 2025 02",
+     "f": "calculo-diferencial/parcial-3/parciales/Solucionario_P3_CD_2025_02.pdf"
+    }
+   ]
+  }
+ },
+ "calculo-integral": {
+  "1": {
+   "parciales": [
+    {
+     "t": "Parcial 1 01-2025",
+     "f": "calculo-integral/parcial-1/parciales/Parcial%201%2001-2025.pdf"
+    },
+    {
+     "t": "Parcial 1 01-2026",
+     "f": "calculo-integral/parcial-1/parciales/Parcial%201%2001-2026.pdf"
+    },
+    {
+     "t": "Parcial 1 02-2024",
+     "f": "calculo-integral/parcial-1/parciales/Parcial%201%2002-2024.pdf"
+    },
+    {
+     "t": "Parcial 1 02-2025",
+     "f": "calculo-integral/parcial-1/parciales/Parcial%201%2002-2025.pdf"
+    }
+   ]
+  },
+  "2": {
+   "parciales": [
+    {
+     "t": "Parcial 2 01-2025 (1)",
+     "f": "calculo-integral/parcial-2/parciales/Parcial%202%2001-2025%20%281%29.pdf"
+    },
+    {
+     "t": "Parcial 2 01-2026",
+     "f": "calculo-integral/parcial-2/parciales/Parcial%202%2001-2026.pdf"
+    },
+    {
+     "t": "Parcial 2 02-2024",
+     "f": "calculo-integral/parcial-2/parciales/Parcial%202%2002-2024.pdf"
+    },
+    {
+     "t": "Parcial 2 02-2025",
+     "f": "calculo-integral/parcial-2/parciales/Parcial%202%2002-2025.pdf"
+    }
+   ]
+  },
+  "3": {
+   "parciales": [
+    {
+     "t": "Parcial 3 01-2025",
+     "f": "calculo-integral/parcial-3/parciales/Parcial%203%2001-2025.pdf"
+    },
+    {
+     "t": "Parcial 3 01-2026",
+     "f": "calculo-integral/parcial-3/parciales/Parcial%203%2001-2026.pdf"
+    },
+    {
+     "t": "Parcial 3 02-24",
+     "f": "calculo-integral/parcial-3/parciales/Parcial%203%2002-24.pdf"
+    },
+    {
+     "t": "Parcial 3 02-2025",
+     "f": "calculo-integral/parcial-3/parciales/Parcial%203%2002-2025.pdf"
     }
    ]
   }
