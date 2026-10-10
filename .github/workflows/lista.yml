@@ -5,6 +5,7 @@ on:
   workflow_dispatch:
 permissions:
   contents: write
+  id-token: write
 concurrency:
   group: publicar
   cancel-in-progress: true
@@ -20,10 +21,10 @@ jobs:
           git config user.email "actions@github.com"
           git add materiales.json version.json
           git diff --cached --quiet || (git commit -m "Actualizar lista de materiales" && git push)
-      - name: Publicar en Firebase Hosting
-        uses: FirebaseExtended/action-hosting-deploy@v0
+      # Sin claves: GitHub se identifica ante Google (Workload Identity Federation).
+      - uses: google-github-actions/auth@v2
         with:
-          repoToken: ${{ secrets.GITHUB_TOKEN }}
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
-          projectId: mathconjean
-          channelId: live
+          workload_identity_provider: projects/108727229400/locations/global/workloadIdentityPools/github/providers/github
+          service_account: github-deploy@mathconjean.iam.gserviceaccount.com
+      - name: Publicar en Firebase Hosting
+        run: npx --yes firebase-tools deploy --only hosting --project mathconjean --non-interactive

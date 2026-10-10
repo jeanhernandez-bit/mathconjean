@@ -20,18 +20,11 @@ COMO FUNCIONA EL CACHE
 CONFIGURACION (una sola vez)
   1. Consola de Firebase > proyecto mathconjean > Hosting > Comenzar
      (avanza con "Siguiente" hasta terminar; no hace falta instalar nada).
-  2. Engranaje > Configuracion del proyecto > Cuentas de servicio >
-     Generar nueva clave privada. Se descarga un archivo .json.
-  3. console.cloud.google.com > IAM y administracion > IAM (proyecto mathconjean).
-     En la cuenta firebase-adminsdk-...: Editar > Agregar rol >
-     "Administrador de Firebase Hosting" > Guardar.
-  4. GitHub > repositorio mathconjean > Settings > Secrets and variables >
-     Actions > New repository secret
-       Name:   FIREBASE_SERVICE_ACCOUNT
-       Secret: pega TODO el contenido del archivo .json
-  5. GitHub Desktop: Commit y Push.
-  6. GitHub > pestana Actions: cuando quede en verde, el sitio esta en
+  2. GitHub publica SIN claves (Workload Identity Federation), porque la
+     organizacion mathconjean.com no permite crear claves privadas.
+     En console.cloud.google.com (proyecto mathconjean) abre Cloud Shell
+     (icono >_ arriba a la derecha) y pega los comandos de tools/wif.sh.
+     Solo se hace una vez.
+  3. GitHub Desktop: Commit y Push.
+  4. GitHub > pestana Actions: cuando quede en verde, el sitio esta en
        https://mathconjean.web.app
-
-IMPORTANTE: el archivo .json de la clave es secreto. No lo pongas dentro
-de la carpeta del repositorio y borralo de Descargas despues del paso 4.
