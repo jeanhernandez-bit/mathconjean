@@ -211,6 +211,228 @@
    ]
   }
  },
+ "calculo-varias-variables": {
+  "1": {
+   "parciales": [
+    {
+     "t": "Parcial 1 2022-2",
+     "f": "calculo-varias-variables/parcial-1/parciales/Parcial%201%202022-2.pdf"
+    },
+    {
+     "t": "Parcial 1 2023-1",
+     "f": "calculo-varias-variables/parcial-1/parciales/Parcial%201%202023-1.pdf"
+    },
+    {
+     "t": "Parcial 1 2023-2",
+     "f": "calculo-varias-variables/parcial-1/parciales/Parcial%201%202023-2.pdf"
+    },
+    {
+     "t": "Parcial 1 2024-1",
+     "f": "calculo-varias-variables/parcial-1/parciales/Parcial%201%202024-1.pdf"
+    },
+    {
+     "t": "Parcial 1 2024-2",
+     "f": "calculo-varias-variables/parcial-1/parciales/Parcial%201%202024-2.pdf"
+    }
+   ]
+  },
+  "2": {
+   "parciales": [
+    {
+     "t": "Parcial 2 2022-2",
+     "f": "calculo-varias-variables/parcial-2/parciales/Parcial%202%202022-2.pdf"
+    },
+    {
+     "t": "Parcial 2 2023-1",
+     "f": "calculo-varias-variables/parcial-2/parciales/Parcial%202%202023-1.pdf"
+    },
+    {
+     "t": "Parcial 2 2023-2",
+     "f": "calculo-varias-variables/parcial-2/parciales/Parcial%202%202023-2.pdf"
+    },
+    {
+     "t": "Parcial 2 2024-1",
+     "f": "calculo-varias-variables/parcial-2/parciales/Parcial%202%202024-1.pdf"
+    },
+    {
+     "t": "Parcial 2 2024-2",
+     "f": "calculo-varias-variables/parcial-2/parciales/Parcial%202%202024-2.pdf"
+    },
+    {
+     "t": "Segundo Parcial Cálculo en Varias Variables 2025-1",
+     "f": "calculo-varias-variables/parcial-2/parciales/Segundo%20Parcial%20C%C3%A1lculo%20en%20Varias%20Variables%202025-1.pdf"
+    }
+   ]
+  },
+  "3": {
+   "parciales": [
+    {
+     "t": "Parcial 3 2022-2",
+     "f": "calculo-varias-variables/parcial-3/parciales/Parcial%203%202022-2.pdf"
+    },
+    {
+     "t": "Parcial 3 2023-1",
+     "f": "calculo-varias-variables/parcial-3/parciales/Parcial%203%202023-1.pdf"
+    },
+    {
+     "t": "Parcial 3 2023-2",
+     "f": "calculo-varias-variables/parcial-3/parciales/Parcial%203%202023-2.pdf"
+    },
+    {
+     "t": "Parcial 3 2024-1",
+     "f": "calculo-varias-variables/parcial-3/parciales/Parcial%203%202024-1.pdf"
+    },
+    {
+     "t": "Parcial 3 2024-2",
+     "f": "calculo-varias-variables/parcial-3/parciales/Parcial%203%202024-2.pdf"
+    },
+    {
+     "t": "Tercer Parcial Cálculo en Varias Variables 2025-1",
+     "f": "calculo-varias-variables/parcial-3/parciales/Tercer%20Parcial%20C%C3%A1lculo%20en%20Varias%20Variables%202025-1.pdf"
+    }
+   ]
+  }
+ },
+ "ecuaciones-diferenciales": {
+  "1": {
+   "parciales": [
+    {
+     "t": "Parcial 1 2022-2",
+     "f": "ecuaciones-diferenciales/parcial-1/parciales/Parcial%201%202022-2.pdf"
+    },
+    {
+     "t": "Parcial 1 2023-1",
+     "f": "ecuaciones-diferenciales/parcial-1/parciales/Parcial%201%202023-1.pdf"
+    },
+    {
+     "t": "Parcial 1 2023-2A",
+     "f": "ecuaciones-diferenciales/parcial-1/parciales/Parcial%201%202023-2A.pdf"
+    },
+    {
+     "t": "Parcial 1 2023-2B",
+     "f": "ecuaciones-diferenciales/parcial-1/parciales/Parcial%201%202023-2B.pdf"
+    },
+    {
+     "t": "Parcial 1 2024-1",
+     "f": "ecuaciones-diferenciales/parcial-1/parciales/Parcial%201%202024-1.pdf"
+    },
+    {
+     "t": "Parcial 1 2024-2",
+     "f": "ecuaciones-diferenciales/parcial-1/parciales/Parcial%201%202024-2.pdf"
+    },
+    {
+     "t": "Parcial 1 2025-01",
+     "f": "ecuaciones-diferenciales/parcial-1/parciales/Parcial%201%202025-01.pdf"
+    },
+    {
+     "t": "Parcial 1 2025-02",
+     "f": "ecuaciones-diferenciales/parcial-1/parciales/Parcial%201%20-%202025-02.pdf"
+    }
+   ]
+  },
+  "2": {
+   "parciales": [
+    {
+     "t": "Parcial 2 2023-1",
+     "f": "ecuaciones-diferenciales/parcial-2/parciales/Parcial%202%202023-1.pdf"
+    },
+    {
+     "t": "Parcial 2 2023-2",
+     "f": "ecuaciones-diferenciales/parcial-2/parciales/Parcial%202%202023-2.pdf"
+    },
+    {
+     "t": "Parcial 2 2024-1",
+     "f": "ecuaciones-diferenciales/parcial-2/parciales/Parcial%202%202024-1.pdf"
+    },
+    {
+     "t": "Parcial 2 2024-2",
+     "f": "ecuaciones-diferenciales/parcial-2/parciales/Parcial%202%202024-2.pdf"
+    },
+    {
+     "t": "Parcial 2 2025-01",
+     "f": "ecuaciones-diferenciales/parcial-2/parciales/Parcial%202%202025-01.pdf"
+    },
+    {
+     "t": "Parcial 2 2025-2",
+     "f": "ecuaciones-diferenciales/parcial-2/parciales/Parcial%202%202025-2.pdf"
+    }
+   ]
+  },
+  "3": {
+   "parciales": [
+    {
+     "t": "Parcial 3 2023-1",
+     "f": "ecuaciones-diferenciales/parcial-3/parciales/Parcial%203%202023-1.pdf"
+    },
+    {
+     "t": "Parcial 3 2023-2",
+     "f": "ecuaciones-diferenciales/parcial-3/parciales/Parcial%203%202023-2.pdf"
+    },
+    {
+     "t": "Parcial 3 2024-1",
+     "f": "ecuaciones-diferenciales/parcial-3/parciales/Parcial%203%202024-1.pdf"
+    },
+    {
+     "t": "Parcial 3 2025-01",
+     "f": "ecuaciones-diferenciales/parcial-3/parciales/Parcial%203%202025-01.pdf"
+    },
+    {
+     "t": "Parcial 3 2025-02",
+     "f": "ecuaciones-diferenciales/parcial-3/parciales/Parcial%203%20-%202025-02.pdf"
+    }
+   ]
+  }
+ },
+ "fisica-mecanica": {
+  "1": {
+   "parciales": [
+    {
+     "t": "Física I Parcial 1-2024 1S",
+     "f": "fisica-mecanica/parcial-1/parciales/F%C3%ADsica_I-Parcial_1-2024_1S.pdf"
+    },
+    {
+     "t": "Física I Parcial 1-2024 2S",
+     "f": "fisica-mecanica/parcial-1/parciales/F%C3%ADsica_I-Parcial_1-2024_2S.pdf"
+    },
+    {
+     "t": "Física I Parcial 1-2025 1S",
+     "f": "fisica-mecanica/parcial-1/parciales/F%C3%ADsica_I-Parcial_1-2025_1S.pdf"
+    }
+   ]
+  },
+  "2": {
+   "parciales": [
+    {
+     "t": "Física I Parcial 2-2024 1S",
+     "f": "fisica-mecanica/parcial-2/parciales/F%C3%ADsica_I-Parcial_2-2024_1S.pdf"
+    },
+    {
+     "t": "Física I Parcial 2-2024 2S",
+     "f": "fisica-mecanica/parcial-2/parciales/F%C3%ADsica_I-Parcial_2-2024_2S.pdf"
+    },
+    {
+     "t": "Física I Parcial 2-2025 1S",
+     "f": "fisica-mecanica/parcial-2/parciales/F%C3%ADsica_I-Parcial_2-2025_1S.pdf"
+    }
+   ]
+  },
+  "3": {
+   "parciales": [
+    {
+     "t": "Física I Parcial 3-2024 1S",
+     "f": "fisica-mecanica/parcial-3/parciales/F%C3%ADsica_I-Parcial_3-2024_1S.pdf"
+    },
+    {
+     "t": "Física I Parcial 3-2024 2S",
+     "f": "fisica-mecanica/parcial-3/parciales/F%C3%ADsica_I-Parcial_3-2024_2S.pdf"
+    },
+    {
+     "t": "Física I Parcial 3-2025 1S",
+     "f": "fisica-mecanica/parcial-3/parciales/F%C3%ADsica_I-Parcial_3-2025_1S.pdf"
+    }
+   ]
+  }
+ },
  "geometria-vectorial": {
   "2": {
    "material-gratis": [
