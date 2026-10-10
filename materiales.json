@@ -1,4 +1,36 @@
 {
+ "calculo-diferencial": {
+  "2": {
+   "material-gratis": [
+    {
+     "t": "Notas Clase 14. Simulacrooo",
+     "f": "calculo-diferencial/parcial-2/material-gratis/Notas%20Clase%2014.%20Simulacrooo.pdf"
+    },
+    {
+     "t": "Notas Clase 15. Aplicacionesssss",
+     "f": "calculo-diferencial/parcial-2/material-gratis/Notas%20Clase%2015.%20Aplicacionesssss.pdf"
+    },
+    {
+     "t": "Simulacro Parcial 1",
+     "f": "calculo-diferencial/parcial-2/material-gratis/Simulacro%20Parcial%201.pdf"
+    }
+   ],
+   "parciales": [
+    {
+     "t": "Notas Clase 14. Simulacrooo",
+     "f": "calculo-diferencial/parcial-2/parciales/Notas%20Clase%2014.%20Simulacrooo.pdf"
+    },
+    {
+     "t": "Notas Clase 15. Aplicacionesssss",
+     "f": "calculo-diferencial/parcial-2/parciales/Notas%20Clase%2015.%20Aplicacionesssss.pdf"
+    },
+    {
+     "t": "Simulacro Parcial 1",
+     "f": "calculo-diferencial/parcial-2/parciales/Simulacro%20Parcial%201.pdf"
+    }
+   ]
+  }
+ },
  "geometria-vectorial": {
   "2": {
    "material-gratis": [
