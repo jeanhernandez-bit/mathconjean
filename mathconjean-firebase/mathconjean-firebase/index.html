@@ -797,6 +797,33 @@ html[data-theme="light"] .thm .moon{opacity:1;transform:none}
 html.thx,html.thx *,html.thx *::before,html.thx *::after{transition:background-color .4s ease,color .4s ease,border-color .4s ease,fill .4s ease,stroke .4s ease!important}
 ::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal}
 @media(max-width:600px){.hact{gap:8px}.thm{width:38px;height:38px}}
+
+/* notas de clase: tarjetas tipo video */
+.ng{display:flex;flex-wrap:wrap;justify-content:center;gap:18px;margin:0 0 16px}
+.ng .nc{flex:0 0 calc((100% - 36px)/3);max-width:calc((100% - 36px)/3)}
+.nc{position:relative;display:block;text-decoration:none;color:inherit;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:linear-gradient(160deg,#171717,#0b0b0b);transition:transform .3s cubic-bezier(.2,.8,.2,1),border-color .25s,box-shadow .3s;animation:v21in .5s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i,0)*70ms)}
+.nc:hover,.nc:focus-visible{transform:translateY(-5px);border-color:#cfcfcf;box-shadow:0 18px 40px rgba(0,0,0,.6)}
+.nc .tw{position:relative;overflow:hidden;aspect-ratio:4/3;background:#f4f4f2}
+.nc .sk{position:absolute;inset:16% 13% 0;display:flex;flex-direction:column;gap:11px}
+.nc .sk i{display:block;height:9px;border-radius:5px;background:linear-gradient(90deg,#e2e2e0 0,#eeeeec 40%,#e2e2e0 80%);background-size:200% 100%;animation:ncsh 1.4s linear infinite}
+.nc .sk i:nth-child(1){width:55%;height:13px;margin-bottom:6px}.nc .sk i:nth-child(3){width:88%}.nc .sk i:nth-child(5){width:72%}.nc .sk i:nth-child(6){width:40%}
+@keyframes ncsh{to{background-position:-200% 0}}
+.nc .th{position:absolute;inset:0;background:transparent top center/100% auto no-repeat;opacity:0;transition:opacity .45s,transform .6s cubic-bezier(.2,.8,.2,1),filter .3s}
+.nc.ok .th{opacity:1;background-color:#fff}
+.nc.ok .sk{display:none}
+.nc:hover .th{transform:scale(1.06);filter:brightness(.8)}
+.nc .nbg{position:absolute;left:10px;top:10px;padding:3px 8px;border-radius:6px;background:#111;color:#fff;font:700 .66rem "IBM Plex Mono",monospace,sans-serif;letter-spacing:.06em}
+.nc .pl{position:absolute;left:50%;top:50%;width:54px;height:54px;margin:-27px 0 0 -27px;display:grid;place-items:center;border-radius:50%;background:rgba(10,10,10,.86);color:#fff;box-shadow:0 8px 26px rgba(0,0,0,.35);transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+.nc .pl svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.nc:hover .pl{transform:scale(1.14)}
+.nc .vt{display:flex;flex-direction:column;gap:3px;padding:13px 16px}
+.nc .vt b{font:700 1.02rem/1.25 "Bricolage Grotesque",sans-serif;color:var(--ink);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.nc .vt small{font:500 .78rem "IBM Plex Mono",monospace,sans-serif;color:var(--muted)}
+@media(max-width:900px){.ng{gap:14px}.ng .nc{flex-basis:calc((100% - 14px)/2);max-width:calc((100% - 14px)/2)}}
+@media(max-width:600px){.ng{gap:10px}.ng .nc{flex-basis:calc((100% - 10px)/2);max-width:calc((100% - 10px)/2)}.nc .pl{width:42px;height:42px;margin:-21px 0 0 -21px}.nc .pl svg{width:19px;height:19px}.nc .vt{padding:10px 11px}.nc .vt b{font-size:.88rem}.nc .vt small{font-size:.68rem}}
+@media(prefers-reduced-motion:reduce){.nc,.nc *{animation:none!important;transition:none!important}}
+html[data-theme="light"] .nc{background:linear-gradient(160deg,#e8e8e8,#f4f4f4)}
+html[data-theme="light"] .nc:hover,html[data-theme="light"] .nc:focus-visible{border-color:#303030;box-shadow:0 18px 40px rgba(0,0,0,.16)}
 </style>
 <style id="light">
 html[data-theme="light"] .spec::after{background:linear-gradient(100deg,transparent,rgba(255,255,255,.28),transparent)}
@@ -1169,7 +1196,8 @@ function gm(sl,k,c){var a=MAT&&MAT[sl]&&MAT[sl][String(k+1)];return a&&a[c]?a[c]
 function blkf(t,it,fb,ic,tag){ic=ic||FDOC;if(!MAT)return blk(t,fb,ic);if(!it.length)return blk(t,["Aún no hay archivos"],ic);return '<div class="fg"><h3>'+t+'</h3><div class="fis">'+it.map(function(x,i){var u=esc(DB+x.f+(x.v?"?v="+x.v:""));return '<div class="fi" style="--i:'+i+'"><span class="ico">'+ic+'</span><span class="ft"><a class="tt view" href="'+u+'" data-t="'+esc(x.t)+'" target="_blank" rel="noopener">'+esc(x.t)+'</a><small>'+(tag||"pdf")+'</small></span><span class="acts"><a class="act view" href="'+u+'" data-t="'+esc(x.t)+'" target="_blank" rel="noopener">👁 Ver</a><a class="act" href="'+u+'" download>↓ Descargar</a></span></div>'}).join("")+'</div></div>'}
 function isol(x){return /soluci/i.test(x.t)}
 function nm(kind,k){var v=kind==="v",ic=v?'<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10 9.5v5l4.5-2.5z"/></svg>':FPEN,ld=v?VS:MS;return '<div class="nm'+(ld?'':' ld')+'"><span class="ni">'+ic+'</span><span class="nb"><i></i>Pendiente de publicación</span><h4>Actualmente no hay material disponible</h4><p>Esperemos al Quiz o al Parcial. '+(v?'Las grabaciones':'Las notas de clase')+' del Parcial '+(k+1)+' se publican aquí apenas estén listas.</p><ol class="ns"><li>Clases</li><li>Quiz</li><li>Parcial</li><li class="on">Material publicado</li></ol></div>'}
-function mat(s,k){var a=gm(s.slug,k,"material-gratis");return a.length?'<p class="pt">Parcial '+(k+1)+' · notas de clase</p>'+blkf("Notas de clase",a,[],FPEN,"notas"):'<p class="pt">Parcial '+(k+1)+' · notas de clase</p>'+nm("n",k)}
+function nts(a,k){return '<div class="ng">'+a.map(function(x,i){var u=esc(DB+x.f+(x.v?"?v="+x.v:""));return '<a class="nc view" style="--i:'+i+'" href="'+u+'" data-pdf="'+u+'" data-t="'+esc(x.t)+'" target="_blank" rel="noopener"><div class="tw"><div class="sk" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="th"></div><span class="nbg">PDF</span><span class="pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/></svg></span></div><div class="vt"><b>'+esc(x.t)+'</b><small>Parcial '+(k+1)+' · notas de clase</small></div></a>'}).join("")+'</div>'}
+function mat(s,k){var a=gm(s.slug,k,"material-gratis");return a.length?'<p class="pt">Parcial '+(k+1)+' · notas de clase</p>'+nts(a,k):'<p class="pt">Parcial '+(k+1)+' · notas de clase</p>'+nm("n",k)}
 function tkm(s,f,k){return "*Solicitud de inscripción*\nCurso: *"+s.name+"*\nParcial: "+(k+1)+"\nPrecio: "+f.precio}
 function iniT(f,k){return k===1?(f.ini0||"Iniciamos el "+f.inicio):"Fecha de inicio por definir"}
 function wk(f){var L=["L","M","X","J","V","S","D"],N=["Lunes","Martes","Miércoles","Jueves","Viernes","Sábado","Domingo"],tx=function(i){return N[i]+' · '+(f.ex&&f.ex[i]?f.ex[i]:f.h1+' – '+f.h2+' '+f.ap)+' · '+f.modalidad};
@@ -1578,7 +1606,7 @@ ov.innerHTML='<div class="pvp"><div class="pvh"><b id="pvt"></b><a id="pvd" href
 var bd=document.getElementById("pvb"),tt=document.getElementById("pvt"),dl=document.getElementById("pvd"),lib=null,tok=0,last=null;
 function close(){ov.classList.remove("on");document.body.classList.remove("pvo");tok++;setTimeout(function(){if(!ov.classList.contains("on"))bd.innerHTML=""},300);if(last&&last.focus)try{last.focus()}catch(e){}}
 function msg(h){bd.innerHTML='<div class="pvm">'+h+'</div>'}
-function load(){if(lib)return lib;lib=new Promise(function(ok,no){var sc=document.createElement("script");sc.src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js";sc.onload=function(){fetch("https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js").then(function(r){return r.text()}).then(function(t){window.pdfjsLib.GlobalWorkerOptions.workerSrc=URL.createObjectURL(new Blob([t],{type:"text/javascript"}));ok(window.pdfjsLib)}).catch(no)};sc.onerror=no;document.head.appendChild(sc)});lib.catch(function(){lib=null});return lib}
+function load(){if(lib)return lib;if(window.pdfjsLib&&window.pdfjsLib.GlobalWorkerOptions.workerSrc)return lib=Promise.resolve(window.pdfjsLib);lib=new Promise(function(ok,no){var sc=document.createElement("script");sc.src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js";sc.onload=function(){fetch("https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js").then(function(r){return r.text()}).then(function(t){window.pdfjsLib.GlobalWorkerOptions.workerSrc=URL.createObjectURL(new Blob([t],{type:"text/javascript"}));ok(window.pdfjsLib)}).catch(no)};sc.onerror=no;document.head.appendChild(sc)});lib.catch(function(){lib=null});return lib}
 function frame(u){bd.innerHTML='<iframe src="'+u+'" title="PDF"></iframe>'}
 function pages(doc,my){bd.innerHTML="";var w=Math.min(bd.clientWidth-32,940),i,h,io;
 io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;io.unobserve(e.target);var h=e.target;
@@ -1678,6 +1706,17 @@ function apply(t){if(t==="light")d.setAttribute("data-theme","light");else d.rem
 b.addEventListener("click",function(){var t=d.getAttribute("data-theme")==="light"?"dark":"light",rm=matchMedia("(prefers-reduced-motion:reduce)").matches,r=b.getBoundingClientRect(),x=r.left+r.width/2,y=r.top+r.height/2,R=Math.hypot(Math.max(x,innerWidth-x),Math.max(y,innerHeight-y));
 if(document.startViewTransition&&!rm){var vt=document.startViewTransition(function(){apply(t)});vt.ready.then(function(){d.animate({clipPath:["circle(0px at "+x+"px "+y+"px)","circle("+R+"px at "+x+"px "+y+"px)"]},{duration:700,easing:"cubic-bezier(.65,0,.35,1)",pseudoElement:"::view-transition-new(root)"})}).catch(function(){})}
 else{d.classList.add("thx");apply(t);setTimeout(function(){d.classList.remove("thx")},450)}});lab()})();
+</script>
+<script>
+(function(){var lib=null,Q=[],run=0,io=null,V="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/";
+function L(){if(window.pdfjsLib&&window.pdfjsLib.GlobalWorkerOptions.workerSrc)return Promise.resolve(window.pdfjsLib);if(lib)return lib;lib=new Promise(function(ok,no){function w(){fetch(V+"pdf.worker.min.js").then(function(r){return r.text()}).then(function(t){if(!window.pdfjsLib.GlobalWorkerOptions.workerSrc)window.pdfjsLib.GlobalWorkerOptions.workerSrc=URL.createObjectURL(new Blob([t],{type:"text/javascript"}));ok(window.pdfjsLib)}).catch(no)}if(window.pdfjsLib)return w();var sc=document.createElement("script");sc.src=V+"pdf.min.js";sc.onload=w;sc.onerror=no;document.head.appendChild(sc)});lib.catch(function(){lib=null});return lib}
+function put(el,d){var t=el.querySelector(".th");if(t){t.style.backgroundImage="url("+d+")";el.classList.add("ok")}}
+function key(u){return "mcj-th:"+u.replace(/^https?:\/\/[^\/]+\//,"")}
+function make(u){return L().then(function(p){return p.getDocument({url:u,disableAutoFetch:true,disableStream:true}).promise}).then(function(doc){return doc.getPage(1).then(function(pg){var v0=pg.getViewport({scale:1}),sc=520/v0.width,v=pg.getViewport({scale:sc}),c=document.createElement("canvas"),x=c.getContext("2d");c.width=Math.round(v.width);c.height=Math.round(v.width*.75);x.fillStyle="#fff";x.fillRect(0,0,c.width,c.height);return pg.render({canvasContext:x,viewport:v}).promise.then(function(){var d=c.toDataURL("image/jpeg",.72);try{doc.destroy()}catch(e){}return d})})})}
+function next(){while(run<2&&Q.length){(function(el){var u=el.getAttribute("data-pdf"),k=key(u),d=null;try{d=localStorage.getItem(k)}catch(e){}if(d){put(el,d);return}run++;make(u).then(function(d){put(el,d);try{localStorage.setItem(k,d)}catch(e){}}).catch(function(){el.classList.add("er")}).then(function(){run--;next()})})(Q.shift())}}
+function scan(){var a=document.querySelectorAll(".nc[data-pdf]:not([data-q])");if(!a.length)return;if(!io)io="IntersectionObserver" in window?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){io.unobserve(e.target);Q.push(e.target);next()}})},{rootMargin:"300px 0px"}):null;a.forEach(function(el){el.setAttribute("data-q","1");var d=null;try{d=localStorage.getItem(key(el.getAttribute("data-pdf")))}catch(e){}if(d){put(el,d);return}if(io)io.observe(el);else{Q.push(el);next()}})}
+var pend=0;new MutationObserver(function(){if(pend)return;pend=1;setTimeout(function(){pend=0;scan()},60)}).observe(document.documentElement,{childList:true,subtree:true});
+document.addEventListener("DOMContentLoaded",scan);scan()})();
 </script>
 </body>
 </html>
