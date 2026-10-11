@@ -3,11 +3,6 @@
   "1": {
    "parciales": [
     {
-     "t": "Notas Clase 16. Aplicacionessss",
-     "f": "algebra-lineal/parcial-1/parciales/Notas%20Clase%2016.%20Aplicacionessss.pdf",
-     "v": "8a72fe8e34"
-    },
-    {
      "t": "Parcial 1 2024 I",
      "f": "algebra-lineal/parcial-1/parciales/Parcial%201%202024-I.pdf",
      "v": "56f3fac2c2"
@@ -537,6 +532,30 @@
   }
  },
  "geometria-vectorial": {
+  "1": {
+   "parciales": [
+    {
+     "t": "GVA 2024-01 Parcial 1",
+     "f": "geometria-vectorial/parcial-1/parciales/GVA%202024-01%20Parcial%201.pdf",
+     "v": "67e88209fb"
+    },
+    {
+     "t": "GVA 2024-02 Parcial 1",
+     "f": "geometria-vectorial/parcial-1/parciales/GVA%202024-02%20-%20Parcial%201.pdf",
+     "v": "b31cc4af12"
+    },
+    {
+     "t": "GVA 2025-01 Parcial 1",
+     "f": "geometria-vectorial/parcial-1/parciales/GVA%202025-01%20Parcial%201.pdf",
+     "v": "3886d9a422"
+    },
+    {
+     "t": "GVA 2025-2 Parcial 1",
+     "f": "geometria-vectorial/parcial-1/parciales/GVA%202025-2%20Parcial%201.pdf",
+     "v": "c587c61711"
+    }
+   ]
+  },
   "2": {
    "material-gratis": [
     {
@@ -595,6 +614,30 @@
      "t": "Parciales 2025 02",
      "f": "geometria-vectorial/parcial-2/parciales/Parciales%202025%20-%2002.pdf",
      "v": "617df3e3e9"
+    }
+   ]
+  },
+  "3": {
+   "parciales": [
+    {
+     "t": "GVA 2024-01 Parcial 3",
+     "f": "geometria-vectorial/parcial-3/parciales/GVA%202024-01%20Parcial%203.pdf",
+     "v": "56f43a87c2"
+    },
+    {
+     "t": "GVA 2024-02 Parcial 3",
+     "f": "geometria-vectorial/parcial-3/parciales/GVA%202024-02%20-%20Parcial%203.pdf",
+     "v": "2d11005572"
+    },
+    {
+     "t": "GVA 2025-01 Parcial 3",
+     "f": "geometria-vectorial/parcial-3/parciales/GVA%202025-01%20Parcial%203.pdf",
+     "v": "64c0cad671"
+    },
+    {
+     "t": "GVA 2025-02 parcial 3",
+     "f": "geometria-vectorial/parcial-3/parciales/GVA%202025-02%20parcial%203.pdf",
+     "v": "7a588c39b1"
     }
    ]
   }
