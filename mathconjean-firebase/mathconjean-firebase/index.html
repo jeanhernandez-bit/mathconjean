@@ -838,6 +838,11 @@ html[data-theme="light"] .nc:hover,html[data-theme="light"] .nc:focus-visible{bo
 .gact .ytc{margin:0}
 @media(max-width:900px){.vg{gap:14px}.vg .vc{flex-basis:calc((100% - 14px)/2);max-width:calc((100% - 14px)/2)}}
 @media(max-width:600px){.vg{gap:10px}.vg .vc{flex-basis:calc((100% - 10px)/2);max-width:calc((100% - 10px)/2)}.vg .vc .pl,.vg.one .vc .pl{width:42px;height:42px;margin:-21px 0 0 -21px}.vg .vc .pl svg{width:19px;height:19px}.vg .vc .vt{padding:10px 11px}.vg .vc .vt b{font-size:.88rem}.vg .vc .vt small{font-size:.68rem}.gact .gbuy{min-width:0;width:100%}}
+
+/* video mas grande: ocupa todo lo que permita la pantalla manteniendo 16:9 */
+.pv{container-type:size}
+@supports (width:1cqw){.pvp.vid{width:min(1440px,calc(100cqw - 36px),calc((100cqh - 100px)*16/9))}}
+@media(max-width:600px){@supports (width:1cqw){.pvp.vid{width:min(100cqw,calc((100cqh - 64px)*16/9))}}}
 </style>
 <style id="light">
 html[data-theme="light"] .spec::after{background:linear-gradient(100deg,transparent,rgba(255,255,255,.28),transparent)}
