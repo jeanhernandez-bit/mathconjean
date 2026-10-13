@@ -30,6 +30,13 @@
    ]
   },
   "2": {
+   "material-gratis": [
+    {
+     "t": "Notas sesion. Inversa y Subespacio",
+     "f": "algebra-lineal/parcial-2/material-gratis/Notas%20sesion.%20Inversa%20y%20Subespacio.pdf",
+     "v": "3add1756c0"
+    }
+   ],
    "parciales": [
     {
      "t": "Parcial 2 2024 I",
@@ -205,6 +212,13 @@
    ]
   },
   "2": {
+   "material-gratis": [
+    {
+     "t": "Notas sesion. Areas entre curvas y solidos",
+     "f": "calculo-integral/parcial-2/material-gratis/Notas%20sesion.%20%20Areas%20entre%20curvas%20y%20solidos.pdf",
+     "v": "74af227e52"
+    }
+   ],
    "parciales": [
     {
      "t": "Parcial 2 01-2025 (1)",
@@ -354,6 +368,18 @@
  },
  "ecuaciones-diferenciales": {
   "1": {
+   "material-gratis": [
+    {
+     "t": "Notas quiz. Aplicaciones (Parte 1)",
+     "f": "ecuaciones-diferenciales/parcial-1/material-gratis/Notas%20quiz.%20Aplicaciones%20%28Parte%201%29.pdf",
+     "v": "d3155cc934"
+    },
+    {
+     "t": "Notas quiz. Aplicaciones (Parte 2)",
+     "f": "ecuaciones-diferenciales/parcial-1/material-gratis/Notas%20quiz.%20Aplicaciones%20%28Parte%202%29.pdf",
+     "v": "8a72fe8e34"
+    }
+   ],
    "parciales": [
     {
      "t": "Parcial 1 2022-2",
@@ -398,6 +424,18 @@
    ]
   },
   "2": {
+   "material-gratis": [
+    {
+     "t": "Notas quiz. Aplicaciones (Parte 1)",
+     "f": "ecuaciones-diferenciales/parcial-2/material-gratis/Notas%20quiz.%20Aplicaciones%20%28Parte%201%29.pdf",
+     "v": "d3155cc934"
+    },
+    {
+     "t": "Notas quiz. Aplicaciones (Parte 2)",
+     "f": "ecuaciones-diferenciales/parcial-2/material-gratis/Notas%20quiz.%20Aplicaciones%20%28Parte%202%29.pdf",
+     "v": "8a72fe8e34"
+    }
+   ],
    "parciales": [
     {
      "t": "Parcial 2 2023-1",
@@ -596,34 +634,9 @@
   "2": {
    "material-gratis": [
     {
-     "t": "Ejercicios Operativos Capitulo 8 (segunda mitad)",
-     "f": "geometria-vectorial/parcial-2/material-gratis/Ejercicios_Operativos_Capitulo_8%20%28segunda%20mitad%29.pdf",
-     "v": "3d42014c0d"
-    },
-    {
-     "t": "Ejercicios Operativos Capitulo 10",
-     "f": "geometria-vectorial/parcial-2/material-gratis/Ejercicios_Operativos_Capitulo_10.pdf",
-     "v": "cd59f0d101"
-    },
-    {
-     "t": "Ejercicios Operativos Capitulo Capitulo 8 segunda parte (versión 2)",
-     "f": "geometria-vectorial/parcial-2/material-gratis/Ejercicios_Operativos_Capitulo_Capitulo%208%20segunda%20parte%20%28versi%C3%B3n%202%29.pdf",
-     "v": "c2382b0a34"
-    },
-    {
-     "t": "Entrega 2 Grupo 2 Seminario III",
-     "f": "geometria-vectorial/parcial-2/material-gratis/Entrega%202_Grupo%202_Seminario%20III.pdf",
-     "v": "b2f90530a0"
-    },
-    {
-     "t": "Fase 1 (Trabajo de Gerencia)",
-     "f": "geometria-vectorial/parcial-2/material-gratis/Fase%201%20%28Trabajo%20de%20Gerencia%29.pdf",
-     "v": "6db10400fd"
-    },
-    {
-     "t": "Ruta Critica",
-     "f": "geometria-vectorial/parcial-2/material-gratis/Ruta%20Critica.pdf",
-     "v": "8053f4622f"
+     "t": "Notas sesion. Rectas",
+     "f": "geometria-vectorial/parcial-2/material-gratis/Notas%20sesion.%20Rectas.pdf",
+     "v": "509c69f661"
     }
    ],
    "parciales": [
