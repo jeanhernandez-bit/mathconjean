@@ -9,5 +9,10 @@
 # Las líneas que empiezan con # se ignoran.
 #
 # Ejemplos (bórralos y pon los tuyos):
-geometria-vectorial | 2 | Vectores en el plano | https://www.youtube.com/watch?v=PC0GvyEIXfk&list=RDPC0GvyEIXfk&start_radio=1
-geometria-vectorial | 2 | Producto punto | https://www.youtube.com/watch?v=0NAKpzOfVoY&list=RD0NAKpzOfVoY&start_radio=1
+geometria-vectorial | 2 | Rectas Ecuaciones, Angulo de Inclinación y Conceptos Básicos | https://www.youtube.com/watch?v=EWsarHnuvCs
+ecuaciones-diferenciales | 1 | Quiz. Vaciado de Tanques, Mezclas y Trayectorias Ortogonales | https://www.youtube.com/watch?v=IVcqAPm0kE0
+ecuaciones-diferenciales | 2 | Quiz. Vaciado de Tanques, Mezclas y Trayectorias Ortogonales | https://www.youtube.com/watch?v=IVcqAPm0kE0
+ecuaciones-diferenciales | 1 | Quiz. Geométricas, Dinámica de Población y Cuerpos en caída | https://www.youtube.com/watch?v=5Xr47DADY4Y&t=1615s
+ecuaciones-diferenciales | 2 | Quiz. Geométricas, Dinámica de Población y Cuerpos en caída | https://www.youtube.com/watch?v=5Xr47DADY4Y&t=1615s
+calculo-integral | 2 | Áreas entre curvas y Solidos de revolución | https://www.youtube.com/watch?v=5DN0fjTl6tw
+algebra-lineal | 2 | Inversa de una matriz y Subespacios | https://www.youtube.com/watch?v=zaCPSPuWSKY
