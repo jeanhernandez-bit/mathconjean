@@ -16,3 +16,5 @@ ecuaciones-diferenciales | 1 | Quiz. Geométricas, Dinámica de Población y Cue
 ecuaciones-diferenciales | 2 | Quiz. Geométricas, Dinámica de Población y Cuerpos en caída | https://www.youtube.com/watch?v=5Xr47DADY4Y&t=1615s
 calculo-integral | 2 | Áreas entre curvas y Solidos de revolución | https://www.youtube.com/watch?v=5DN0fjTl6tw
 algebra-lineal | 2 | Inversa de una matriz y Subespacios | https://www.youtube.com/watch?v=zaCPSPuWSKY
+geometria-vectorial | 1 | Gva. Solucíon parcial 1 2026-02 | https://www.youtube.com/watch?v=DgPIM3M5g8A
+geometria-vectorial | 1 | Gva. Solucíon parcial 1 2026-02 | https://www.youtube.com/watch?v=DgPIM3M5g8A
