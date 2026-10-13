@@ -965,6 +965,24 @@ html[data-theme="light"] .hdic,html[data-theme="light"] .hda{background:#0b0b0b;
 html[data-theme="light"] .hdp{background:rgba(0,0,0,.06)}
 html[data-theme="light"] .hdd button{background:#cfcfcf}
 html[data-theme="light"] .hdd button.on{background:#0b0b0b}
+
+/* ===== politica de privacidad ===== */
+.pdoc{max-width:800px;padding-top:34px;padding-bottom:60px}
+.pback{display:block;width:fit-content;margin-bottom:22px;color:var(--muted);font-weight:600;font-size:.9rem;text-decoration:none}
+.pback:hover{color:var(--ink)}
+.pdoc h2{margin:.1em 0 .2em}
+.pdoc .pupd{color:var(--muted);opacity:1;font-size:.85rem;margin:0 0 26px}
+.pdoc h3{margin:32px 0 10px;font:700 1.15rem "Bricolage Grotesque",sans-serif}
+.pdoc p,.pdoc li{color:var(--ink);opacity:.88;line-height:1.65;font-size:.98rem}
+.pdoc p{margin:0 0 12px}
+.pdoc a{color:var(--ink);text-decoration:underline}
+.pdl{list-style:none;margin:0;padding:0;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.pdl li{display:flex;gap:16px;padding:11px 16px;border-top:1px solid var(--line)}
+.pdl li:first-child{border-top:0}
+.pdl span{flex:none;width:110px;color:var(--muted);font-size:.85rem;padding-top:2px}
+.pbl{margin:0 0 12px;padding-left:20px}
+.pbl li{margin:4px 0}
+@media(max-width:600px){.pdl li{flex-direction:column;gap:2px}.pdl span{width:auto}}
 </style>
 <style id="light">
 html[data-theme="light"] .spec::after{background:linear-gradient(100deg,transparent,rgba(255,255,255,.28),transparent)}
@@ -1293,6 +1311,47 @@ function wamsg(t){t=String(t||"").replace(/^Hola Jean,?\s*/i,"");t=t.charAt(0).t
 <details><summary>¿Qué pasa si no puedo asistir a una sesión?</summary><p>Tranquilo: todas las sesiones quedan grabadas y te compartimos las notas y diapositivas de apoyo. Si te queda alguna duda o pregunta, escríbenos; estamos atentos.</p></details>
 </div>
 </div></section>
+<section id="privacidad" hidden><div class="wrap pdoc">
+<a class="pback" href="#inicio">← Volver al inicio</a>
+<p class="kick">Legal</p>
+<h2>Política de privacidad</h2>
+<p class="pupd">Última actualización: 13 de octubre de 2026</p>
+<p>En <b>Math con Jean</b> respetamos tu privacidad. Esta política explica qué información se recoge cuando visitas <b>mathconjean.com</b> o nos escribes, para qué se usa y cómo puedes ejercer tus derechos, de acuerdo con la Ley 1581 de 2012 y el Decreto 1377 de 2013 de Colombia sobre protección de datos personales.</p>
+
+<h3>1. Responsable del tratamiento</h3>
+<ul class="pdl"><li><span>Responsable</span>Jean Hernández — Math con Jean</li><li><span>Ciudad</span>Medellín, Colombia</li><li><span>Correo</span><a href="mailto:jeanhernandez@mathconjean.com">jeanhernandez@mathconjean.com</a></li><li><span>WhatsApp</span>+57 313 744 5333</li></ul>
+
+<h3>2. Qué información recogemos</h3>
+<p><b>Información que tú nos das.</b> Cuando nos escribes por WhatsApp, por correo o desde el formulario de contacto de la página, recibimos los datos que decidas compartir: nombre, número de celular, cursos de interés y tu mensaje. El formulario no guarda nada en la página: solo arma el mensaje y lo abre en tu WhatsApp para que tú lo envíes.</p>
+<p><b>Información de uso de la página.</b> Usamos Google Analytics para conocer de forma general cómo se usa el sitio: páginas y secciones visitadas, botones que se tocan (por ejemplo, los de WhatsApp o los PDF que se abren), tipo de dispositivo y navegador, ciudad o país aproximado y de dónde llegaste (Google, Instagram, WhatsApp, etc.). Estos datos son estadísticos y no los usamos para identificarte personalmente.</p>
+<p><b>Información guardada en tu navegador.</b> La página guarda en tu propio dispositivo tu preferencia de fondo claro u oscuro, y copias de la lista de materiales y de las portadas de los PDF para que cargue más rápido. Esa información no se nos envía.</p>
+
+<h3>3. Para qué la usamos</h3>
+<ul class="pbl"><li>Responder tus preguntas y gestionar tu inscripción a los cursos.</li><li>Enviarte información sobre horarios, materiales y novedades de los cursos que tomas o que nos pediste.</li><li>Entender qué contenidos son más útiles y mejorar la página.</li></ul>
+<p>No vendemos ni alquilamos tus datos a terceros.</p>
+
+<h3>4. Cookies y tecnologías similares</h3>
+<p>Google Analytics utiliza cookies para contar visitas y medir el uso del sitio. Los videos de clases se muestran desde YouTube, que puede usar sus propias cookies cuando reproduces un video. Puedes bloquear o borrar las cookies desde la configuración de tu navegador, o desactivar Google Analytics con el complemento oficial de Google (<a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">tools.google.com/dlpage/gaoptout</a>). La página seguirá funcionando.</p>
+
+<h3>5. Servicios de terceros</h3>
+<p>Para funcionar, el sitio se apoya en servicios externos que tienen sus propias políticas de privacidad: Firebase Hosting y Google Analytics (Google), GitHub (donde se alojan los PDF, el video y las imágenes), YouTube (videos de clases), WhatsApp (Meta) para la comunicación, y Google Fonts y cdnjs para tipografías y el visor de PDF. Estos servicios pueden procesar datos técnicos como tu dirección IP para entregarte el contenido.</p>
+
+<h3>6. Tus derechos</h3>
+<p>Como titular de tus datos puedes, en cualquier momento:</p>
+<ul class="pbl"><li>Conocer, actualizar y rectificar tus datos personales.</li><li>Pedir prueba de la autorización que nos diste.</li><li>Saber qué uso le hemos dado a tus datos.</li><li>Pedir que eliminemos tus datos o revocar tu autorización, cuando no exista un deber legal o contractual de conservarlos.</li><li>Presentar quejas ante la Superintendencia de Industria y Comercio (SIC).</li></ul>
+
+<h3>7. Cómo ejercer tus derechos</h3>
+<p>Escríbenos a <a href="mailto:jeanhernandez@mathconjean.com">jeanhernandez@mathconjean.com</a> o por WhatsApp al +57 313 744 5333, indicando tu nombre y lo que solicitas. Responderemos las consultas en un máximo de 10 días hábiles y los reclamos en un máximo de 15 días hábiles, según la ley.</p>
+
+<h3>8. Conservación y seguridad</h3>
+<p>Conservamos tus datos de contacto mientras seas estudiante o mientras sean necesarios para atender tu solicitud, y luego los eliminamos si nos lo pides. Tomamos medidas razonables para protegerlos, aunque ningún sistema en internet es completamente seguro.</p>
+
+<h3>9. Menores de edad</h3>
+<p>Nuestros cursos están dirigidos a estudiantes universitarios. Si eres menor de edad, te pedimos que un adulto responsable nos contacte o autorice el uso de tus datos.</p>
+
+<h3>10. Cambios a esta política</h3>
+<p>Podemos actualizar esta política cuando cambien nuestros servicios o la ley. Publicaremos la nueva versión en esta misma página con su fecha de actualización.</p>
+</div></section>
 </main>
 <div id="subject" hidden></div>
 
@@ -1302,7 +1361,7 @@ function wamsg(t){t=String(t||"").replace(/^Hola Jean,?\s*/i,"");t=t.charAt(0).t
 <div class="fsoc"><a href="https://www.instagram.com/math_jean1" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8"/></svg></a><a href="https://www.youtube.com/@matematicasconjean3481" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10 9.5v5l4.5-2.5z"/></svg></a><a data-wa="Hola Jean, quiero información sobre los cursos." href="#contacto" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.4-4.2A8 8 0 1 1 8.2 18.6L4 20z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-.8.8c-1-.4-1.8-1.2-2.2-2.2l.8-.8-1-2z"/></svg></a></div></div>
 <div class="fcol"><h4>Navegación</h4><a href="#inicio">Inicio</a><a href="#jean">Sobre Jean</a><a href="#cursos">Nuestros cursos</a><a href="#combos">Combos</a><a href="#contacto">Contáctanos</a></div>
 <div class="fcol"><h4>Más</h4><a href="#faq">Preguntas frecuentes</a><a href="https://www.youtube.com/@matematicasconjean3481" target="_blank" rel="noopener">Videos en YouTube</a></div>
-<div class="fcol"><h4>Legal</h4><span>Política de privacidad</span><span>Términos y condiciones</span><span>Política de cookies</span><small>Próximamente</small></div>
+<div class="fcol"><h4>Legal</h4><a href="#privacidad">Política de privacidad</a><span>Términos y condiciones</span><span>Política de cookies</span><small>Próximamente</small></div>
 </div>
 <div class="fbot"><span>© 2026 Math con Jean. Todos los derechos reservados.</span><span>Hecho con <i class="hrt">♥</i> en Colombia</span></div>
 </div></footer>
@@ -1947,6 +2006,9 @@ if((a=t.closest(".pjb")))return ev("cambiar_parcial",{ubicacion:where(),parcial:
 },true);
 document.addEventListener("ended",function(e){if(e.target.closest&&e.target.closest(".stv"))ev("video_promo_completo")},true);
 })();
+</script>
+<script>
+(function(){function t(){if(location.hash==="#privacidad")document.title="Política de privacidad | Math con Jean"}addEventListener("hashchange",t);t()})();
 </script>
 </body>
 </html>
