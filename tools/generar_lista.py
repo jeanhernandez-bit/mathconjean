@@ -67,8 +67,9 @@ with open("materiales.json", "w", encoding="utf-8") as fh:
 # version.json: huella de cada archivo de datos. La pagina la consulta primero
 # y solo vuelve a descargar materiales.json o videos.txt si su huella cambio.
 ver = {"m": huella("materiales.json")}
-if os.path.isfile("videos.txt"):
-    ver["v"] = huella("videos.txt")
+for archivo, clave in (("videos.txt", "v"), ("destacados.txt", "d")):
+    if os.path.isfile(archivo):
+        ver[clave] = huella(archivo)
 with open("version.json", "w", encoding="utf-8") as fh:
     json.dump(ver, fh)
 print("materiales.json:", sum(len(v) for c in data.values() for p in c.values() for v in p.values()), "archivos")

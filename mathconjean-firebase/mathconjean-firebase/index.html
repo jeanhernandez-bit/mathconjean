@@ -931,6 +931,40 @@ html[data-theme="light"] .cfa button:hover,html[data-theme="light"] .cfa a:hover
 html[data-theme="light"] .hsb{background:rgba(0,0,0,.03)}
 html[data-theme="light"] .phk{color:#555}
 @media(prefers-reduced-motion:reduce){.phn,.cff,.cfs::before,.hsr::before{animation:none!important}}
+
+/* ===== destacados de grabaciones (Inicio) ===== */
+.hdz{margin:22px auto 0;width:min(480px,100%)}
+.hdc{position:relative;display:flex;align-items:center;gap:14px;padding:10px 12px 12px 10px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.015));color:var(--ink);text-decoration:none;text-align:left;overflow:hidden;transition:transform .25s cubic-bezier(.2,.8,.2,1),border-color .25s,box-shadow .25s}
+.hdc:hover,.hdc:focus-visible{transform:translateY(-3px);border-color:#8a8a8a;box-shadow:0 16px 34px rgba(0,0,0,.5)}
+.hdic{position:relative;width:46px;height:46px;flex:none;border-radius:13px;background:#f4f4f4;color:#000;display:grid;place-items:center}
+.hdic svg{width:18px;height:18px;fill:currentColor;margin-left:2px}
+.hdic::after{content:"";position:absolute;inset:-4px;border-radius:16px;border:2px solid #ff4d5e;opacity:0;animation:hdpu 2s ease-out infinite}
+@keyframes hdpu{0%{opacity:.85;transform:scale(.92)}100%{opacity:0;transform:scale(1.22)}}
+.hdv{position:relative;flex:1;min-width:0;height:44px;overflow:hidden}
+.hdi{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;gap:2px;opacity:0;transform:translateY(105%);transition:transform .55s cubic-bezier(.2,.8,.2,1),opacity .35s}
+.hdi.on{opacity:1;transform:none}
+.hdi.out{opacity:0;transform:translateY(-105%)}
+.hdi small{font:600 .66rem "IBM Plex Mono",monospace,sans-serif;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hdi small em{font-style:normal;color:#ff6b78;margin-right:6px}
+.hdi b{font:700 1.02rem "Bricolage Grotesque",sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hda{flex:none;display:flex;align-items:center;gap:6px;padding:8px 13px;border-radius:999px;background:#fff;color:#000;font:700 .8rem "IBM Plex Sans",sans-serif;transition:gap .25s}
+.hdc:hover .hda{gap:10px}
+.hdp{position:absolute;left:0;right:0;bottom:0;height:3px;background:rgba(255,255,255,.07)}
+.hdp i{display:block;height:100%;width:0;background:linear-gradient(90deg,#ff4d5e,#ffc857)}
+.hdc.run .hdp i{animation:hdbar 2s linear forwards}
+.hdc:hover .hdp i,.hdc:focus-visible .hdp i{animation-play-state:paused}
+@keyframes hdbar{to{width:100%}}
+.hdd{display:flex;justify-content:center;gap:6px;margin-top:10px}
+.hdd button{width:7px;height:7px;padding:0;border:0;border-radius:999px;background:#3d3d3d;cursor:pointer;transition:width .3s,background .3s}
+.hdd button.on{width:22px;background:#f4f4f4}
+@media(max-width:600px){.hdz{margin-top:18px}.hda span{display:none}.hda{padding:8px 10px}.hdi b{font-size:.92rem}}
+@media(prefers-reduced-motion:reduce){.hdi{transition:opacity .2s}.hdi,.hdi.out{transform:none}.hdic::after{animation:none}}
+html[data-theme="light"] .hdc{background:linear-gradient(160deg,rgba(0,0,0,.04),rgba(0,0,0,.01))}
+html[data-theme="light"] .hdc:hover{border-color:#303030;box-shadow:0 16px 34px rgba(0,0,0,.14)}
+html[data-theme="light"] .hdic,html[data-theme="light"] .hda{background:#0b0b0b;color:#fff}
+html[data-theme="light"] .hdp{background:rgba(0,0,0,.06)}
+html[data-theme="light"] .hdd button{background:#cfcfcf}
+html[data-theme="light"] .hdd button.on{background:#0b0b0b}
 </style>
 <style id="light">
 html[data-theme="light"] .spec::after{background:linear-gradient(100deg,transparent,rgba(255,255,255,.28),transparent)}
@@ -1146,6 +1180,7 @@ function wamsg(t){t=String(t||"").replace(/^Hola Jean,?\s*/i,"");t=t.charAt(0).t
 <p class="lead">Cursos 100% virtuales.</p>
 <div class="stats"><div><b>4 años</b><span>de experiencia</span></div><div><b>9</b><span>materias principales</span></div><div><b>UNAL</b><span>sede Medellín</span></div><div><b class="sm">Simulacros</b><span>tipo parcial</span></div></div>
 <div class="cta"><a class="btn" href="#cursos">Nuestros cursos</a><a class="btn ghost" data-wa="Hola Jean, quiero información sobre los cursos." href="#contacto">Inscríbete ahora</a></div>
+<div class="hdz" hidden></div>
 <button class="hsb" type="button" aria-label="Ver el video de Math con Jean"><span class="hsr"><img src="https://jeanhernandez-bit.github.io/mathconjean/media/promo-poster.jpg" alt="" loading="lazy"></span><span><b>Mira el video</b><small>20 s · con sonido</small></span></button>
 </div><div class="hmq" aria-label="Nuestros cursos"><div class="mqb"><div class="mqt" id="hmq"></div></div></div></section>
 <section id="cursos"><div class="wrap">
@@ -1867,6 +1902,26 @@ if(cp)cp.addEventListener("click",fopen);var cz=document.querySelector(".cfz");i
 fo.querySelector(".fyx").addEventListener("click",fclose);fo.addEventListener("click",function(e){if(e.target===fo)fclose()});
 addEventListener("keydown",function(e){if(e.key==="Escape")fclose()});addEventListener("hashchange",fclose);
 })();
+</script>
+<script>
+(function(){var box=document.querySelector(".hdz");
+/* abrir la pestaña Grabaciones cuando la direccion termina en /grabaciones */
+function tab(){var m=location.hash.match(/^#materia\/([^\/]+)\/p\d+\/grabaciones$/);if(!m)return;var n=0;(function t(){var b=document.querySelector('.sv[data-s="'+m[1]+'"] #t3');if(b){b.click();var sc=document.querySelector(".tabsec");if(sc)setTimeout(function(){sc.scrollIntoView({behavior:"smooth",block:"start"})},60)}else if(n++<40)setTimeout(t,50)})()}
+addEventListener("hashchange",tab);tab();
+if(!box||typeof cget!=="function")return;
+function esc2(x){return String(x).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function parse(t){var o=[];String(t||"").split(/\r?\n/).forEach(function(l){l=l.trim();if(!l||l[0]==="#")return;var p=l.split("|").map(function(x){return x.trim()}),s=S.find(function(x){return x.slug===p[0]}),k=parseInt(p[1],10);if(p.length<3||!s||!(k>0)||!p[2])return;o.push({slug:s.slug,name:s.name,k:k,t:p[2]})});return o}
+cget("destacados.txt","d",0).then(function(t){var a=parse(t);if(!a.length)return;
+var PL='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>';
+box.innerHTML='<a class="hdc" href="#"><span class="hdic">'+PL+'</span><span class="hdv">'+a.map(function(x,i){return '<span class="hdi'+(i?'':' on')+'"><small><em>Nuevo</em>'+esc2(x.name)+' · Parcial '+x.k+'</small><b>'+esc2(x.t)+'</b></span>'}).join("")+'</span><span class="hda"><span>Ver</span>→</span>'+(a.length>1?'<span class="hdp"><i></i></span>':'')+'</a>'+(a.length>1?'<div class="hdd">'+a.map(function(x,i){return '<button type="button" aria-label="Ver destacado '+(i+1)+'"'+(i?'':' class="on"')+'></button>'}).join("")+'</div>':'');
+box.hidden=false;
+var c=box.querySelector(".hdc"),it=box.querySelectorAll(".hdi"),ds=box.querySelectorAll(".hdd button"),bar=box.querySelector(".hdp i"),cur=0;
+function link(){var x=a[cur];c.href="#materia/"+x.slug+"/p"+x.k+"/grabaciones";c.setAttribute("aria-label","Ver "+x.t+" en "+x.name+", grabaciones del parcial "+x.k)}
+function run(){if(!bar)return;c.classList.remove("run");void c.offsetWidth;c.classList.add("run")}
+function go(n){if(n===cur)return;var o=it[cur];o.classList.remove("on");o.classList.add("out");setTimeout(function(){o.classList.remove("out")},600);cur=(n+a.length)%a.length;it[cur].classList.add("on");ds.forEach(function(d,i){d.classList.toggle("on",i===cur)});link();run()}
+link();
+if(bar){bar.addEventListener("animationend",function(){go(cur+1)});ds.forEach(function(d,i){d.addEventListener("click",function(){go(i)})});run()}
+})})();
 </script>
 </body>
 </html>

@@ -1,0 +1,15 @@
+# DESTACADOS DE MATH CON JEAN (recuadro animado de Inicio)
+# Una línea por destacado, con este formato (separado por el símbolo | ):
+#   curso | parcial | texto que se muestra
+#
+# Al tocarlo, lleva a la pestaña Grabaciones de ese curso y ese parcial.
+# Cada destacado se muestra 2 segundos y pasa al siguiente.
+# Para quitar uno, borra su línea (o ponle # al inicio).
+#
+# Cursos: geometria-vectorial, calculo-diferencial, calculo-integral,
+#         calculo-varias-variables, algebra-lineal, ecuaciones-diferenciales,
+#         estadistica-1, quimica-general, fisica-mecanica
+# Las líneas que empiezan con # se ignoran.
+
+geometria-vectorial | 2 | Solución Parcial 1 2026-02
+ecuaciones-diferenciales | 1 | Quiz 1 (Aplicaciones)
