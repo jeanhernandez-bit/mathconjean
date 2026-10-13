@@ -121,23 +121,6 @@
    ]
   },
   "2": {
-   "material-gratis": [
-    {
-     "t": "Notas Clase 14. Simulacrooo",
-     "f": "calculo-diferencial/parcial-2/material-gratis/Notas%20Clase%2014.%20Simulacrooo.pdf",
-     "v": "c4c767a519"
-    },
-    {
-     "t": "Notas Clase 15. Aplicacionesssss",
-     "f": "calculo-diferencial/parcial-2/material-gratis/Notas%20Clase%2015.%20Aplicacionesssss.pdf",
-     "v": "d3155cc934"
-    },
-    {
-     "t": "Simulacro Parcial 1",
-     "f": "calculo-diferencial/parcial-2/material-gratis/Simulacro%20Parcial%201.pdf",
-     "v": "b233b23df3"
-    }
-   ],
    "parciales": [
     {
      "t": "Parcial 2 2024 02",
@@ -573,39 +556,9 @@
   "1": {
    "material-gratis": [
     {
-     "t": "Notas Clase 14. Simulacro Gvaaa",
-     "f": "geometria-vectorial/parcial-1/material-gratis/Notas%20Clase%2014.%20Simulacro%20Gvaaa.pdf",
-     "v": "54ea3ece89"
-    },
-    {
-     "t": "Notas Clase 15. Taller Parcialll 1 Gva",
-     "f": "geometria-vectorial/parcial-1/material-gratis/Notas%20Clase%2015.%20Taller%20Parcialll%201%20Gva.pdf",
-     "v": "da4276c806"
-    },
-    {
-     "t": "Notas Clase 15. Taller Parcialll 1 Gva anotado",
-     "f": "geometria-vectorial/parcial-1/material-gratis/Notas%20Clase%2015.%20Taller%20Parcialll%201%20Gva_anotado.pdf",
-     "v": "da47fe60c5"
-    },
-    {
-     "t": "Notas Clase 16. Taller Parcialll 1 Gva (Math con Jean)",
-     "f": "geometria-vectorial/parcial-1/material-gratis/Notas%20Clase%2016.%20Taller%20Parcialll%201%20Gva%20%28Math%20con%20Jean%29.pdf",
-     "v": "95a57aeafc"
-    },
-    {
-     "t": "Notas Clases 14. Simulacro 2 Algebraaaaa",
-     "f": "geometria-vectorial/parcial-1/material-gratis/Notas%20Clases%2014.%20Simulacro%202%20Algebraaaaa.pdf",
-     "v": "452451c4ca"
-    },
-    {
-     "t": "simulacro parcial 1-2026-02s",
-     "f": "geometria-vectorial/parcial-1/material-gratis/simulacro-parcial-1-2026-02s.pdf",
-     "v": "8f794983d6"
-    },
-    {
-     "t": "taller parcial unidad1",
-     "f": "geometria-vectorial/parcial-1/material-gratis/taller-parcial-unidad1.pdf",
-     "v": "f4fe8cf6ee"
+     "t": "Solucion Parcial 1. Gva 2026-2 Math con Jean",
+     "f": "geometria-vectorial/parcial-1/material-gratis/Solucion%20Parcial%201.%20Gva%202026-2%20%20Math%20con%20Jean.pdf",
+     "v": "7965daa2bd"
     }
    ],
    "parciales": [
@@ -637,6 +590,11 @@
      "t": "Notas sesion. Rectas",
      "f": "geometria-vectorial/parcial-2/material-gratis/Notas%20sesion.%20Rectas.pdf",
      "v": "509c69f661"
+    },
+    {
+     "t": "Solucion Parcial 1. Gva 2026-2 Math con Jean",
+     "f": "geometria-vectorial/parcial-2/material-gratis/Solucion%20Parcial%201.%20Gva%202026-2%20%20Math%20con%20Jean.pdf",
+     "v": "7965daa2bd"
     }
    ],
    "parciales": [
