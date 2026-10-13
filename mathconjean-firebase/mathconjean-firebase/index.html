@@ -1087,6 +1087,8 @@ html[data-theme="light"] .stage::before{background:radial-gradient(closest-side,
 :where(html[data-theme="light"]) nav.open a.on{border-left:2px solid #000000}
 @media(max-width:600px){:where(html[data-theme="light"]) .sv .tkp span{background:#1d1d1d}}
 </style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GQBF3CYY77"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-GQBF3CYY77",{send_page_view:false});</script>
 </head>
 <body>
 <div id="pre" aria-hidden="true">
@@ -1922,6 +1924,29 @@ function go(n){if(n===cur)return;var o=it[cur];o.classList.remove("on");o.classL
 link();
 if(bar){bar.addEventListener("animationend",function(){go(cur+1)});ds.forEach(function(d,i){d.addEventListener("click",function(){go(i)})});run()}
 })})();
+</script>
+<script>
+/* Google Analytics: paginas vistas (la web usa #secciones) y acciones importantes */
+(function(){if(typeof gtag!=="function")return;
+function ev(n,p){try{gtag("event",n,p||{})}catch(e){}}
+function where(){var g=document.body.dataset.pg||"inicio",sv=document.querySelector(".sv");return g==="materia"&&sv?"curso:"+sv.dataset.s:g}
+var lastPv="";function pv(){var h=location.hash.replace(/\/grabaciones$/,"")||"#inicio";if(h===lastPv)return;lastPv=h;ev("page_view",{page_location:location.origin+location.pathname+h,page_path:location.pathname+h,page_title:document.title})}
+setTimeout(pv,50);addEventListener("hashchange",function(){setTimeout(pv,50)});
+function txt(el){return (el.getAttribute("data-t")||el.getAttribute("aria-label")||el.textContent||"").replace(/\s+/g," ").trim().slice(0,80)}
+document.addEventListener("click",function(e){var t=e.target;if(!t.closest)return;var a;
+if((a=t.closest('a[href*="wa.me"]')))return ev("contacto_whatsapp",{ubicacion:where(),boton:txt(a)});
+if((a=t.closest('a[href*="chat.whatsapp.com"]')))return ev("canal_whatsapp",{ubicacion:where()});
+if((a=t.closest('a[href*="instagram.com"],a[href*="youtube.com/@"]')))return ev("red_social",{red:a.href.indexOf("instagram")>-1?"instagram":"youtube",ubicacion:where()});
+if((a=t.closest("a[download]")))return ev("descargar",{archivo:decodeURIComponent((a.getAttribute("href")||"").split("?")[0].split("/").pop()),ubicacion:where()});
+if((a=t.closest("a.view")))return ev("abrir_pdf",{documento:txt(a),ubicacion:where()});
+if((a=t.closest("button.vc")))return ev("ver_clase",{clase:txt(a),ubicacion:where()});
+if((a=t.closest(".phn,.hsb")))return ev("video_promo_abrir",{desde:a.classList.contains("phn")?"celular":"historia"});
+if((a=t.closest(".hdc")))return ev("destacado",{destino:a.getAttribute("href")});
+if((a=t.closest(".cfp,.cfz")))return ev("ver_flyer");
+if((a=t.closest(".pjb")))return ev("cambiar_parcial",{ubicacion:where(),parcial:a.dataset.k?+a.dataset.k+1:""});
+},true);
+document.addEventListener("ended",function(e){if(e.target.closest&&e.target.closest(".stv"))ev("video_promo_completo")},true);
+})();
 </script>
 </body>
 </html>
