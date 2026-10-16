@@ -12,4 +12,8 @@
 # Las líneas que empiezan con # se ignoran.
 
 geometria-vectorial | 2 | Solución Parcial 1 2026-02
+calculo-diferencial | 2 | Entrenamiento 5
 ecuaciones-diferenciales | 1 | Quiz 1 (Aplicaciones)
+
+
+

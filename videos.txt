@@ -7,6 +7,10 @@
 #         estadistica-1, quimica-general, fisica-mecanica
 # Parcial: 1, 2 o 3
 # Las líneas que empiezan con # se ignoran.
+# calculo-varias-variables
+# estadistica-1
+# quimica-general
+# fisica-mecanica
 #
 # Ejemplos (bórralos y pon los tuyos):
 geometria-vectorial | 2 | Rectas desde cero: Ecuaciones y posiciones  | https://www.youtube.com/watch?v=yUTqQpDjA2A
@@ -19,3 +23,5 @@ algebra-lineal | 2 | Inversa de una matriz | https://www.youtube.com/watch?v=zaC
 algebra-lineal | 2 | Algebra. Subespacios y Espacios vectoriales | https://www.youtube.com/watch?v=7atl_b8K5nc
 geometria-vectorial | 1 | Gva. Solucíon parcial 1 2026-02 | https://www.youtube.com/watch?v=DgPIM3M5g8A
 geometria-vectorial | 2 | Gva. Solucíon parcial 1 2026-02 | https://www.youtube.com/watch?v=DgPIM3M5g8A
+calculo-varias-variables | 1 | Ejercicios Parcial 1 | https://youtu.be/7-5orrrihN4
+calculo-diferencial | 2 | Notas. Entrenamiento 5 | https://www.youtube.com/watch?v=4xOuOLNO42Y
