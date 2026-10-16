@@ -48,7 +48,8 @@ for base in BASES:
             pdir = os.path.join(cdir, par)
             if not m or not os.path.isdir(pdir):
                 continue
-            for cat in CATS:
+            extra = tuple(sorted((d for d in os.listdir(pdir) if re.fullmatch(r"entrenamiento-\d+", d)), key=natural))
+            for cat in CATS + extra:
                 kdir = os.path.join(pdir, cat)
                 if not os.path.isdir(kdir):
                     continue

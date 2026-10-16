@@ -983,6 +983,53 @@ html[data-theme="light"] .hdd button.on{background:#0b0b0b}
 .pbl{margin:0 0 12px;padding-left:20px}
 .pbl li{margin:4px 0}
 @media(max-width:600px){.pdl li{flex-direction:column;gap:2px}.pdl span{width:auto}}
+
+/* ===== Entrenamiento (Calculo diferencial) ===== */
+.etop{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin:0 0 16px}
+.etop h3{margin:0;font:800 1.5rem "Bricolage Grotesque",sans-serif}
+.esel{display:flex;align-items:center;gap:8px}
+.esel span{font:600 .72rem "IBM Plex Mono",monospace,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.esel button{min-width:44px;height:40px;padding:0 12px;border-radius:12px;border:1px solid var(--line);background:transparent;color:var(--ink);font:800 1.05rem "Bricolage Grotesque",sans-serif;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.esel button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.esel button:hover{border-color:var(--ink)}
+.ewrap{display:grid;grid-template-columns:280px minmax(0,1fr);gap:24px;align-items:start}
+.eleft{display:flex;flex-direction:column;gap:14px;position:sticky;top:96px}
+.eleft .ng{margin:0}.eleft .ng .nc{flex-basis:100%;max-width:100%}
+.nc.enp{cursor:default}.nc.enp:hover{transform:none;border-color:var(--line);box-shadow:none}
+.eexp{width:100%;justify-content:center;text-align:center}
+.ehint{margin:0;color:var(--muted);font-size:.85rem;line-height:1.5}
+.ecalc{border:1px solid var(--line);border-radius:20px;padding:16px;min-width:0;background:linear-gradient(160deg,rgba(255,255,255,.035),transparent)}
+.eps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;padding:4px;border:1px solid var(--line);border-radius:14px;margin-bottom:16px}
+.eps button{border:0;border-radius:10px;padding:8px 6px;background:transparent;color:var(--muted);font:600 .82rem "IBM Plex Sans",sans-serif;cursor:pointer;line-height:1.2;transition:background .2s,color .2s}
+.eps button b{display:block;font:800 1rem "Bricolage Grotesque",sans-serif;color:var(--ink)}
+.eps button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.eps button[aria-pressed="true"] b{color:var(--bg)}
+.epu{display:flex;flex-direction:column;gap:14px}
+.eit{border:1px solid var(--line);border-radius:16px;padding:14px;display:flex;flex-direction:column;gap:12px;min-width:0;animation:rise .4s cubic-bezier(.2,.8,.2,1) both}
+.eih{font:600 .74rem "IBM Plex Mono",monospace,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.etex{overflow-x:auto;overflow-y:hidden;min-height:58px;display:flex;align-items:center;justify-content:center;padding:2px 0}
+.etex .katex-display{margin:0}
+.etex .efb{font:500 .9rem "IBM Plex Mono",monospace,sans-serif;color:var(--muted)}
+.evs{display:flex;flex-wrap:wrap;gap:8px}
+.ev{display:flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:12px;padding:4px 5px 4px 9px}
+.ev i{width:11px;height:11px;border-radius:3px;flex:none;border:1px solid rgba(0,0,0,.25)}
+.ev label{font:600 .8rem "IBM Plex Sans",sans-serif;white-space:nowrap}
+.ev label small{font-weight:400;color:var(--muted);margin-left:4px}
+.ev input{width:78px;font:600 .98rem "IBM Plex Mono",monospace,sans-serif;padding:6px 6px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);text-align:center}
+.ev input:focus-visible{outline:2px solid var(--ink);outline-offset:1px}
+.ev input.bad{border-color:#ff6b78}
+.ean{display:flex;flex-wrap:wrap;gap:8px}
+.ea{flex:1 1 130px;display:flex;align-items:baseline;gap:9px;background:var(--ink);color:var(--bg);border-radius:12px;padding:10px 14px;min-width:0}
+.ea b{font:800 .98rem "Bricolage Grotesque",sans-serif;opacity:.65}
+.ea output{font:600 1.3rem "IBM Plex Mono",monospace,sans-serif;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.ea output small{font-size:.75rem;opacity:.6;margin-left:6px}
+.ea.err{background:transparent;color:#ff6b78;border:1px dashed #ff6b78}
+.ea.err output{font:600 .88rem "IBM Plex Sans",sans-serif}
+.ey{background:#ffe94a}.eg{background:#7be27a}.ep{background:#f59fd0}.eb2{background:#8fdcf5}.er2{background:#ef4444}
+@media(max-width:900px){.ewrap{grid-template-columns:minmax(0,1fr)}.eleft{position:static}.eleft .ng .nc{flex-basis:calc((100% - 10px)/2);max-width:calc((100% - 10px)/2)}}
+.eps button small{display:block;font-size:inherit}
+@media(max-width:600px){.eps button small{display:none}.eps button{font-size:.7rem}.eps button b{font-size:.92rem}.ev input{width:66px}.etop h3{font-size:1.25rem}}
+html[data-theme="light"] .ea.err,html[data-theme="light"] .ev input.bad{border-color:#c0262f;color:#c0262f}
 </style>
 <style id="light">
 html[data-theme="light"] .spec::after{background:linear-gradient(100deg,transparent,rgba(255,255,255,.28),transparent)}
@@ -1736,14 +1783,14 @@ h+='<nav class="chips" aria-label="Cambiar de materia">'+S.map(function(x){retur
 h+='<div class="svh"><div class="svt"><span class="sem">Semestre 2026-2</span><h1>'+s.name+'</h1></div><div class="pj" role="group" aria-label="Elige el parcial"><span class="pjl">Parcial</span><div class="pjn n'+s.parciales.length+'">'+s.parciales.map(function(_,i){return '<button class="pjb" data-k="'+i+'" aria-pressed="'+(i===k)+'">'+(i+1)+'</button>'}).join("")+'</div></div></div><div class="sgrid"><aside class="saside">';
 h+='<div class="tk"><span class="open">'+f.estado+'</span><div class="tkp"><small>Precio</small><b>'+f.precio+'</b><span class="cort">'+f.corte.replace(/Corte \d/,"Corte "+(k+1))+'</span></div><ul class="tkl">'+f.beneficios.map(function(x,i){return '<li><span aria-hidden="true">'+["≡","▶","✓"][i%3]+'</span>'+x+'</li>'}).join("")+'</ul><a class="btn" data-wa="'+tkm(s,f,k)+'" href="#contacto">Comprar ahora</a></div>';
 h+='<div class="sc"><div class="sch"><small>Horario</small>'+(f.sb?'<b>'+f.sb+'</b><span>'+f.ss+' · '+f.modalidad+'</span>':f.tbd?'<b>Por definir</b><span>'+f.tbd+' · '+f.modalidad+'</span>':'<b>'+f.h1+' – '+f.h2+'</b><span>'+f.ap+' · '+f.modalidad+'</span>')+'</div>'+wk(f)+'<ul class="sfl"><li><i></i><span class="ini">'+iniT(f,k)+'</span></li><li><i></i>Finalizamos un día antes del Parcial</li></ul></div>';
-h+='</aside><div class="smain"><section class="tabsec"><div class="tabs" role="tablist" aria-label="Más sobre el curso"><button role="tab" id="t1" aria-selected="true" aria-controls="p1">Temas del curso</button><button role="tab" id="t4" aria-selected="false" aria-controls="p4">Parciales</button><button role="tab" id="t2" aria-selected="false" aria-controls="p2">Notas de clase</button><button role="tab" id="t3" aria-selected="false" aria-controls="p3">Grabaciones</button></div>';
+h+='</aside><div class="smain"><section class="tabsec"><div class="tabs" role="tablist" aria-label="Más sobre el curso"><button role="tab" id="t1" aria-selected="true" aria-controls="p1">Temas del curso</button><button role="tab" id="t4" aria-selected="false" aria-controls="p4">Parciales</button><button role="tab" id="t2" aria-selected="false" aria-controls="p2">Notas de clase</button>'+(window.ENT&&ENT[sl]?'<button role="tab" id="t5" aria-selected="false" aria-controls="p5">Entrenamiento</button>':'')+'<button role="tab" id="t3" aria-selected="false" aria-controls="p3">Grabaciones</button></div>';
 h+='<div class="tp" role="tabpanel" id="p1" aria-labelledby="t1">'+ruta(s,k)+'</div>';
 h+='<div class="tp" role="tabpanel" id="p2" aria-labelledby="t2" hidden>'+mat(s,k)+'</div>';
-h+='<div class="tp" role="tabpanel" id="p3" aria-labelledby="t3" hidden>'+grab(s,k)+'</div>';
+h+='<div class="tp" role="tabpanel" id="p3" aria-labelledby="t3" hidden>'+grab(s,k)+'</div>';if(window.ENT&&ENT[sl])h+='<div class="tp" role="tabpanel" id="p5" aria-labelledby="t5" hidden>'+ent(s,k)+'</div>';
 h+='<div class="tp" role="tabpanel" id="p4" aria-labelledby="t4" hidden>'+parc(s,k)+'</div></section>';
 h+='</div></div></div>';var MQ=S.map(function(x){return '<a href="#materia/'+x.slug+'">'+x.name+'</a><i aria-hidden="true">•</i>'}).join("");h+='<section class="pmq"><p>Nuestro sistema se centra en fortalecer tus habilidades para el Parcial</p><div class="mqb"><div class="mqt">'+MQ+MQ+'</div></div></section>';
 return {h:h,t:s.name}}
-function paint(r,s,k){var q=r.querySelector("#p2");if(q)q.innerHTML=mat(s,k);q=r.querySelector("#p3");if(q)q.innerHTML=grab(s,k);q=r.querySelector("#p4");if(q)q.innerHTML=parc(s,k)}
+function paint(r,s,k){var q=r.querySelector("#p2");if(q)q.innerHTML=mat(s,k);q=r.querySelector("#p5");if(q&&window.ent){q.innerHTML=ent(s,k);if(!q.hidden&&window.entTex)entTex(q)}q=r.querySelector("#p3");if(q)q.innerHTML=grab(s,k);q=r.querySelector("#p4");if(q)q.innerHTML=parc(s,k)}
 function rep(){var r=document.querySelector(".sv");if(!r)return;var s=S.find(function(x){return x.slug===r.dataset.s}),b=r.querySelector(".pjb[aria-pressed=true]");if(s&&b)paint(r,s,+b.dataset.k)}
 var DB="https://jeanhernandez-bit.github.io/mathconjean/";var VER=null;try{VER=(function(){var K="mcj-ver-at",gap=90000,t=0,opt;try{t=+sessionStorage.getItem(K)||0}catch(e){}opt={cache:"no-cache"};return fetch(DB+"version.json",opt).then(function(x){return x.ok?x.json():null}).then(function(d){if(d)try{sessionStorage.setItem(K,String(Date.now()))}catch(e){}return d}).catch(function(){return null})})()}catch(e){VER=Promise.resolve(null)}
 function cget(f,k,js){return VER.then(function(V){var v=V&&V[k],K="mcj-"+k,c;if(!v)return fetch(DB+f,{cache:"no-cache"}).then(function(x){return x.ok?(js?x.json():x.text()):null}).catch(function(){return null});try{c=JSON.parse(localStorage.getItem(K));if(c&&c.v===v)return c.d}catch(e){}return fetch(DB+f+"?v="+encodeURIComponent(v)).then(function(x){return x.ok?(js?x.json():x.text()):null}).then(function(d){if(d!=null){try{localStorage.setItem(K,JSON.stringify({v:v,d:d}))}catch(e){}}return d})})}
@@ -1751,7 +1798,7 @@ try{cget("materiales.json","m",1).then(function(j){if(!j||typeof j!=="object")re
 try{cget("videos.txt","v",0).then(function(t){if(t==null)return;VID=parseVid(t);var r=document.querySelector(".sv");if(!r)return;var s=S.find(function(x){return x.slug===r.dataset.s}),b=r.querySelector(".pjb[aria-pressed=true]");if(s&&b)paint(r,s,+b.dataset.k)}).catch(function(){}).then(function(){VS=true;rep()})}catch(e){VS=true}
 setTimeout(function(){if(!MS||!VS){MS=VS=true;rep()}},2500);
 function wireDemo(r){var sl=r.querySelector(".sv").dataset.s,s=S.find(function(x){return x.slug===sl}),tb=r.querySelectorAll('[role=tab]');
-tb.forEach(function(t){t.addEventListener("click",function(){tb.forEach(function(x){x.setAttribute("aria-selected",x===t)});var gq=r.querySelector(".sgrid");if(gq)gq.classList.toggle("rec",t.id==="t3");r.querySelectorAll('[role=tabpanel]').forEach(function(p){p.hidden=p.id!==t.getAttribute("aria-controls")})})});
+tb.forEach(function(t){t.addEventListener("click",function(){tb.forEach(function(x){x.setAttribute("aria-selected",x===t)});var gq=r.querySelector(".sgrid");if(gq)gq.classList.toggle("rec",t.id==="t3"||t.id==="t5");if(t.id==="t5"&&window.entTex)entTex(r.querySelector("#p5"));r.querySelectorAll('[role=tabpanel]').forEach(function(p){p.hidden=p.id!==t.getAttribute("aria-controls")})})});
 r.querySelectorAll("button.wkd").forEach(function(b){b.addEventListener("click",function(){r.querySelectorAll("button.wkd.sel").forEach(function(x){x.classList.remove("sel")});b.classList.add("sel");r.querySelector("#cdet").textContent=b.dataset.d})});
 var pb=r.querySelectorAll(".pjb");pb.forEach(function(b){b.addEventListener("click",function(){var k=+b.dataset.k;pb.forEach(function(x){x.setAttribute("aria-pressed",x===b)});r.querySelector("#p1").innerHTML=ruta(s,k);paint(r,s,k);var ct=r.querySelector(".cort");if(ct)ct.textContent=ct.textContent.replace(/Corte \d/,"Corte "+(k+1));var fi=s.info||S[0].info,ii=r.querySelector(".ini");if(ii)ii.textContent=iniT(fi,k);var tb=r.querySelector(".tk .btn[data-wa]");if(tb){tb.dataset.wa=tkm(s,fi,k);setWA(r)}r.querySelector("#t1").click();try{history.replaceState(null,"","#materia/"+sl+"/p"+(k+1))}catch(e){}})})}
 var home=document.getElementById("inicio"),sv=document.getElementById("subject"),T0=document.title;
@@ -1967,7 +2014,7 @@ addEventListener("keydown",function(e){if(e.key==="Escape")fclose()});addEventLi
 <script>
 (function(){var box=document.querySelector(".hdz");
 /* abrir la pestaña Grabaciones cuando la direccion termina en /grabaciones */
-function tab(){var m=location.hash.match(/^#materia\/([^\/]+)\/p\d+\/grabaciones$/);if(!m)return;var n=0;(function t(){var b=document.querySelector('.sv[data-s="'+m[1]+'"] #t3');if(b){b.click();var sc=document.querySelector(".tabsec");if(sc)setTimeout(function(){sc.scrollIntoView({behavior:"smooth",block:"start"})},60)}else if(n++<40)setTimeout(t,50)})()}
+function tab(){var m=location.hash.match(/^#materia\/([^\/]+)\/p\d+\/(grabaciones|entrenamiento)$/);if(!m)return;var n=0;(function t(){var b=document.querySelector('.sv[data-s="'+m[1]+'"] '+(m[2]==="entrenamiento"?"#t5":"#t3"));if(b){b.click();var sc=document.querySelector(".tabsec");if(sc)setTimeout(function(){sc.scrollIntoView({behavior:"smooth",block:"start"})},60)}else if(n++<40)setTimeout(t,50)})()}
 addEventListener("hashchange",tab);tab();
 if(!box||typeof cget!=="function")return;
 function esc2(x){return String(x).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
@@ -2009,6 +2056,86 @@ document.addEventListener("ended",function(e){if(e.target.closest&&e.target.clos
 </script>
 <script>
 (function(){function t(){if(location.hash==="#privacidad")document.title="Política de privacidad | Math con Jean"}addEventListener("hashchange",t);t()})();
+</script>
+<script>
+/* ===== Entrenamientos: datos y calculadoras (solo respuesta) ===== */
+(function(){
+function gcd(a,b){a=Math.abs(a);b=Math.abs(b);while(b){var t=a%b;a=b;b=t}return a||1}
+function Q(n,d){if(d===undefined)d=1;if(d===0)throw new Error("div0");if(d<0){n=-n;d=-d}var g=gcd(n,d);return{n:n/g,d:d/g}}
+function add(x,y){return Q(x.n*y.d+y.n*x.d,x.d*y.d)}function sub(x,y){return Q(x.n*y.d-y.n*x.d,x.d*y.d)}
+function mul(x,y){return Q(x.n*y.n,x.d*y.d)}function div(x,y){if(y.n===0)throw new Error("div0");return Q(x.n*y.d,x.d*y.n)}
+function neg(x){return Q(-x.n,x.d)}function pw(x,k){var r=Q(1);for(var i=0;i<k;i++)r=mul(r,x);return r}
+function eq(x,y){return x.n===y.n&&x.d===y.d}function cmp(x,y){return x.n*y.d-y.n*x.d}function num(x){return x.n/x.d}
+function pn(s){s=String(s).trim().replace(/[−–]/g,"-").replace(/,/g,".");if(!/^[-+]?\d+(\.\d+)?$/.test(s))return null;var p=s.split("."),dec=p[1]?p[1].length:0,k=Math.pow(10,dec);return Q(Math.round(parseFloat(s)*k),k)}
+function parse(s){s=String(s).trim().replace(/\s+/g,"");if(!s)return null;if(s.indexOf("/")>-1){var p=s.split("/");if(p.length!==2)return null;var a=pn(p[0]),b=pn(p[1]);if(!a||!b||b.n===0)return null;return div(a,b)}return pn(s)}
+function fmt(x){var s=(x.n<0?"−":"")+Math.abs(x.n);if(x.d===1)return s;var r=Math.round(num(x)*10000)/10000;return s+"/"+x.d+"<small>≈ "+String(r).replace("-","−")+"</small>"}
+var COL={y:"#ffe94a",g:"#7be27a",p:"#f59fd0",b:"#8fdcf5",r:"#ef4444"},CLS={y:"ey",g:"eg",p:"ep",b:"eb2",r:"er2"};
+function txt(x){var a=Math.abs(x.n)+(x.d===1?"":"/"+x.d);return x.n<0?"(−"+a+")":a}
+function B(x,c){return "\\colorbox{"+COL[c]+"}{\\textcolor{black}{"+txt(x)+"}}"}
+function P_(x,c){return x.n<0?"-"+B(Q(-x.n,x.d),c):"+"+B(x,c)}
+function msg(t){var e=new Error(t);e.user=true;return e}
+var E5=[
+ {t:"Límites fundamentales",items:[
+  {id:"1a",h:"Punto 1 · (a)",v:[["a","y","2","coef. de x"],["b","g","22",""],["c","p","16",""]],
+   tex:function(V){return "\\lim_{x\\to\\infty}\\left(\\dfrac{"+B(V.a,"y")+"x"+P_(V.b,"g")+"}{"+B(V.a,"y")+"x"+P_(V.c,"p")+"}\\right)^{x}=\\exp(A)"},
+   solve:function(V){if(V.a.n===0)throw msg("a no puede ser 0");return[["A",fmt(div(sub(V.b,V.c),V.a))]]}},
+  {id:"1b",h:"Punto 1 · (b)",v:[["p","g","24","coef. de x"],["q","p","8",""],["r","b","12","exponente"]],
+   tex:function(V){return "\\lim_{x\\to\\infty}\\left(\\dfrac{"+B(V.p,"g")+"x}{"+B(V.p,"g")+"x"+P_(V.q,"p")+"}\\right)^{"+B(V.r,"b")+"x}=\\exp(B)"},
+   solve:function(V){if(V.p.n===0)throw msg("p no puede ser 0");return[["B",fmt(neg(div(mul(V.q,V.r),V.p)))]]}}]},
+ {t:"Límites trigonométricos",items:[
+  {id:"2a",h:"Punto 2 · (a)",v:[["h","y","22","x tiende a"],["k","p","5",""],["c","b","2",""]],
+   tex:function(V){var h=B(V.h,"y");return "A=\\lim_{x\\to "+h+"^{+}}\\left[(x-"+h+")\\sin\\!\\left(\\dfrac{"+B(V.k,"p")+"}{x-"+h+"}\\right)+"+B(V.c,"b")+"\\right]"},
+   solve:function(V){return[["A",fmt(V.c)]]}},
+  {id:"2b",h:"Punto 2 · (b)",v:[["h","y","22",""],["k","g","5",""],["c","p","2",""]],
+   tex:function(V){var h=B(V.h,"y");return "B=\\lim_{x\\to\\infty}\\left[(x-"+h+")\\sin\\!\\left(\\dfrac{"+B(V.k,"g")+"}{x-"+h+"}\\right)+"+B(V.c,"p")+"\\right]"},
+   solve:function(V){return[["B",fmt(add(V.k,V.c))]]}}]},
+ {t:"Función a trozos",items:[
+  {id:"3",h:"Punto 3 · (a), (b) y (c)",v:[["p","g","-1","corte"],["m","y","9","coef. de x²"],["n","b","19","constante"],["L","p","7","límite izq."],["R","b","16","límite der."],["q","r","1","C = f(q)"]],
+   tex:function(V){var p=B(V.p,"g");return "f(x)=\\begin{cases}x^{3}+Ax+B, & x\\le "+p+"\\\\ "+B(V.m,"y")+"x^{2}+Bx"+P_(V.n,"b")+", & x> "+p+"\\end{cases}\\\\[6pt]\\lim_{x\\to "+p+"^{-}}f(x)="+B(V.L,"p")+",\\quad \\lim_{x\\to "+p+"^{+}}f(x)="+B(V.R,"b")+",\\quad C=f("+B(V.q,"r")+")"},
+   solve:function(V){if(V.p.n===0)throw msg("El punto de corte no puede ser 0");var p=V.p,Bv=div(sub(sub(V.R,V.n),mul(V.m,pw(p,2))),p),Av=div(sub(sub(V.L,Bv),pw(p,3)),p),q=V.q,Cv=cmp(q,p)>0?add(add(mul(V.m,pw(q,2)),mul(Bv,q)),V.n):add(add(pw(q,3),mul(Av,q)),Bv);return[["A",fmt(Av)],["B",fmt(Bv)],["C",fmt(Cv)]]}}]},
+ {t:"Función indicatriz",items:[
+  {id:"4",h:"Punto 4 · (a) y (b)",v:[["a","g","28","valor en x < 0"],["b","y","8","de exp(b)"],["d","b","4","denominador en (a)"],["f","p","1/8","fracción en (b)"],["c","r","2","en (b)"]],
+   tex:function(V){var c=B(V.c,"r");return "f(x)="+B(V.a,"g")+"\\cdot\\mathbf{1}_{(-\\infty,0)}+\\exp("+B(V.b,"y")+")\\cdot\\mathbf{1}_{(0,\\infty)}\\\\[8pt]\\text{(a)}\\;A=\\lim_{x\\to0^{-}}\\dfrac{\\sin\\big(x\\cdot f(x)\\big)}{"+B(V.d,"b")+"\\cdot x}\\\\[8pt]\\text{(b)}\\;B=\\lim_{x\\to0^{+}}\\dfrac{\\big(f(x)\\big)^{x+"+B(V.f,"p")+"\\ln "+c+"}-"+c+"}{x}"},
+   solve:function(V){if(V.d.n===0)throw msg("d no puede ser 0");if(V.c.n<=0)throw msg("c debe ser positivo");var A=fmt(div(V.a,V.d)),e=mul(V.b,V.f),Bt;if(V.c.n===V.c.d||eq(e,Q(1)))Bt=fmt(mul(V.b,V.c));else{var d=Math.pow(num(V.c),num(e))-num(V.c);Bt=d>0?"No existe <small>→ +∞</small>":"No existe <small>→ −∞</small>"}return[["A",A],["B",Bt]]}}]}
+];
+/* Registro: curso -> parcial -> lista de entrenamientos */
+window.ENT={"calculo-diferencial":{"2":[{n:5,puntos:E5}]}};
+var SEL={},PU={},EV={};
+function esc(x){return String(x).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function val(n,it,v){var k=n+"|"+it.id+"|"+v[0];return k in EV?EV[k]:v[2]}
+function calcItem(n,it){var V={},bad=[];it.v.forEach(function(v){var x=parse(val(n,it,v));if(!x)bad.push(v[0]);else V[v[0]]=x});
+  if(bad.length)return{tex:null,ans:'<div class="ea err"><output>Revisa: '+bad.join(", ")+'</output></div>'};
+  var ans;try{ans=it.solve(V).map(function(x){return '<div class="ea"><b>'+x[0]+' =</b><output>'+x[1]+'</output></div>'}).join("")}catch(e){ans='<div class="ea err"><output>'+(e.user?esc(e.message):"No se puede calcular con esos valores")+'</output></div>'}
+  return{tex:it.tex(V),ans:ans}}
+function itemHTML(n,it){var c=calcItem(n,it);return '<div class="eit" data-n="'+n+'" data-id="'+it.id+'"><div class="eih">'+it.h+'</div><div class="etex" data-tex="'+esc(c.tex||"")+'"><span class="efb">Cargando enunciado…</span></div><div class="evs">'+it.v.map(function(v){var id="e"+n+"-"+it.id+"-"+v[0];return '<div class="ev"><i class="'+CLS[v[1]]+'" aria-hidden="true"></i><label for="'+id+'">'+esc(v[0])+(v[3]?'<small>'+esc(v[3])+'</small>':'')+'</label><input id="'+id+'" data-v="'+esc(v[0])+'" inputmode="decimal" autocomplete="off" spellcheck="false" value="'+esc(val(n,it,v))+'"></div>'}).join("")+'</div><div class="ean">'+c.ans+'</div></div>'}
+function find(n){var o=null;Object.keys(ENT).forEach(function(c){Object.keys(ENT[c]).forEach(function(p){ENT[c][p].forEach(function(t){if(t.n===n)o=t})})});return o}
+window.ent=function(s,k){var L=(ENT[s.slug]||{})[String(k+1)]||[],h='<p class="pt">Parcial '+(k+1)+' · entrenamientos</p>';
+  if(!L.length)return h+'<div class="nm"><span class="ni"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19h16M7 16V9m5 7V5m5 11v-4"/></svg></span><span class="nb"><i></i>Pendiente de publicación</span><h4>Aún no hay entrenamientos</h4><p>Los entrenamientos del Parcial '+(k+1)+' se publican aquí apenas estén listos.</p></div>';
+  var key=s.slug+"|"+k,n=SEL[key]||L[L.length-1].n,T=L.filter(function(t){return t.n===n})[0]||L[L.length-1];n=T.n;var pu=PU[n]||0;
+  var notes=(typeof gm==="function"?gm(s.slug,k,"entrenamiento-"+n):[]);
+  var nh=notes.length?nts(notes,k).replace(/· notas de clase/g,"· entrenamiento "+n):'<div class="ng"><div class="nc enp"><div class="tw"><div class="sk" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div><span class="nbg">PDF</span></div><div class="vt"><b>Notas del entrenamiento '+n+'</b><small>Próximamente</small></div></div></div>';
+  return h+'<div class="etop"><h3>Entrenamiento '+n+'</h3><div class="esel" role="group" aria-label="Elige el entrenamiento"><span>Entrenamiento</span>'+L.map(function(t){return '<button type="button" class="eb" data-s="'+s.slug+'" data-k="'+k+'" data-n="'+t.n+'" aria-pressed="'+(t.n===n)+'">'+t.n+'</button>'}).join("")+'</div></div>'+
+  '<div class="ewrap"><div class="eleft">'+nh+'<button type="button" class="btn eexp">Ver explicación en video →</button><p class="ehint">Cada estudiante tiene valores diferentes: escribe los tuyos en las casillas de color y obtén la respuesta al instante.</p></div>'+
+  '<div class="ecalc"><div class="eps" role="group" aria-label="Elige el punto">'+T.puntos.map(function(P,i){return '<button type="button" data-n="'+n+'" data-pu="'+i+'" aria-pressed="'+(i===pu)+'"><b>Punto '+(i+1)+'</b><small>'+P.t+'</small></button>'}).join("")+'</div>'+
+  T.puntos.map(function(P,i){return '<div class="epu" data-pu="'+i+'"'+(i===pu?'':' hidden')+'>'+P.items.map(function(it){return itemHTML(n,it)}).join("")+'</div>'}).join("")+'</div></div>'};
+/* KaTeX bajo demanda */
+var K="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/",kp=null;
+function kx(){if(window.katex)return Promise.resolve();if(kp)return kp;kp=new Promise(function(ok,no){var l=document.createElement("link");l.rel="stylesheet";l.href=K+"katex.min.css";document.head.appendChild(l);var sc=document.createElement("script");sc.src=K+"katex.min.js";sc.onload=ok;sc.onerror=no;document.head.appendChild(sc)});kp.catch(function(){kp=null});return kp}
+function draw(el){var t=el.getAttribute("data-tex");if(!t){el.innerHTML="";return}try{katex.render(t,el,{displayMode:true,throwOnError:false,strict:false})}catch(e){el.textContent=""}}
+window.entTex=function(root){if(!root)return;kx().then(function(){root.querySelectorAll(".epu:not([hidden]) .etex").forEach(draw)}).catch(function(){root.querySelectorAll(".etex .efb").forEach(function(x){x.textContent="No se pudo cargar el enunciado; las respuestas sí funcionan."})})};
+function cur(){var r=document.querySelector(".sv"),b=r&&r.querySelector(".pjb[aria-pressed=true]");if(!r||!b)return null;var s=S.find(function(x){return x.slug===r.dataset.s});return s?{r:r,s:s,k:+b.dataset.k}:null}
+function rerender(){var c=cur();if(!c)return;var q=c.r.querySelector("#p5");if(!q)return;q.innerHTML=ent(c.s,c.k);entTex(q)}
+document.addEventListener("input",function(e){var inp=e.target;if(!inp.closest)return;var box=inp.closest(".eit");if(!box)return;var n=+box.dataset.n,T=find(n);if(!T)return;var it=null;T.puntos.forEach(function(P){P.items.forEach(function(x){if(x.id===box.dataset.id)it=x})});if(!it)return;
+  EV[n+"|"+it.id+"|"+inp.dataset.v]=inp.value;inp.classList.toggle("bad",!parse(inp.value));var c=calcItem(n,it);box.querySelector(".ean").innerHTML=c.ans;if(c.tex){var t=box.querySelector(".etex");t.setAttribute("data-tex",c.tex);if(window.katex)draw(t)}});
+document.addEventListener("click",function(e){var t=e.target;if(!t.closest)return;var b;
+  if((b=t.closest(".esel .eb"))){SEL[b.dataset.s+"|"+b.dataset.k]=+b.dataset.n;rerender();return}
+  if((b=t.closest(".eps button"))){var n=+b.dataset.n,i=+b.dataset.pu;PU[n]=i;var w=b.closest(".ecalc");w.querySelectorAll(".eps button").forEach(function(x){x.setAttribute("aria-pressed",x===b)});w.querySelectorAll(".epu").forEach(function(x){x.hidden=+x.dataset.pu!==i});entTex(w);if(typeof gtag==="function")gtag("event","entrenamiento_punto",{entrenamiento:n,punto:i+1});return}
+  if((b=t.closest(".eexp"))){var g=document.querySelector(".sv #t3");if(g){g.click();var sc=document.querySelector(".tabsec");if(sc)setTimeout(function(){sc.scrollIntoView({behavior:"smooth",block:"start"})},60)}if(typeof gtag==="function")gtag("event","entrenamiento_ver_explicacion");return}
+  if((b=t.closest('.sv [role=tab]#t5'))&&typeof gtag==="function")gtag("event","abrir_entrenamiento",{ubicacion:document.querySelector(".sv").dataset.s});
+});
+/* si la pagina abrio directo en un curso, volver a dibujarlo con la pestaña nueva */
+if(location.hash.indexOf("#materia/")===0&&typeof route==="function"){route();if(/\/entrenamiento$/.test(location.hash))setTimeout(function(){var b=document.querySelector(".sv #t5");if(b)b.click()},60)}
+})();
 </script>
 </body>
 </html>
