@@ -32,9 +32,14 @@
   "2": {
    "material-gratis": [
     {
-     "t": "Notas sesion. Inversa y Subespacio",
-     "f": "algebra-lineal/parcial-2/material-gratis/Notas%20sesion.%20Inversa%20y%20Subespacio.pdf",
-     "v": "3add1756c0"
+     "t": "Notas. Inversa de una matriz",
+     "f": "algebra-lineal/parcial-2/material-gratis/Notas.%20Inversa%20de%20una%20matriz.pdf",
+     "v": "284f9d6fe4"
+    },
+    {
+     "t": "Notas. Subespacios",
+     "f": "algebra-lineal/parcial-2/material-gratis/Notas.%20Subespacios.pdf",
+     "v": "0cca2fdab0"
     }
    ],
    "parciales": [
@@ -587,9 +592,9 @@
   "2": {
    "material-gratis": [
     {
-     "t": "Notas sesion. Rectas",
-     "f": "geometria-vectorial/parcial-2/material-gratis/Notas%20sesion.%20Rectas.pdf",
-     "v": "509c69f661"
+     "t": "Notas Gva. Rectas desde cero",
+     "f": "geometria-vectorial/parcial-2/material-gratis/Notas%20Gva.%20Rectas%20desde%20cero.pdf",
+     "v": "258924ea74"
     },
     {
      "t": "Solucion Parcial 1. Gva 2026-2 Math con Jean",
