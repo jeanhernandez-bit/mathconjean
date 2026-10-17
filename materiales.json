@@ -126,6 +126,13 @@
    ]
   },
   "2": {
+   "material-gratis": [
+    {
+     "t": "Notas Entrenamiento 5. Math con Jean",
+     "f": "calculo-diferencial/parcial-2/material-gratis/Notas%20Entrenamiento%205.%20Math%20con%20Jean.pdf",
+     "v": "e5565494ae"
+    }
+   ],
    "parciales": [
     {
      "t": "Parcial 2 2024 02",
@@ -146,6 +153,13 @@
      "t": "Solucionario P2 CD 2025 02",
      "f": "calculo-diferencial/parcial-2/parciales/Solucionario_P2_CD_2025_02.pdf",
      "v": "f0d3bcc0a2"
+    }
+   ],
+   "entrenamiento-5": [
+    {
+     "t": "Notas Entrenamiento 5. Math con Jean",
+     "f": "calculo-diferencial/parcial-2/entrenamiento-5/Notas%20Entrenamiento%205.%20Math%20con%20Jean.pdf",
+     "v": "e5565494ae"
     }
    ]
   },
@@ -257,6 +271,13 @@
  },
  "calculo-varias-variables": {
   "1": {
+   "material-gratis": [
+    {
+     "t": "Notas sesion. Ejercicios parcial 1",
+     "f": "calculo-varias-variables/parcial-1/material-gratis/Notas%20sesion.%20Ejercicios%20parcial%201.pdf",
+     "v": "6b604c8f8f"
+    }
+   ],
    "parciales": [
     {
      "t": "Parcial 1 2022-2",
