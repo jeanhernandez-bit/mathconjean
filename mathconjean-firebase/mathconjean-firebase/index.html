@@ -997,6 +997,8 @@ html[data-theme="light"] .hdd button.on{background:#0b0b0b}
 .eleft .ng{margin:0}.eleft .ng .nc{flex-basis:100%;max-width:100%}
 .nc.enp{cursor:default}.nc.enp:hover{transform:none;border-color:var(--line);box-shadow:none}
 .eexp{width:100%;justify-content:center;text-align:center}
+.eopt{display:flex;flex-wrap:wrap;align-items:center;gap:6px}.eopt span{font-size:.82rem;color:var(--muted);margin-right:4px}.eopt button{font:600 .85rem "IBM Plex Mono",monospace,sans-serif;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer;transition:background .2s,color .2s}.eopt button[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}.enote{margin:0;font-size:.8rem;color:var(--muted)}
+.eplot{border:1px solid var(--line);border-radius:12px;padding:8px;background:rgba(255,255,255,.02)}.eplot:empty{display:none}.egraph{display:block;width:100%;height:auto}.egraph .fr{fill:none;stroke:var(--line)}.egraph .gr{stroke:var(--line);stroke-width:1;opacity:.6}.egraph .ax{stroke:var(--muted);stroke-width:1.2}.egraph .tk{fill:var(--muted);font:11px "IBM Plex Mono",monospace}.egraph .lb{fill:#8fdcf5;font:600 12px "IBM Plex Mono",monospace}.egraph .as{stroke:#8fdcf5;stroke-width:1.6;stroke-dasharray:7 6}.egraph .gd{stroke:var(--muted);stroke-width:1.2;stroke-dasharray:3 5}.egraph .cv{fill:none;stroke:var(--ink);stroke-width:2.6;stroke-linejoin:round;stroke-linecap:round}.egraph .dt{fill:var(--ink)}.egraph .dt.o{fill:var(--bg);stroke:var(--ink);stroke-width:2.2}html[data-theme="light"] .egraph .lb{fill:#0b7fa3}html[data-theme="light"] .egraph .as{stroke:#0b7fa3}
 .ehint{margin:0;color:var(--muted);font-size:.85rem;line-height:1.5}
 .ecalc{border:1px solid var(--line);border-radius:20px;padding:16px;min-width:0;background:linear-gradient(160deg,rgba(255,255,255,.035),transparent)}
 .eps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;padding:4px;border:1px solid var(--line);border-radius:14px;margin-bottom:16px}
@@ -2102,16 +2104,96 @@ var E5=[
    tex:function(V){var c=B(V.c,"r");return "f(x)="+B(V.a,"g")+"\\cdot\\mathbf{1}_{(-\\infty,0)}+\\exp("+B(V.b,"y")+")\\cdot\\mathbf{1}_{(0,\\infty)}\\\\[8pt]\\text{(a)}\\;A=\\lim_{x\\to0^{-}}\\dfrac{\\sin\\big(x\\cdot f(x)\\big)}{"+B(V.d,"b")+"\\cdot x}\\\\[8pt]\\text{(b)}\\;B=\\lim_{x\\to0^{+}}\\dfrac{\\big(f(x)\\big)^{x+"+B(V.f,"p")+"\\ln "+c+"}-"+c+"}{x}"},
    solve:function(V){if(V.d.n===0)throw msg("d no puede ser 0");if(V.c.n<=0)throw msg("c debe ser positivo");var A=fmt(div(V.a,V.d)),e=mul(V.b,V.f),Bt;if(V.c.n===V.c.d||eq(e,Q(1)))Bt=fmt(mul(V.b,V.c));else{var d=Math.pow(num(V.c),num(e))-num(V.c);Bt=d>0?"No existe <small>→ +∞</small>":"No existe <small>→ −∞</small>"}return[["A",A],["B",Bt]]}}]}
 ];
+function isq(v){if(v<0)return null;var r=Math.round(Math.sqrt(v));return r*r===v?r:null}
+function rts(b,c){/* raices de x^2 - b x + c */var D=sub(mul(b,b),mul(Q(4),c));if(D.n<0)return null;var sn=isq(D.n),sd=isq(D.d);
+ if(sn!==null&&sd!==null){var s=Q(sn,sd),h=Q(1,2);return{q:true,r:[mul(sub(b,s),h),mul(add(b,s),h)]}}
+ var bb=num(b),sq=Math.sqrt(num(D));return{q:false,r:[(bb-sq)/2,(bb+sq)/2]}}
+function fx(v){return typeof v==="number"?"≈ "+String(Math.round(v*10000)/10000).replace("-","−"):fmt(v)}
+/* grafica SVG simple */
+var GID=0;
+function nice(r){var e=Math.pow(10,Math.floor(Math.log10(r))),f=r/e;return(f<1.5?1:f<3?2:f<7?5:10)*e}
+function tl(v,st){var d=st<1?Math.min(4,Math.ceil(-Math.log10(st))):0;return String(+v.toFixed(d)).replace("-","−")}
+function plot(o){var W=600,H=300,L=46,R=14,T=14,Bm=26,x0=o.x0,x1=o.x1,y0=o.y0,y1=o.y1,id="eg"+(++GID);
+ function X(x){return L+(x-x0)/(x1-x0)*(W-L-R)}function Y(y){return T+(y1-y)/(y1-y0)*(H-T-Bm)}
+ function c(v){return Math.round(v*10)/10}
+ var g="",sx=nice((x1-x0)/7),sy=nice((y1-y0)/6),v;
+ for(v=Math.ceil(x0/sx)*sx;v<=x1+1e-9;v+=sx)g+='<line class="gr" x1="'+c(X(v))+'" x2="'+c(X(v))+'" y1="'+T+'" y2="'+(H-Bm)+'"/><text class="tk" x="'+c(X(v))+'" y="'+(H-8)+'" text-anchor="middle">'+tl(v,sx)+'</text>';
+ for(v=Math.ceil(y0/sy)*sy;v<=y1+1e-9;v+=sy)g+='<line class="gr" y1="'+c(Y(v))+'" y2="'+c(Y(v))+'" x1="'+L+'" x2="'+(W-R)+'"/><text class="tk" x="'+(L-6)+'" y="'+c(Y(v)+4)+'" text-anchor="end">'+tl(v,sy)+'</text>';
+ if(x0<0&&x1>0)g+='<line class="ax" x1="'+c(X(0))+'" x2="'+c(X(0))+'" y1="'+T+'" y2="'+(H-Bm)+'"/>';
+ if(y0<0&&y1>0)g+='<line class="ax" y1="'+c(Y(0))+'" y2="'+c(Y(0))+'" x1="'+L+'" x2="'+(W-R)+'"/>';
+ var b='<g clip-path="url(#'+id+')">';
+ (o.vl||[]).forEach(function(a){b+='<line class="'+(a.f?"gd":"as")+'" x1="'+c(X(a.x))+'" x2="'+c(X(a.x))+'" y1="'+T+'" y2="'+(H-Bm)+'"/>'});
+ (o.hl||[]).forEach(function(a){b+='<line class="as" y1="'+c(Y(a.y))+'" y2="'+c(Y(a.y))+'" x1="'+L+'" x2="'+(W-R)+'"/>'});
+ (o.paths||[]).forEach(function(p){if(p.length<2)return;b+='<path class="cv" d="'+p.map(function(q,i){var yy=Math.max(y0-(y1-y0)*4,Math.min(y1+(y1-y0)*4,q[1]));return(i?"L":"M")+c(X(q[0]))+" "+c(Y(yy))}).join("")+'"/>'});
+ (o.dots||[]).forEach(function(d){b+='<circle class="dt'+(d.o?" o":"")+'" cx="'+c(X(d.x))+'" cy="'+c(Y(d.y))+'" r="5"/>'});
+ b+='</g>';
+ (o.vl||[]).forEach(function(a){if(a.l)b+='<text class="lb" x="'+c(X(a.x)+6)+'" y="'+(T+14)+'">'+a.l+'</text>'});
+ (o.hl||[]).forEach(function(a){if(a.l)b+='<text class="lb" x="'+(W-R-6)+'" y="'+c(Y(a.y)-7)+'" text-anchor="end">'+a.l+'</text>'});
+ return '<svg class="egraph" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="Gráfica de f(x)"><defs><clipPath id="'+id+'"><rect x="'+L+'" y="'+T+'" width="'+(W-L-R)+'" height="'+(H-T-Bm)+'"/></clipPath></defs><rect class="fr" x="'+L+'" y="'+T+'" width="'+(W-L-R)+'" height="'+(H-T-Bm)+'"/>'+g+b+'</svg>'}
+function lbl(v){return tl(v,v%1?0.01:1)}
+var E6=[
+ {t:"Asíntota oblicua",items:[
+  {id:"1",h:"Punto 1 · (a) y (b)",o:[["ab","A + Bx"],["ba","Ax + B"]],ol:"Tu enunciado dice",
+   v:[["p","y","63"],["q","g","39"],["r","p","22"],["s","b","3"],["t","r","1"],["L","g","14"]],
+   tex:function(V){var f=V._o==="ba"?"Ax+B":"A+Bx";return "\\lim_{x\\to\\infty}\\left("+f+"-\\dfrac{"+B(V.p,"y")+"x^{2}"+P_(V.q,"g")+"x"+P_(V.r,"p")+"}{"+B(V.s,"b")+"x"+P_(V.t,"r")+"}\\right)="+B(V.L,"g")},
+   solve:function(V){if(V.s.n===0)throw msg("El coeficiente de x abajo no puede ser 0");
+    var m=div(V.p,V.s),K=div(sub(mul(V.q,V.s),mul(V.p,V.t)),mul(V.s,V.s)),c=add(V.L,K);
+    return V._o==="ba"?[["A",fmt(m)],["B",fmt(c)]]:[["A",fmt(c)],["B",fmt(m)]]}}]},
+ {t:"Dominio y asíntotas",items:[
+  {id:"2",h:"Punto 2 · (a), (b), (c) y (d)",
+   v:[["m","y","5"],["b","g","7"],["c","p","10"],["k","b","20"]],
+   tex:function(V){return "f(x)=\\dfrac{x"+P_(neg(V.m),"y")+"}{x^{2}"+P_(neg(V.b),"g")+"x"+P_(V.c,"p")+"}"+P_(V.k,"b")},
+   solve:function(V){var R=rts(V.b,V.c);if(!R)throw msg("El denominador no tiene raíces reales");
+    var r=R.r,va;
+    if(R.q){if(eq(r[0],r[1]))va=[r[0]];else va=r.filter(function(x){return !eq(x,V.m)})}
+    else va=r;
+    return[["A",fx(r[0])],["B",fx(r[1])],["C",fmt(V.k)],["D",va.map(fx).join(" y ")]]},
+   plot:function(V){var m=num(V.m),b=num(V.b),c=num(V.c),k=num(V.k),R=rts(V.b,V.c),rr=R?R.r.map(function(x){return typeof x==="number"?x:num(x)}):[];
+    var hole=null,va=rr.slice();
+    if(R&&R.q&&!eq(R.r[0],R.r[1])){[0,1].forEach(function(i){if(eq(R.r[i],V.m)){var o=rr[1-i];hole={x:m,y:1/(m-o)+k,o:1};va=[o]}})}
+    var pts=rr.concat([m]),lo=Math.min.apply(null,pts),hi=Math.max.apply(null,pts),sp=Math.max(hi-lo,4),x0=lo-sp*.8,x1=hi+sp*.8;
+    var N=900,P=[],cur=[],pd=null;
+    for(var i=0;i<=N;i++){var x=x0+(x1-x0)*i/N,d=x*x-b*x+c;if(pd!==null&&(d===0||d*pd<0)){if(cur.length)P.push(cur);cur=[]}if(d!==0){cur.push([x,(x-m)/d+k]);pd=d}}
+    if(cur.length)P.push(cur);
+    return plot({x0:x0,x1:x1,y0:k-5,y1:k+5,paths:P,vl:va.map(function(x){return{x:x,l:"x = "+lbl(x)}}),hl:[{y:k,l:"y = "+lbl(k)}],dots:hole?[hole]:[]})}}]},
+ {t:"Límites de la compuesta",items:[
+  {id:"3",h:"Punto 3 · (a) a (e)",o:[["l","(c) es x → 0⁻"],["r","(c) es x → 0⁺"]],ol:"En tu enunciado",
+   v:[["a","y","7"],["d","g","46"],["q","p","39"],["n","b","46"],["s","r","12"],["t","g","29"],["g0","y","46"]],
+   tex:function(V){var n=B(V.n,"b");return "f(x)=\\begin{cases}\\dfrac{"+B(V.a,"y")+"}{"+B(V.d,"g")+"}x"+P_(V.q,"p")+", & x<"+n+"\\\\ "+B(V.s,"r")+", & x="+n+"\\\\ "+B(V.t,"g")+", & x>"+n+"\\end{cases}\\qquad g(0)="+B(V.g0,"y")},
+   solve:function(V){if(V.d.n===0)throw msg("El denominador no puede ser 0");
+    var g=V.g0,c=cmp(g,V.n),lin=add(mul(div(V.a,V.d),g),V.q);
+    var L=c>=0?V.t:lin,Rr=c>0?V.t:lin,E=c===0?V.s:(c>0?V.t:lin);
+    var C=V._o==="r"?Rr:L,D=V._o==="r"?L:Rr;
+    return[["A",fmt(g)],["B",fmt(g)],["C",fmt(C)],["D",fmt(D)],["E",fmt(E)]]},
+   plot:function(V){if(V.d.n===0)return "";var n=num(V.n),s=num(V.s),t=num(V.t),m=num(V.a)/num(V.d),q=num(V.q);function f(x){return m*x+q}
+    var w=Math.max(4,Math.abs(n)*.25),x0=n-w,x1=n+w,ys=[f(x0),f(n),s,t],lo=Math.min.apply(null,ys),hi=Math.max.apply(null,ys),pd=Math.max(2,(hi-lo)*.15);
+    return plot({x0:x0,x1:x1,y0:lo-pd,y1:hi+pd,paths:[[[x0,f(x0)],[n,f(n)]],[[n,t],[x1,t]]],vl:[{x:n,f:1,l:"x = "+lbl(n)}],dots:[{x:n,y:f(n),o:1},{x:n,y:t,o:1},{x:n,y:s}]})}}]},
+ {t:"Continuidad de φ∘f",items:[
+  {id:"4ab",h:"Punto 4 · (a) y (b)",
+   v:[["h","r","41"],["ξ","y","34"],["a","p","25"],["b","b","37"],["η","g","45"]],
+   tex:function(V){return "\\varphi(x)=\\begin{cases}"+B(V.h,"r")+", & x\\in[\\alpha,\\beta]\\\\ 0, & x\\notin[\\alpha,\\beta]\\end{cases}\\\\[8pt] f(x)=\\dfrac{"+B(V["ξ"],"y")+"}{\\pi}\\arctan\\!\\left("+B(V.a,"p")+"x"+P_(V.b,"b")+"\\right)"+P_(V["η"],"g")},
+   solve:function(V){if(V["ξ"].n===0)throw msg("ξ no puede ser 0");if(V.a.n===0)throw msg("El coeficiente de x no puede ser 0");var h=mul(Q(Math.abs(V["ξ"].n),V["ξ"].d),Q(1,2));
+    return[["A",fmt(sub(V["η"],h))],["B",fmt(add(V["η"],h))]]}},
+  {id:"4c",h:"Punto 4 · (c)",
+   v:[["α","p","10"],["β","b","49"],["η","r","28"]],
+   tex:function(V){return "\\alpha="+B(V["α"],"p")+",\\quad \\beta="+B(V["β"],"b")+",\\quad \\eta="+B(V["η"],"r")+"\\qquad \\xi\\le C"},
+   solve:function(V){var a=V["α"],b=V["β"],e=V["η"],m;if(cmp(a,b)>0)throw msg("α debe ser menor que β");
+    if(cmp(e,a)>=0&&cmp(e,b)<=0){var x=sub(e,a),y=sub(b,e);m=cmp(x,y)<0?x:y}else m=cmp(e,a)<0?sub(a,e):sub(e,b);
+    if(m.n===0)throw msg("No existe C > 0 con esos valores");
+    return[["C",fmt(mul(Q(2),m))]]}}]}
+];
 /* Registro: curso -> parcial -> lista de entrenamientos */
-window.ENT={"calculo-diferencial":{"2":[{n:5,puntos:E5}]}};
+window.ENT={"calculo-diferencial":{"2":[{n:5,puntos:E5},{n:6,puntos:E6}]}};
 var SEL={},PU={},EV={};
 function esc(x){return String(x).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
 function val(n,it,v){var k=n+"|"+it.id+"|"+v[0];return k in EV?EV[k]:v[2]}
-function calcItem(n,it){var V={},bad=[];it.v.forEach(function(v){var x=parse(val(n,it,v));if(!x)bad.push(v[0]);else V[v[0]]=x});
+function opt(n,it){var k=n+"|"+it.id+"|@";return k in EV?EV[k]:it.o[0][0]}
+function calcItem(n,it){var V={},bad=[];if(it.o)V._o=opt(n,it);it.v.forEach(function(v){var x=parse(val(n,it,v));if(!x)bad.push(v[0]);else V[v[0]]=x});
   if(bad.length)return{tex:null,ans:'<div class="ea err"><output>Revisa: '+bad.join(", ")+'</output></div>'};
   var ans;try{ans=it.solve(V).map(function(x){return '<div class="ea"><b>'+x[0]+' =</b><output>'+x[1]+'</output></div>'}).join("")}catch(e){ans='<div class="ea err"><output>'+(e.user?esc(e.message):"No se puede calcular con esos valores")+'</output></div>'}
-  return{tex:it.tex(V),ans:ans}}
-function itemHTML(n,it){var c=calcItem(n,it);return '<div class="eit" data-n="'+n+'" data-id="'+it.id+'"><div class="eih">'+it.h+'</div><div class="etex" data-tex="'+esc(c.tex||"")+'"><span class="efb">Cargando enunciado…</span></div><div class="evs">'+it.v.map(function(v){var id="e"+n+"-"+it.id+"-"+v[0];return '<div class="ev"><i class="'+CLS[v[1]]+'" aria-hidden="true"></i><label for="'+id+'">'+esc(v[0])+(v[3]?'<small>'+esc(v[3])+'</small>':'')+'</label><input id="'+id+'" data-v="'+esc(v[0])+'" inputmode="decimal" autocomplete="off" spellcheck="false" value="'+esc(val(n,it,v))+'"></div>'}).join("")+'</div><div class="ean">'+c.ans+'</div></div>'}
+  var pl="";if(it.plot&&ans.indexOf("ea err")<0){try{pl=it.plot(V)||""}catch(e){}}
+  return{tex:it.tex(V),ans:ans,plot:pl}}
+function itemHTML(n,it){var c=calcItem(n,it);return '<div class="eit" data-n="'+n+'" data-id="'+it.id+'"><div class="eih">'+it.h+'</div>'+(it.o?'<div class="eopt" role="group"><span>'+esc(it.ol||"")+'</span>'+it.o.map(function(o){return '<button type="button" data-o="'+o[0]+'" aria-pressed="'+(o[0]===opt(n,it))+'">'+esc(o[1])+'</button>'}).join("")+'</div>':'')+'<div class="etex" data-tex="'+esc(c.tex||"")+'"><span class="efb">Cargando enunciado…</span></div>'+(it.note?'<p class="enote">'+esc(it.note)+'</p>':'')+'<div class="evs">'+it.v.map(function(v){var id="e"+n+"-"+it.id+"-"+v[0];return '<div class="ev"><i class="'+CLS[v[1]]+'" aria-hidden="true"></i><label for="'+id+'">'+esc(v[0])+(v[3]?'<small>'+esc(v[3])+'</small>':'')+'</label><input id="'+id+'" data-v="'+esc(v[0])+'" inputmode="decimal" autocomplete="off" spellcheck="false" value="'+esc(val(n,it,v))+'"></div>'}).join("")+'</div><div class="ean">'+c.ans+'</div>'+(it.plot?'<div class="eplot">'+(c.plot||"")+'</div>':'')+'</div>'}
 function find(n){var o=null;Object.keys(ENT).forEach(function(c){Object.keys(ENT[c]).forEach(function(p){ENT[c][p].forEach(function(t){if(t.n===n)o=t})})});return o}
 window.ent=function(s,k){var L=(ENT[s.slug]||{})[String(k+1)]||[],h='<p class="pt">Parcial '+(k+1)+' · entrenamientos</p>';
   if(!L.length)return h+'<div class="nm"><span class="ni"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19h16M7 16V9m5 7V5m5 11v-4"/></svg></span><span class="nb"><i></i>Pendiente de publicación</span><h4>Aún no hay entrenamientos</h4><p>Los entrenamientos del Parcial '+(k+1)+' se publican aquí apenas estén listos.</p></div>';
@@ -2130,9 +2212,10 @@ window.entTex=function(root){if(!root)return;kx().then(function(){root.querySele
 function cur(){var r=document.querySelector(".sv"),b=r&&r.querySelector(".pjb[aria-pressed=true]");if(!r||!b)return null;var s=S.find(function(x){return x.slug===r.dataset.s});return s?{r:r,s:s,k:+b.dataset.k}:null}
 function rerender(){var c=cur();if(!c)return;var q=c.r.querySelector("#p5");if(!q)return;q.innerHTML=ent(c.s,c.k);entTex(q)}
 document.addEventListener("input",function(e){var inp=e.target;if(!inp.closest)return;var box=inp.closest(".eit");if(!box)return;var n=+box.dataset.n,T=find(n);if(!T)return;var it=null;T.puntos.forEach(function(P){P.items.forEach(function(x){if(x.id===box.dataset.id)it=x})});if(!it)return;
-  EV[n+"|"+it.id+"|"+inp.dataset.v]=inp.value;inp.classList.toggle("bad",!parse(inp.value));var c=calcItem(n,it);box.querySelector(".ean").innerHTML=c.ans;if(c.tex){var t=box.querySelector(".etex");t.setAttribute("data-tex",c.tex);if(window.katex)draw(t)}});
+  EV[n+"|"+it.id+"|"+inp.dataset.v]=inp.value;inp.classList.toggle("bad",!parse(inp.value));var c=calcItem(n,it);box.querySelector(".ean").innerHTML=c.ans;var pq=box.querySelector(".eplot");if(pq)pq.innerHTML=c.plot||"";if(c.tex){var t=box.querySelector(".etex");t.setAttribute("data-tex",c.tex);if(window.katex)draw(t)}});
 document.addEventListener("click",function(e){var t=e.target;if(!t.closest)return;var b;
   if((b=t.closest(".esel .eb"))){SEL[b.dataset.s+"|"+b.dataset.k]=+b.dataset.n;rerender();return}
+  if((b=t.closest(".eopt button"))){var bx=b.closest(".eit"),T6=find(+bx.dataset.n),it6=null;if(T6)T6.puntos.forEach(function(P){P.items.forEach(function(x){if(x.id===bx.dataset.id)it6=x})});if(!it6)return;EV[bx.dataset.n+"|"+it6.id+"|@"]=b.dataset.o;bx.querySelectorAll(".eopt button").forEach(function(x){x.setAttribute("aria-pressed",x===b)});var c6=calcItem(+bx.dataset.n,it6);bx.querySelector(".ean").innerHTML=c6.ans;var pq6=bx.querySelector(".eplot");if(pq6)pq6.innerHTML=c6.plot||"";if(c6.tex){var t6=bx.querySelector(".etex");t6.setAttribute("data-tex",c6.tex);if(window.katex)draw(t6)}return}
   if((b=t.closest(".eps button"))){var n=+b.dataset.n,i=+b.dataset.pu;PU[n]=i;var w=b.closest(".ecalc");w.querySelectorAll(".eps button").forEach(function(x){x.setAttribute("aria-pressed",x===b)});w.querySelectorAll(".epu").forEach(function(x){x.hidden=+x.dataset.pu!==i});entTex(w);if(typeof gtag==="function")gtag("event","entrenamiento_punto",{entrenamiento:n,punto:i+1});return}
   if((b=t.closest(".eexp"))){var g=document.querySelector(".sv #t3");if(g){g.click();var sc=document.querySelector(".tabsec");if(sc)setTimeout(function(){sc.scrollIntoView({behavior:"smooth",block:"start"})},60)}if(typeof gtag==="function")gtag("event","entrenamiento_ver_explicacion");return}
   if((b=t.closest('.sv [role=tab]#t5'))&&typeof gtag==="function")gtag("event","abrir_entrenamiento",{ubicacion:document.querySelector(".sv").dataset.s});
