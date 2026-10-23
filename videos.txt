@@ -25,4 +25,5 @@ geometria-vectorial | 1 | Gva. Solucíon parcial 1 2026-02 | https://www.youtube
 geometria-vectorial | 2 | Gva. Solucíon parcial 1 2026-02 | https://www.youtube.com/watch?v=DgPIM3M5g8A
 calculo-varias-variables | 1 | Ejercicios Parcial 1 | https://youtu.be/7-5orrrihN4
 calculo-varias-variables | 1 | Resolviendo Parciales | https://www.youtube.com/watch?v=QIt-M9R7Fpw
-calculo-diferencial | 2 | Notas. Entrenamiento 5 | https://www.youtube.com/watch?v=4xOuOLNO42Y
+calculo-diferencial | 2 | Explicación. Entrenamiento 5 | https://www.youtube.com/watch?v=4xOuOLNO42Y
+calculo-diferencial | 2 | Explicación. Entrenamiento 6 | https://youtu.be/Pnv1r-Bw_J8
