@@ -27,3 +27,7 @@ calculo-varias-variables | 1 | Ejercicios Parcial 1 | https://youtu.be/7-5orrrih
 calculo-varias-variables | 1 | Resolviendo Parciales | https://www.youtube.com/watch?v=QIt-M9R7Fpw
 calculo-diferencial | 2 | Explicación. Entrenamiento 5 | https://www.youtube.com/watch?v=4xOuOLNO42Y
 calculo-diferencial | 2 | Explicación. Entrenamiento 6 | https://youtu.be/Pnv1r-Bw_J8
+geometria-vectorial | 2 | Ejercicios de Desarrollo - Quiz | https://www.youtube.com/watch?v=DPgCxeGnIOE
+geometria-vectorial | 2 | Ejercicios Quiz 2 - Parte 1 | https://youtu.be/Hx8B1aNy8xQ
+geometria-vectorial | 2 | Ejercicios Quiz 2 - Parte 2 | https://www.youtube.com/watch?v=toZYihLMxQ0
+
